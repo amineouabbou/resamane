@@ -22,7 +22,7 @@ const About = ({ slug }) => {
               <Image
                 src="/remove/slide-1.png"
                 layout="fill"
-                alt=""
+                alt="slider"
                 objectFit="cover"
               />
             </div>
