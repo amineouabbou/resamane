@@ -1,34 +1,39 @@
 import Link from 'next/link'
 import React from 'react'
+import { useRouter } from 'next/router'
 
 const Standnav = () => {
+  const router = useRouter()
+
   return (
     <ul className="flex flex-row items-center justify-center">
-      <li>
+      <li className={router.pathname == '/' ? 'active' : ''}>
+        <Link href="/">
+          <a href="#">Accueil</a>
+        </Link>
+      </li>
+      <li className={router.pathname == '/about' ? 'active' : ''}>
         <Link href="/about">
-          <a href="#">À Propos</a>
+          <a href="#">Qui sommes-nous</a>
+        </Link>
+      </li>
+      <li className={router.pathname == '/offre' ? 'active' : ''}>
+        <Link href="/offre">
+          <a href="#">Notre offre</a>
+        </Link>
+      </li>
+      <li className={router.pathname == '/preinscription' ? 'active' : ''}>
+        <Link href="/preinscription">
+          <a href="#">Mon dossier</a>
         </Link>
       </li>
       <li>
-        <a href="#">Résidence Amane</a>
-      </li>
-      <li className="active">
-        <a href="#">Services</a>
-      </li>
-      <li>
-        <a href="#">Mon dossier</a>
+        <Link href="/">
+          <a href="#">Ville d'agadir</a>
+        </Link>
       </li>
       <li>
-        <a href="#">Ville d’agadir</a>
-      </li>
-      <li>
-        <a href="#">Vidéo 360</a>
-      </li>
-      <li>
-        <a href="#">Médiathèque</a>
-      </li>
-      <li>
-        <Link href="/preinscription">
+        <Link href="/">
           <a href="#">Contact</a>
         </Link>
       </li>
