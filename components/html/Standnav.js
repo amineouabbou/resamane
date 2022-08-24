@@ -9,31 +9,29 @@ const Standnav = () => {
     <ul className="flex flex-row items-center justify-center">
       <li className={router.pathname == '/' ? 'active' : ''}>
         <Link href="/">
-          <a href="#">Accueil</a>
+          <a>Accueil</a>
         </Link>
       </li>
       <li className={router.pathname == '/about' ? 'active' : ''}>
         <Link href="/about">
-          <a href="#">Qui sommes-nous</a>
+          <a>Qui sommes-nous</a>
         </Link>
       </li>
       <li className={router.pathname == '/offre' ? 'active' : ''}>
         <Link href="/offre">
-          <a href="#">Notre offre</a>
+          <a>Notre offre</a>
         </Link>
       </li>
       <li className={router.pathname == '/preinscription' ? 'active' : ''}>
         <Link href="/preinscription">
-          <a href="#">Mon dossier</a>
+          <a>Mon dossier</a>
         </Link>
       </li>
       <li>
-        <Link href="/">
-          <a href="#">{`Ville d'agadir`}</a>
-        </Link>
+        <a>{`Ville d'agadir`}</a>
       </li>
       <li>
-        <Link href="/">
+        <Link href="/contact">
           <a href="#">Contact</a>
         </Link>
       </li>

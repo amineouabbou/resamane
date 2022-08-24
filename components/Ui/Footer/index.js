@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
 
@@ -16,41 +17,74 @@ const Footer = () => {
           <div className="grid grid-cols-4 gap-4">
             <div className="item">
               <div className="font-semibold text-[#1D647D] text-[17px] leading-[20px] mb-[20px] uppercase">
-                À propos
+                QUI SOMMES-NOUS
               </div>
               <ul className="font-light leading-[#30] text-[16px]">
                 <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Notre résidence
-                  </a>
+                  <Link href="/about">
+                    <a className="text-[#023141] hover:text-lightblue">
+                      Présentation
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Notre emplacement
-                  </a>
+                  <Link href="/about">
+                    <a className="text-[#023141] hover:text-lightblue">
+                      Nos valeurs
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about">
+                    <a className="text-[#023141] hover:text-lightblue">
+                      Notre emplacement
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
 
             <div className="item">
               <div className="font-semibold text-[#1D647D] text-[17px] leading-[20px] mb-[20px] uppercase">
-                Résidence Amane
+                NOTRE OFFRE
               </div>
               <ul className="text-[#023141] font-light leading-[#30] text-[16px]">
                 <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Nos chambres
-                  </a>
+                  <Link href="/offre">
+                    <a className="text-[#023141] hover:text-lightblue">
+                      Chambres et appartements
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Nos appartements
-                  </a>
+                  <Link href="/offre">
+                    <a className="text-[#023141] hover:text-lightblue">
+                      Bibliothèque
+                    </a>
+                  </Link>
                 </li>
+
                 <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Chambres à besoin spécifique
-                  </a>
+                  <Link href="/offre">
+                    <a className="text-[#023141] hover:text-lightblue">
+                      Salle multimédia
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="item">
+              <div className="font-semibold text-[#1D647D] text-[17px] leading-[20px] mb-[20px] uppercase">
+                Mon dossier
+              </div>
+              <ul className="text-[#023141] font-light leading-[#30] text-[16px]">
+                <li>
+                  <Link href="/preinscription">
+                    <a className="text-[#023141] hover:text-lightblue">
+                      Pré-inscription
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -73,34 +107,6 @@ const Footer = () => {
                 <li>
                   <a href="#" className="text-[#023141] hover:text-lightblue">
                     Plan de la ville
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="item">
-              <div className="font-semibold text-[#1D647D] text-[17px] leading-[20px] mb-[20px] uppercase">
-                Services
-              </div>
-              <ul className="text-[#023141] font-light leading-[#30] text-[16px]">
-                <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Bibliothèque
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Salle multimédia
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Restaurant
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Salle de sport
                   </a>
                 </li>
               </ul>

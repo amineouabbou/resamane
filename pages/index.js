@@ -134,9 +134,10 @@ export default function Home({ data }) {
                     PROXIMITÉ
                   </div>
                   <div className="font-light text-[18px] leading-[24px]">
-                    Hébergements spacieux
-                    <br /> modernes équipés connectés, et <br /> espaces communs
-                    pratiques.
+                    2 min de votre faculté <br />
+                    5 min de votre école <br />
+                    5 min centre ville
+                    <br />5 min gare routière
                   </div>
                 </div>
               </div>
