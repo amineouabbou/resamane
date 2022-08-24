@@ -358,7 +358,7 @@ export const sendMessage = async (data) => {
   console.log('aasasasa', url)
 
   const response = await axios.post(
-    `${url}/wp-json/contact-form-7/v1/contact-forms/10/feedback/`,
+    `${url}/wp/wp-json/contact-form-7/v1/contact-forms/10/feedback/`,
     formData
   )
 
