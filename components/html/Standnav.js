@@ -29,7 +29,7 @@ const Standnav = () => {
       </li>
       <li>
         <Link href="/">
-          <a href="#">Ville d'agadir</a>
+          <a href="#">{`Ville d'agadir`}</a>
         </Link>
       </li>
       <li>
