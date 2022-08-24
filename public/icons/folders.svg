@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35.162" height="32.36" viewBox="0 0 35.162 32.36">
+  <g id="Groupe_9" data-name="Groupe 9" transform="translate(0 -0.707)">
+    <rect id="Rectangle_9" data-name="Rectangle 9" width="8.485" height="30.345" rx="2" transform="translate(0.5 1.715)" fill="none" stroke="#09556f" stroke-width="1"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="1.682" cy="1.682" r="1.682" transform="translate(3.06 26.136)" fill="#09556f"/>
+    <path id="Tracé_36" data-name="Tracé 36" d="M2.444,8.712H4.686M2.444,13.755H4.686M2.444,3.667H4.686" transform="translate(1.176 1.449)" fill="none" stroke="#09556f" stroke-linecap="round" stroke-width="1" fill-rule="evenodd"/>
+    <rect id="Rectangle_10" data-name="Rectangle 10" width="8.485" height="30.345" rx="2" transform="translate(12.271 1.715)" fill="none" stroke="#09556f" stroke-width="1"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="1.682" cy="1.682" r="1.682" transform="translate(14.831 26.136)" fill="#09556f"/>
+    <path id="Tracé_37" data-name="Tracé 37" d="M9.778,8.712H12.02M9.778,13.755H12.02M9.778,3.667H12.02" transform="translate(5.615 1.449)" fill="none" stroke="#09556f" stroke-linecap="round" stroke-width="1" fill-rule="evenodd"/>
+    <g id="Groupe_8" data-name="Groupe 8" transform="translate(21.972 2.453) rotate(-8)">
+      <rect id="Rectangle_11" data-name="Rectangle 11" width="8.485" height="30.345" rx="2" transform="translate(0 0)" fill="none" stroke="#09556f" stroke-width="1"/>
+      <circle id="Ellipse_9" data-name="Ellipse 9" cx="1.682" cy="1.682" r="1.682" transform="translate(2.56 24.421)" fill="#09556f"/>
+      <path id="Tracé_38" data-name="Tracé 38" d="M0,5.045H2.242M0,10.09H2.242M0,0H2.242" transform="translate(3.12 3.401)" fill="none" stroke="#09556f" stroke-linecap="round" stroke-width="1" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

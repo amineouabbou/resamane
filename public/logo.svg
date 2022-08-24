@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="51.161" height="72.055" viewBox="0 0 51.161 72.055">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00b1b7"/>
+      <stop offset="0.01" stop-color="#02a8b0"/>
+      <stop offset="0.05" stop-color="#0a8f9c"/>
+      <stop offset="0.09" stop-color="#117b8d"/>
+      <stop offset="0.13" stop-color="#156d83"/>
+      <stop offset="0.19" stop-color="#18657c"/>
+      <stop offset="0.3" stop-color="#19637b"/>
+      <stop offset="0.75" stop-color="#00b1b7"/>
+      <stop offset="0.82" stop-color="#00aeb4"/>
+      <stop offset="0.87" stop-color="#03a5ad"/>
+      <stop offset="0.92" stop-color="#0895a1"/>
+      <stop offset="0.96" stop-color="#0f8091"/>
+      <stop offset="1" stop-color="#18647b"/>
+      <stop offset="1" stop-color="#19637b"/>
+    </linearGradient>
+  </defs>
+  <g id="Logo_AMANE_Final_CMJN" data-name="Logo AMANE Final CMJN" transform="translate(0)">
+    <path id="Tracé_28" data-name="Tracé 28" d="M53.133,67.828V33.7s-.019-.808,0-2.066c.046-3.728.393-11.392,2.428-13.431A13.816,13.816,0,0,0,49.954,24a20.867,20.867,0,0,0-2.4,8.595c-.061,1.155-.118,2.535-.118,2.535s-.057,1.086-.057,3.4c0,11.156-.194,25.4-.194,25.4s0,3.308,0,5.027a20.419,20.419,0,0,0,2.767,8.549,13.81,13.81,0,0,0,5.607,5.8c-2.039-2.039-2.386-9.7-2.428-13.431-.015-1.254,0-2.066,0-2.066Z" transform="translate(-29.201 -11.263)" fill="#00b1b7"/>
+    <path id="Tracé_29" data-name="Tracé 29" d="M28.091,112.09c-.366.244-3.941,3.453-3.941,3.453l3.7,3.983,3.655-3.533-3.411-3.9Z" transform="translate(-14.945 -69.368)" fill="#19637b"/>
+    <path id="Tracé_30" data-name="Tracé 30" d="M50.532,106.283a13.868,13.868,0,0,0-26.668.648.121.121,0,0,1-.011.034c-.019.111-.034.213-.05.313a1.041,1.041,0,0,0-.053.194A10.618,10.618,0,1,1,9.887,95.55c-.046.011-.088.023-.133.038a13.865,13.865,0,1,0,17.54,16.705c.088-.332.156-.667.217-1.006a10.615,10.615,0,1,1,13.763,12.391c.046-.011.088-.023.133-.038A13.862,13.862,0,0,0,50.532,106.283Z" transform="translate(0 -59.132)" fill="url(#linear-gradient)"/>
+    <path id="Tracé_31" data-name="Tracé 31" d="M76.179,0s-7.733,3.526-8.073,15.692,0,26.032,0,26.032.705,12.951-2.386,16.042c0,0,8.034-5.45,8.034-12.284V15.493S73.457,2.725,76.179,0Z" transform="translate(-40.671)" fill="#19637b"/>
+  </g>
+</svg>
