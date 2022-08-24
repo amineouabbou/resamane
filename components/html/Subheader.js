@@ -11,7 +11,7 @@ const Subheader = ({ title, subtitle, description, type }) => {
         <div className="w-3/4">
           <div className="relative h-[515px]">
             <Image
-              src="http://localhost:8888/resamane/wp-content/uploads/2022/08/slide-1.png"
+              src="/remove/slide-1.png"
               layout="fill"
               objectFit="cover"
               alt=""
