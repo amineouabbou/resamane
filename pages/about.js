@@ -20,7 +20,7 @@ const About = ({ slug }) => {
           <div className="relative pl-[60px]">
             <div className="img h-[640px] xl:[clip-path:polygon(3%_0,_100%_0,_100%_100%,_0_100%)]">
               <Image
-                src="http://localhost:8888/resamane/wp-content/uploads/2022/08/slide-1.png"
+                src="/remove/slide-1.png"
                 layout="fill"
                 alt=""
                 objectFit="cover"
