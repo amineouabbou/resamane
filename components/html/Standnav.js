@@ -1,41 +1,60 @@
 import Link from 'next/link'
 import React from 'react'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
+import { titesStagger, shortFadeUp } from '../../data/useVariants'
 
 const Standnav = () => {
   const router = useRouter()
 
   return (
-    <ul className="flex flex-row items-center justify-center">
-      <li className={router.pathname == '/' ? 'active' : ''}>
+    <motion.ul
+      variants={titesStagger(0.6, 0.1)}
+      initial="initial"
+      animate="animate"
+      className="flex flex-row items-center justify-center"
+    >
+      <motion.li
+        variants={shortFadeUp()}
+        className={router.pathname == '/' ? 'active' : ''}
+      >
         <Link href="/">
           <a>Accueil</a>
         </Link>
-      </li>
-      <li className={router.pathname == '/about' ? 'active' : ''}>
+      </motion.li>
+      <motion.li
+        variants={shortFadeUp()}
+        className={router.pathname == '/about' ? 'active' : ''}
+      >
         <Link href="/about">
           <a>Qui sommes-nous</a>
         </Link>
-      </li>
-      <li className={router.pathname == '/offre' ? 'active' : ''}>
+      </motion.li>
+      <motion.li
+        variants={shortFadeUp()}
+        className={router.pathname == '/offre' ? 'active' : ''}
+      >
         <Link href="/offre">
           <a>Notre offre</a>
         </Link>
-      </li>
-      <li className={router.pathname == '/preinscription' ? 'active' : ''}>
+      </motion.li>
+      <motion.li
+        variants={shortFadeUp()}
+        className={router.pathname == '/preinscription' ? 'active' : ''}
+      >
         <Link href="/preinscription">
           <a>Mon dossier</a>
         </Link>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li variants={shortFadeUp()}>
         <a>{`Ville d'agadir`}</a>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li variants={shortFadeUp()}>
         <Link href="/contact">
           <a href="#">Contact</a>
         </Link>
-      </li>
-    </ul>
+      </motion.li>
+    </motion.ul>
   )
 }
 

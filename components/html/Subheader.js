@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
 import Cmsoverlay from './Cmsoverlay'
+import { motion } from 'framer-motion'
+import { titesStagger, titlesAnimation } from '../../data/useVariants'
 
 const Subheader = ({ title, subtitle, description, type }) => {
   if (type === 'full') {
@@ -24,14 +26,30 @@ const Subheader = ({ title, subtitle, description, type }) => {
   return (
     <div className="page-sub-pres px-[30px] relative py-[85px]">
       <div className="container mx-auto flex flex-col items-center">
-        <div className="w-5/12 flex flex-col items-center">
-          <h1 className="text-[42px] font-bold leading-[40px]">{title}</h1>
+        <motion.div
+          variants={titesStagger(0, 0.3)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="w-5/12 flex flex-col items-center"
+        >
+          <motion.h1
+            variants={titlesAnimation}
+            className="text-[42px] font-bold leading-[40px]"
+          >
+            {title}
+          </motion.h1>
           {description ? (
-            <div className="text-center mt-[18px]">{description}</div>
+            <motion.div
+              variants={titlesAnimation}
+              className="text-center mt-[18px]"
+            >
+              {description}
+            </motion.div>
           ) : (
             ''
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
   )

@@ -1,0 +1,226 @@
+import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import {
+  titesStagger,
+  imgScaling,
+  shortFadeUp,
+  fadeIn,
+  fadeUpOverlayBox,
+} from '../../data/useVariants'
+
+const Bibliotheque = () => {
+  return (
+    <section className="facilities-sections pt-[100px]">
+      <div className="container mx-auto">
+        <div className="inner py-[70px] relative pl-[40px]">
+          <div className="box pb-[90px]">
+            <motion.div
+              variants={titesStagger(0, 0.2)}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="flex items-center mb-[65px] title relative"
+            >
+              <motion.div variants={shortFadeUp(1)} className="icon mr-[22px]">
+                <Image alt="" src="/icons/folders.svg" width={51} height={47} />
+              </motion.div>
+              <motion.h2
+                variants={shortFadeUp(1)}
+                className="text-[35px] leading-[40px] font-semibold uppercase"
+              >
+                BIBLIOTHÈQUE
+              </motion.h2>
+            </motion.div>
+
+            <div className="flex flex-col items-end relative">
+              <motion.div
+                variants={fadeUpOverlayBox(1, 0)}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="overlay bg-white py-[35px] px-[40px] absolute bottom-0 left-0 z-10 max-w-[350px]"
+              >
+                <motion.p
+                  variants={fadeIn(0.5, 0.4)}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                >
+                  Notre résidence est située sur le Boulevard 11 Janvier, près
+                  de l’École Nationale d’Architecture, la Faculté des Sciences
+                  Juridiques Économiques et Sociales et en face de McDonald’s
+                  Adrar. Cet emplacement lui confrère de nombreux avantages, à
+                  savoir un environnement estudiantin spécial, propice à la
+                  concentration sur les objectifs liés à la réussite et à
+                  l’excellence, en plus d’un accès pratique et rapide à la route
+                  nationale N 1.
+                </motion.p>
+              </motion.div>
+              <div className="w-[85%]">
+                <div className="img h-[580px] relative overflow-hidden">
+                  <motion.div
+                    variants={imgScaling}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    className="h-[580px]"
+                  >
+                    <Image
+                      alt=""
+                      src="/remove/vue-1.jpg"
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="box pb-[90px]">
+            <motion.div
+              variants={titesStagger(0, 0.2)}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="flex items-center mb-[65px] title relative"
+            >
+              <motion.div variants={shortFadeUp(1)} className="icon mr-[22px]">
+                <Image alt="" src="/icons/tv.svg" width={43} height={47} />
+              </motion.div>
+              <motion.h2
+                variants={shortFadeUp(1)}
+                className="text-[35px] leading-[40px] font-semibold uppercase"
+              >
+                SALLE MULTIMÉDIA
+              </motion.h2>
+            </motion.div>
+
+            <div className="flex flex-col items-end relative">
+              <motion.div
+                variants={fadeUpOverlayBox(1, 0)}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="overlay bg-white py-[35px] px-[40px] absolute bottom-0 left-0 z-10 max-w-[350px]"
+              >
+                <motion.p
+                  variants={fadeIn(0.5, 0.4)}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                >
+                  Une salle multimédia tout à fait à adaptée à l’ère du tout
+                  numérique dans laquelle nous évoluons afin de vous permettre
+                  d’être à la page des nouvelles technologies de l’information
+                  et de la communication et de favoriser votre réussite
+                </motion.p>
+              </motion.div>
+              <div className="w-[85%]">
+                <div className="img h-[580px] relative overflow-hidden">
+                  <motion.div
+                    variants={imgScaling}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    className="h-[580px]"
+                  >
+                    <Image
+                      alt=""
+                      src="/remove/vue-1.jpg"
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="box pb-[90px]">
+            <motion.div
+              variants={titesStagger(0, 0.2)}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="flex items-center mb-[65px] title relative"
+            >
+              <motion.div variants={shortFadeUp(1)} className="icon mr-[22px]">
+                <Image
+                  alt=""
+                  src="/icons/restaurant.svg"
+                  width={42}
+                  height={52}
+                />
+              </motion.div>
+              <motion.h2
+                variants={shortFadeUp(1)}
+                className="text-[35px] leading-[40px] font-semibold uppercase"
+              >
+                RESTAURANT
+              </motion.h2>
+            </motion.div>
+
+            <div className="flex flex-col items-end relative">
+              <motion.div
+                variants={fadeUpOverlayBox(1, 0)}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="overlay bg-white py-[35px] px-[40px] absolute bottom-0 left-0 z-10 max-w-[350px]"
+              >
+                <motion.p
+                  variants={fadeIn(0.5, 0.4)}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                >
+                  Un grand restaurant de 624m² constitué de deux étages où les
+                  résidentes et les externes peuvent y déguster de délicieux et
+                  savoureux plats préparés par un personnel hautement qualifiée.
+                  Derrière les fourneaux, une équipe qui se serrent les coudes
+                  et exerçant son métier avec passion et amour afin de
+                  satisfaire les bouches gourmandes, il s’agit d’un staff
+                  composé d’un chef de cuisine, d’un sous-chef, d’un chef de
+                  parti, d’un commis et de plusieurs pâtissiers, et plongeurs
+                  qui vous proposent une carte aussi riche que variés et des
+                  saveurs bien de chez nous mais aussi d’ailleurs, d’Italie,
+                  d’Espagne, d’Orient et d’Amérique
+                </motion.p>
+              </motion.div>
+              <div className="w-[85%]">
+                <div className="img h-[580px] relative overflow-hidden">
+                  <motion.div
+                    variants={imgScaling}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    className="h-[580px]"
+                  >
+                    <Image
+                      alt=""
+                      src="/remove/vue-1.jpg"
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="box">
+            <div className="flex items-center mb-[65px] title relative">
+              <a href="#" className="btn outborder ml-[35px]">
+                VOIR PLUS DE SERVICES
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Bibliotheque

@@ -13,6 +13,7 @@ const Servicescard = ({ texteGroup }) => {
         <div className="img h-[570px] relative">
           {texteGroup?.photo?.sourceUrl ? (
             <Image
+              alt=""
               src={texteGroup.photo.sourceUrl}
               layout="fill"
               objectFit="cover"
