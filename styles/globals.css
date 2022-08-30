@@ -111,6 +111,14 @@
     @apply w-full h-[55px] bg-white border-[1px] border-[#1D647D14] rounded-[35px] px-[32px] py-[5px] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)];
   }
 
+  .input-file-label {
+    @apply block w-full h-[55px] bg-white border-[1px] border-[#1D647D14] rounded-[35px] px-[32px] py-[5px] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)] relative;
+  }
+
+  .input-file-label span {
+    @apply absolute w-full h-full left-0 top-0 px-[32px] leading-[52px];
+  }
+
   .selectinput {
     @apply w-full h-[55px] bg-white border-[1px] border-[#1D647D14] rounded-[35px] px-[32px] py-[5px] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)] appearance-none
     bg-[url('/icons/arrow-down.svg')] bg-[length:16px_10px] bg-[center_right_25px] bg-no-repeat;
@@ -135,5 +143,26 @@
 
   .choice input:checked + label i {
     @apply block;
+  }
+
+  .std {
+    @apply text-justify;
+  }
+
+  .std p {
+    @apply mb-4;
+  }
+
+  .std ul {
+    @apply list-disc pl-[15px];
+  }
+
+  .table {
+    @apply w-full;
+  }
+
+  .table th,
+  .table td {
+    @apply border-b-[1px] border-[#ccc] p-2;
   }
 }

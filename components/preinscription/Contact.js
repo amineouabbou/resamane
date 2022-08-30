@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useEffect, useRef, useState } from 'react'
+import Select from 'react-select'
+import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import Image from 'next/image'
@@ -18,29 +19,58 @@ import {
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
-const schema = yup
-  .object({
-    datedu: yup.string().required(requiredMessage),
-    dateau: yup.string().required(requiredMessage),
-    nom: yup.string().required(requiredMessage),
-    prenom: yup.string().required(requiredMessage),
-    phone: yup
-      .string()
-      .required(requiredMessage)
-      .matches(phoneRegExp, 'Téléphone non valide'),
-    email: yup.string().email('E-mail non valide').required(requiredMessage),
-    ville: yup.string().required(requiredMessage),
-    etablissement: yup.string().required(requiredMessage),
-    cycle: yup.string().required(requiredMessage),
-    chambre: yup.string().required(requiredMessage),
-  })
-  .required()
+const schema = yup.object().shape({
+  datedu: yup.string().required(requiredMessage),
+  dateau: yup.string().required(requiredMessage),
+  nom: yup.string().required(requiredMessage),
+  prenom: yup.string().required(requiredMessage),
+  phone: yup
+    .string()
+    .required(requiredMessage)
+    .matches(phoneRegExp, 'Téléphone non valide'),
+  email: yup.string().email('E-mail non valide').required(requiredMessage),
+  ville: yup.string().required(requiredMessage),
+  etablissement: yup.string().required(requiredMessage),
+  cycle: yup.string().required(requiredMessage),
+  chambre: yup.string().required(requiredMessage),
+  services: yup
+    .array()
+    .of(
+      yup.object().shape({
+        label: yup.string().required('Label is required'),
+        value: yup.string().required('Value is required'),
+      })
+    )
+    .test(
+      'required',
+      'Merci de sélectionner 3 services',
+      (value) => Array.isArray(value) && value.length >= 3
+    ),
+})
+
+const options = [
+  { value: 'Restaurant', label: 'Restaurant' },
+  { value: 'Médiathèque', label: 'Médiathèque' },
+  { value: 'Bibliothèque', label: 'Bibliothèque' },
+  { value: 'Piscine couverte', label: 'Piscine couverte' },
+  { value: 'Salle de Fitness', label: 'Salle de Fitness' },
+  { value: 'Parking privé ', label: 'Parking privé ' },
+  {
+    value: 'Navette transport ',
+    label: 'Navette transport (De Résidences Amane à votre établissement)',
+  },
+  { value: 'Laverie', label: 'Laverie' },
+  { value: 'Centre de beauté', label: 'Centre de beauté' },
+]
 
 const Contact = () => {
   const [mailMessage, setmailMessage] = useState('')
+  const imageName = useRef()
+  const inputTag = useRef()
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -52,6 +82,12 @@ const Contact = () => {
 
     setmailMessage(message)
   }
+
+  const handleAttachementChange = (e) => {
+    let inputImage = inputTag.current.files[0]
+    imageName.current.innerText = inputImage.name
+  }
+
   return (
     <section className="form">
       <div className="w-[60%] mx-auto">
@@ -199,6 +235,36 @@ const Contact = () => {
             </div>
 
             <div className="field mb-[35px]">
+              <Inputlabel name="Services prioritaires souhaités" />
+              <Controller
+                name="services"
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    // defaultValue={options[0]}
+                    instanceId="services"
+                    {...field}
+                    isClearable
+                    isMulti
+                    isSearchable={false}
+                    options={options}
+                  />
+                )}
+              />
+
+              <div className="font-light text-[14px] leading-[17px] pt-[10px]">
+                Merci de sélectionner 3 services prioritaires dont vous serez
+                <br />
+                intéressée en priorité pendant votre séjour
+              </div>
+              {errors.services ? (
+                <Inputerror message={errors.services?.message} />
+              ) : (
+                ''
+              )}
+            </div>
+
+            <div className="field mb-[35px]">
               <Inputlabel name="Type de chambre" />
               <select className="selectinput" {...register('chambre')}>
                 <option value=""></option>
@@ -214,6 +280,29 @@ const Contact = () => {
               </select>
               {errors.chambre ? (
                 <Inputerror message={errors.chambre?.message} />
+              ) : (
+                ''
+              )}
+            </div>
+
+            <div className="field mb-[35px]">
+              <Inputlabel name="Pièce jointe" />
+              <div className="input-field">
+                <label htmlFor="inputTag" className="input-file-label">
+                  <span ref={imageName}></span>
+                </label>
+                <input
+                  {...register('attachement')}
+                  name="file-attachement"
+                  ref={inputTag}
+                  className="hidden"
+                  type="file"
+                  id="inputTag"
+                  onChange={handleAttachementChange}
+                />
+              </div>
+              {errors.attachement ? (
+                <Inputerror message={errors.attachement?.message} />
               ) : (
                 ''
               )}

@@ -51,13 +51,13 @@ const Presentation = () => {
               height={451}
             />
           </motion.div>
-          <div className="w-8/12	mx-auto">
+          <div className="w-6/12	mx-auto">
             <motion.div
               variants={fadeUp}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="grid grid-cols-2 gap-x-[65px] text-white"
+              className="text-white"
             >
               <div>
                 <p>
@@ -76,11 +76,7 @@ const Presentation = () => {
                   favoriser le confort, la satisfaction, l’épanouissement
                   personnel, et la grande réussite du parcours de nos
                   locataires.
-                </p>
-              </div>
-
-              <div>
-                <p>
+                  <br />
                   Nos locaux se distinguent avec brio grâce à l’espace spacieux
                   de leurs chambres et appartements. Notre résidence s’étale sur
                   une superficie globale de 10800 mètres carré et met à votre
