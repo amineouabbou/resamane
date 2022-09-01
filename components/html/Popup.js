@@ -60,7 +60,7 @@ const Popup = ({ handleClosePopup }) => {
           },
         }}
         exit={{ opacity: 0 }}
-        className="backdrop bg-[#000]/40 fixed top-0 bottom-0 left-0 right-0 my-auto mx-auto z-30"
+        className="backdrop bg-[#000]/40 fixed top-0 bottom-0 left-0 right-0 my-auto mx-auto z-40"
       ></motion.div>
     </>
   )

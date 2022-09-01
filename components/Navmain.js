@@ -41,7 +41,7 @@ const Navmain = () => {
               ease: globaleasing,
             },
           }}
-          className={`fixed top-0 z-50 bg-white main-nav border-b-[1px] border-[#1D647D40] w-full h-[70px] hidden items-center justify-center mb-[45px] md:flex md:flex-row `}
+          className={`fixed top-0 z-20 bg-white main-nav border-b-[1px] border-[#1D647D40] w-full h-[70px] hidden items-center justify-center mb-[45px] md:flex md:flex-row `}
         >
           <motion.div
             style={{ scaleX }}

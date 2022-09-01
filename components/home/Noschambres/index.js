@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import Slider from 'react-slick'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
@@ -133,7 +134,9 @@ export default function Noschambres() {
         </div>
       </div>
 
-      {showPopup && <Popup handleClosePopup={handleClosePopup} />}
+      <AnimatePresence>
+        {showPopup && <Popup handleClosePopup={handleClosePopup} />}
+      </AnimatePresence>
     </section>
   )
 }
