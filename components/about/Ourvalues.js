@@ -63,54 +63,38 @@ const Ourvalues = () => {
             >
               <motion.div
                 variants={fadeUp}
-                className="mt-[80px] cursor-pointer"
+                className="mt-[80px] cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group"
                 onClick={handleClosePopup}
               >
-                <motion.div
-                  variants={blocHover}
-                  initial="initial"
-                  whileHover="animate"
-                  className="bloc flex flex-col justify-center items-center py-[50px]"
-                >
-                  <motion.div className="icone mb-[35px]" variants={fadeBg}>
+                <div className="bloc flex flex-col justify-center items-center py-[50px]">
+                  <div className="icone mb-[35px] transition-all duration-300 group-hover:-translate-y-5">
                     <Image
                       src="/icons/vitalite.svg"
                       alt="Securité"
                       width={91}
                       height={123}
                     />
-                  </motion.div>
-                  <motion.div
-                    variants={fadeBg}
-                    className="font-semibold uppercase text-[28px]"
-                  >
+                  </div>
+                  <div className="font-semibold uppercase text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
                     VITALITÉ
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div onClick={handleClosePopup} variants={fadeUp}>
-                <motion.div
-                  variants={blocHover}
-                  initial="initial"
-                  whileHover="animate"
-                  className="bloc flex flex-col justify-center items-center py-[50px] active bg-[#F5FCFD]"
-                >
-                  <motion.div variants={fadeBg} className="icone mb-[35px]">
+                <div className="bloc flex flex-col justify-center items-center py-[50px] active cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
+                  <div className="icone mb-[35px] transition-all duration-300 group-hover:-translate-y-5">
                     <Image
                       src="/icons/security.svg"
                       alt="Securité"
                       width={97}
                       height={108}
                     />
-                  </motion.div>
-                  <motion.div
-                    variants={fadeBg}
-                    className="font-semibold uppercase text-[28px]"
-                  >
+                  </div>
+                  <div className="font-semibold uppercase text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
                     SÉCURITÉ
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div
@@ -118,27 +102,19 @@ const Ourvalues = () => {
                 variants={fadeUp}
                 className="mt-[80px]"
               >
-                <motion.div
-                  variants={blocHover}
-                  initial="initial"
-                  whileHover="animate"
-                  className="bloc flex flex-col justify-center items-center py-[50px]"
-                >
-                  <motion.div variants={fadeBg} className="icone mb-[35px]">
+                <div className="bloc flex flex-col justify-center items-center py-[50px] cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
+                  <div className="icone mb-[35px] transition-all duration-300 group-hover:-translate-y-5">
                     <Image
                       src="/icons/hand-shake.svg"
                       alt="Securité"
                       width={180}
                       height={115}
                     />
-                  </motion.div>
-                  <motion.div
-                    variants={fadeBg}
-                    className="font-semibold uppercase text-[28px]"
-                  >
+                  </div>
+                  <div className="font-semibold uppercase text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
                     INTÉGRITÉ
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div
@@ -146,51 +122,35 @@ const Ourvalues = () => {
                 variants={fadeUp}
                 className="mt-[40px]"
               >
-                <motion.div
-                  variants={blocHover}
-                  initial="initial"
-                  whileHover="animate"
-                  className="bloc flex flex-col justify-center items-center py-[50px] active bg-[#F5FCFD]"
-                >
-                  <motion.div variants={fadeBg} className="icone mb-[35px]">
+                <div className="bloc flex flex-col justify-center items-center py-[50px] active cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
+                  <div className="icone mb-[35px] transition-all duration-300 group-hover:-translate-y-5">
                     <Image
                       src="/icons/quality.svg"
                       alt="Securité"
                       width={91}
                       height={123}
                     />
-                  </motion.div>
-                  <motion.div
-                    variants={fadeBg}
-                    className="font-semibold uppercase text-[28px]"
-                  >
+                  </div>
+                  <div className="font-semibold uppercase text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
                     QUALITÉ
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div onClick={handleClosePopup} variants={fadeUp}>
-                <motion.div
-                  variants={blocHover}
-                  initial="initial"
-                  whileHover="animate"
-                  className="bloc flex flex-col justify-center items-center py-[50px] active"
-                >
-                  <motion.div variants={fadeBg} className="icone mb-[35px]">
+                <div className="bloc flex flex-col justify-center items-center py-[50px] cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
+                  <div className="icone mb-[35px] transition-all duration-300 group-hover:-translate-y-5">
                     <Image
                       src="/icons/diversite.svg"
                       alt="Securité"
                       width={116}
                       height={117}
                     />
-                  </motion.div>
-                  <motion.div
-                    variants={fadeBg}
-                    className="font-semibold uppercase text-[28px]"
-                  >
+                  </div>
+                  <div className="font-semibold uppercase text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
                     DIVERSITÉ
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div
@@ -198,27 +158,19 @@ const Ourvalues = () => {
                 variants={fadeUp}
                 className="mt-[40px]"
               >
-                <motion.div
-                  variants={blocHover}
-                  initial="initial"
-                  whileHover="animate"
-                  className="bloc flex flex-col justify-center items-center py-[50px] bg-[#F5FCFD]"
-                >
-                  <motion.div variants={fadeBg} className="icone mb-[35px]">
+                <div className="bloc flex flex-col justify-center items-center py-[50px] cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
+                  <div className="icone mb-[35px] transition-all duration-300 group-hover:-translate-y-5">
                     <Image
                       src="/icons/durabilite.svg"
                       alt="Securité"
                       width={116}
                       height={116}
                     />
-                  </motion.div>
-                  <motion.div
-                    variants={fadeBg}
-                    className="font-semibold uppercase text-[28px]"
-                  >
+                  </div>
+                  <div className="font-semibold uppercase text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
                     DURABILITÉ
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
           </div>

@@ -115,6 +115,10 @@
     @apply w-full h-[55px] bg-white border-[1px] border-[#1D647D14] rounded-[35px] px-[32px] py-[5px] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)];
   }
 
+  textarea.input {
+    @apply h-[120px] appearance-none resize-none py-[20px];
+  }
+
   .input-file-label {
     @apply block w-full h-[55px] bg-white border-[1px] border-[#1D647D14] rounded-[35px] px-[32px] py-[5px] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)] relative;
   }
