@@ -10,13 +10,13 @@ const Chambreslidercard = ({ item }) => {
           </div>
           <div className="flex flex-col items-center">
             <a href="#" className="btn w-border w-[217px]">
-              Plus de détails / {item}
+              Plus de détails
             </a>
           </div>
         </div>
       </div>
       <div className="img relative h-[870px]">
-        <Image src="/remove/chambre-1.jpg" layout="fill" objectFit="cover" />
+        <Image src={item.url} layout="fill" objectFit="cover" />
       </div>
     </div>
   )

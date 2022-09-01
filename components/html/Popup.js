@@ -15,7 +15,15 @@ const Popup = ({ handleClosePopup }) => {
             ease: globaleasing,
           },
         }}
-        className="min-w-[50%] max-w-[50%] bg-white p-8 fixed left-0 translate-y-[-50%] right-0 top-[50%] my-auto mx-auto z-40"
+        exit={{
+          opacity: 0,
+          y: 100,
+          transition: {
+            duration: 0.6,
+            ease: globaleasing,
+          },
+        }}
+        className="min-w-[50%] max-w-[50%] bg-white p-8 fixed left-0 right-0 top-[50%] my-auto mx-auto z-[9999]"
       >
         <p>
           Dans une ville comme Agadir, devenue un grand pôle urbain et
@@ -51,6 +59,7 @@ const Popup = ({ handleClosePopup }) => {
             ease: globaleasing,
           },
         }}
+        exit={{ opacity: 0 }}
         className="backdrop bg-[#000]/40 fixed top-0 bottom-0 left-0 right-0 my-auto mx-auto z-30"
       ></motion.div>
     </>

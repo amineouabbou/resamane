@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { fadeUp, titesStagger, globaleasing } from '../../data/useVariants'
 import Popup from '../html/Popup'
 
@@ -225,7 +225,9 @@ const Ourvalues = () => {
         </div>
       </section>
 
-      {showPopup && <Popup handleClosePopup={handleClosePopup} />}
+      <AnimatePresence>
+        {showPopup && <Popup handleClosePopup={handleClosePopup} />}
+      </AnimatePresence>
     </>
   )
 }

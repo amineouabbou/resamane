@@ -62,8 +62,8 @@ const Atouts = () => {
                   PROXIMITÉ
                 </div>
                 <div className="font-light text-[18px] leading-[24px]">
-                  5 min de la faculté de médecine et de pharmacie. <br />
-                  5 min de l’école nationale de commerce et de gestion.
+                  5 min de la faculté de médecine. <br />
+                  5 min de l’ENCG.
                   <br />
                   13 min du centre ville.
                   <br />6 min de la gare routière

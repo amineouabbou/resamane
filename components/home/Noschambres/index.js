@@ -7,6 +7,39 @@ import Popup from '../../html/Popup'
 import Chambreslidercard from './Chambreslidercard'
 import Chambretabtitle from './Chambretabtitle'
 
+const apparts = [
+  {
+    url: '/remove/APPART1.jpg',
+  },
+  {
+    url: '/remove/APPART2.jpg',
+  },
+  {
+    url: '/remove/APPART2.jpg',
+  },
+]
+
+const studios = [
+  {
+    url: '/remove/Studio.jpg',
+  },
+  {
+    url: '/remove/Studio-2.jpg',
+  },
+  {
+    url: '/remove/Studio-3.jpg',
+  },
+]
+
+const Lima = [
+  {
+    url: '/remove/LIMA-PMR1-V2.jpg',
+  },
+  {
+    url: '/remove/LIMA-PMR2-V2.jpg',
+  },
+]
+
 export default function Noschambres() {
   const [showPopup, setShowPopup] = useState(false)
   const chamberSlider = useRef()
@@ -38,22 +71,22 @@ export default function Noschambres() {
                       {...settings}
                       ref={(currslide) => (chamberSlider.current = currslide)}
                     >
-                      {[1, 2, 3].map((item) => (
-                        <Chambreslidercard key={item} item={item} />
+                      {studios.map((item, index) => (
+                        <Chambreslidercard key={index} item={item} />
                       ))}
                     </Slider>
                   </TabPanel>
                   <TabPanel>
                     <Slider {...settings}>
-                      {[8, 9, 10].map((item) => (
-                        <Chambreslidercard key={item} item={item} />
+                      {Lima.map((item, index) => (
+                        <Chambreslidercard key={index} item={item} />
                       ))}
                     </Slider>
                   </TabPanel>
                   <TabPanel>
                     <Slider {...settings}>
-                      {[9, 10, 11].map((item) => (
-                        <Chambreslidercard key={item} item={item} />
+                      {apparts.map((item, index) => (
+                        <Chambreslidercard key={index} item={item} />
                       ))}
                     </Slider>
                   </TabPanel>
