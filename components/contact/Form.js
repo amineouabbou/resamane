@@ -44,16 +44,30 @@ const Contact = () => {
   const inputTag = useRef()
   const {
     register,
+    reset,
     handleSubmit,
     control,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   })
-  const onSubmit = async (data) => {
+  const onSubmit = async (formData) => {
+    console.log(formData)
     const {
       data: { status, message },
-    } = await sendMessage('21', data)
+    } = await sendMessage('21', formData)
+
+    console.log(status)
+
+    if (status === 'mail_sent')
+      reset({
+        adresse: '',
+        email: '',
+        message: '',
+        nom: '',
+        prenom: '',
+        subject: '',
+      })
 
     setmailMessage(message)
   }
