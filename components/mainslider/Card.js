@@ -11,7 +11,7 @@ const Card = ({ item }) => {
           backgroundSize: '100% 100%',
           transition: { duration: 12, type: 'spring', stiffness: 3 },
         }}
-        className="relative md:h-[750px] bg-no-repeat origin-center bg-cover"
+        className="relative h-[350px] md:h-[750px] bg-no-repeat origin-center bg-cover"
         style={{
           backgroundImage: `url("https://residencesamane.ma/wp-content/themes/amane/assets/images/remove/slide-1.png")`,
         }}

@@ -1,20 +1,27 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Slider from 'react-slick'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import Customarrows from '../../html/Customarrows'
+import Popup from '../../html/Popup'
 
 import Chambreslidercard from './Chambreslidercard'
 import Chambretabtitle from './Chambretabtitle'
 
 export default function Noschambres() {
+  const [showPopup, setShowPopup] = useState(false)
   const chamberSlider = useRef()
   const settings = {
     arrows: false,
-    infinite: false,
+    infinite: true,
     lazyLoad: false,
     speed: 500,
     slidesToShow: 1,
+    autoplay: true,
     slidesToScroll: 1,
+  }
+
+  const handleClosePopup = () => {
+    setShowPopup(!showPopup)
   }
 
   return (
@@ -64,18 +71,21 @@ export default function Noschambres() {
                       <TabList>
                         <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
                           <Chambretabtitle
+                            handleClosePopup={handleClosePopup}
                             title="Chambres<br/> de 20m²"
                             number="407"
                           />
                         </Tab>
                         <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
                           <Chambretabtitle
+                            handleClosePopup={handleClosePopup}
                             title="Chambres<br/> de 18m²"
                             number="3"
                           />
                         </Tab>
                         <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
                           <Chambretabtitle
+                            handleClosePopup={handleClosePopup}
                             title="Appartements<br /> de 50m²"
                             number="15"
                           />
@@ -89,6 +99,8 @@ export default function Noschambres() {
           </Tabs>
         </div>
       </div>
+
+      {showPopup && <Popup handleClosePopup={handleClosePopup} />}
     </section>
   )
 }

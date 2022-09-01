@@ -254,7 +254,6 @@ const Contact = () => {
 
               <div className="font-light text-[14px] leading-[17px] pt-[10px]">
                 Merci de sélectionner 3 services prioritaires dont vous serez
-                <br />
                 intéressée en priorité pendant votre séjour
               </div>
               {errors.services ? (
@@ -268,14 +267,20 @@ const Contact = () => {
               <Inputlabel name="Type de chambre" />
               <select className="selectinput" {...register('chambre')}>
                 <option value=""></option>
-                <option value="Chambre PMR">Chambre PMR</option>
-                <option value="Chambre single">Chambre single</option>
-                <option value="Chambre double">Chambre double</option>
-                <option value="Appartement 3 personnes">
-                  Appartement 3 personnes
+                <option value="Studio individuel (1 personne)">
+                  Studio individuel (1 personne)
                 </option>
-                <option value="Appartement 4 personnes">
-                  Appartement 4 personnes
+                <option value="Studio partagé (2 personnes)">
+                  Studio partagé (2 personnes)
+                </option>
+                <option value="Studio PMR (1 personne)">
+                  Studio PMR (1 personne)
+                </option>
+                <option value="Appartement double (2 personnes)">
+                  Appartement double (2 personnes)
+                </option>
+                <option value="Appartement quadruple (4 personnes)">
+                  Appartement quadruple (4 personnes)
                 </option>
               </select>
               {errors.chambre ? (
@@ -285,7 +290,7 @@ const Contact = () => {
               )}
             </div>
 
-            <div className="field mb-[35px]">
+            <div className="field mb-[35px] hidden">
               <Inputlabel name="Pièce jointe" />
               <div className="input-field">
                 <label htmlFor="inputTag" className="input-file-label">

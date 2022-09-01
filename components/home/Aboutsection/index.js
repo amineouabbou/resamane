@@ -28,7 +28,7 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="text-[32px] leading-[40px] uppercase font-bold mb-[45px] origin-center"
+          className="text-[25px] md:text-[32px] leading-[40px] uppercase font-bold mb-[20px] md:mb-[45px] origin-center"
         >
           VOUS L’AVEZ IMAGINÉ… <br />
           NOUS L’AVONS CONSTRUIT.
@@ -36,14 +36,14 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
       </div>
 
       <div className="inner relative">
-        <div className="absolute top-0 bottom-0 left-0 right-0 z-10">
+        <div className="md:absolute top-0 bottom-0 left-0 right-0 z-10">
           <div className="container mx-auto h-full relative">
             <motion.div
               variants={fadeUpOverlayBox(1, 0)}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="overlay bg-white w-2/5 absolute bottom-0 right-0 p-[35px]"
+              className="overlay bg-white md:w-2/5 md:absolute bottom-0 right-0 md:p-[35px]"
             >
               <motion.div
                 variants={fadeIn(0.8, 0.4)}
@@ -64,7 +64,7 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
             </motion.div>
           </div>
         </div>
-        <div className="h-[475px] relative w-2/3 overflow-hidden">
+        <div className="h-[320px] md:h-[475px] relative md:w-2/3 overflow-hidden">
           {/*<motion.div
             variants={imgSlash}
             initial="initial"
@@ -73,7 +73,7 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
             className="bg-lightblue/80 h-full absolute  z-[5] "
           ></motion.div>* */}
           <motion.div
-            className="h-[475px]"
+            className="h-[320px] md:h-[475px]"
             variants={imgScaling}
             initial="initial"
             whileInView="animate"
@@ -89,7 +89,7 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
         </div>
       </div>
 
-      <div className="w-2/3 mx-auto">
+      <div className="md:w-2/3 mx-auto">
         <div className="cta relative pt-[60px] pb-[90px]">
           <div className="absolute -top-[32px] left-[30px]">
             <Image src="/icons/quoate.svg" alt="" width={99} height={64} />
@@ -102,13 +102,15 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="uppercase leading-[41px] font-medium text-center"
+            className="uppercase leading-[30px] md:leading-[41px] font-medium text-center"
           >
-            <span className="text-[32px]">
+            <span className="text-[22px] md:text-[32px]">
               BIENVENUE DANS VOTRE HAVRE DE PAIX ET DE SÉRÉNITÉ !
             </span>{' '}
             <br />
-            <span className="text-[41px] text-lightblue">RESIDENCES AMANE</span>
+            <span className="text-[31px] md:text-[41px] text-lightblue">
+              RESIDENCES AMANE
+            </span>
           </motion.div>
         </div>
       </div>

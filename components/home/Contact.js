@@ -28,12 +28,12 @@ const Contact = () => {
 
   return (
     <section className="contact-section bg-[#F5FCFD] relative">
-      <div className="absolute bottom-0 w-full h-[130px] bg-white right-0"></div>
-      <div className="bg-[#013C50] absolute top-0 left-0 w-4/5 bottom-0 h-full [clip-path:polygon(0_0,_100%_0%,_97%_100%,_0%_100%)]"></div>
+      <div className="hidden md:block md:absolute bottom-0 w-full h-[130px] bg-white right-0"></div>
+      <div className="bg-[#013C50] absolute top-0 left-0 w-full md:w-4/5 bottom-0 h-full md:[clip-path:polygon(0_0,_100%_0%,_97%_100%,_0%_100%)]"></div>
       <div className="container mx-auto relative z-10 py-[120px]">
         <motion.div
           style={{ y, scale }}
-          className="absolute -top-[150px] left-[145px] z-10"
+          className="absolute -top-[150px] left-[145px] z-10 hidden md:block"
           ref={carouselRef}
         >
           <Image src="/icons/shape.svg" alt="shape" width={110} height={451} />
@@ -53,7 +53,7 @@ const Contact = () => {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="w-2/5"
+            className="md:w-2/5"
           >
             <div className="flex mb-[15px]">
               <span className="text-lightblue text-[26px] mr-[15px]">

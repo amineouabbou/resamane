@@ -5,28 +5,30 @@ import { fadeUp } from '../../data/useVariants'
 const Presentation = () => {
   return (
     <section className="mb-[90px] mt-[70px]">
-      <div className="w-[60%] mx-auto">
+      <div className="w-[50%] mx-auto">
         <div className="text-[32px] text-center leading-[40px] uppercase font-bold mb-[35px] origin-center">
           MON DOSSIER DE RESERVATION
           <br />
           EN 2 ETAPES
         </div>
-        <div className="text-[28px] text-center leading-[32px] mb-[55px]">
+        <div className="text-[28px] text-center leading-[32px] mb-[55px] text-lightblue">
           Résidences Amane vous facilite la vie,
           <br />
           et vous offre la possibilité de vous inscrire
           <br />à distance pour réserver votre logement!
         </div>
-        <div className="grid md:grid-cols-2 gap-4 mb-[40px]">
+        <div className="mb-[40px]">
           <div className="item">
-            <h2 className="text-[32px] font-bold leading-[37px]">Etape 1</h2>
+            <h2 className="text-[32px] font-bold leading-[37px] mb-6 text-center">
+              Etape 1
+            </h2>
           </div>
 
           <div className="item std">
-            <p>
+            <p className="font-bold">
               1- Merci de renseigner le formulaire de pré-inscription ci-dessous
             </p>
-            <p className="mb-[30px]">
+            <p className="mb-[30px] font-bold">
               2- Pour valider cette 1 ère étape, merci d’envoyer par mail à
               info@residencesamane.ma, les documents et pièces obligatoires
               suivants :
@@ -81,41 +83,46 @@ const Presentation = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="h-[1px] bg-[#ccc] my-[40px]"></div>
+
+        <div className="">
           <div className="item">
-            <h2 className="text-[32px] font-bold leading-[37px]">Etape 2</h2>
+            <h2 className="text-[32px] font-bold leading-[37px] mb-6 text-center">
+              Etape 2
+            </h2>
           </div>
 
           <div className="item std">
             <p>
               Après étude de votre dossier, nous vous répondrons par e-mail pour
               vous inviter à finaliser la démarche de réservation dans nos
-              locaux.
+              locaux. N&apos; oubliez pas de vous munir des originaux de tous
+              les documents et pièces fournis par E-mail.
             </p>
             <p>
               Le règlement des frais d’inscription et d’hébergement se fera sur
-              place en espèces ou par chèque bancaire certifié, selon la grille
-              tarifaire suivante :
+              place en espèces, par carte bancaire ou par chèque certifié, selon
+              la grille tarifaire suivante :
             </p>
             <p className="font-bold">Frais d’inscription par an</p>
             <table className="table mb-4">
               <thead className="bg-secondary text-primary">
                 <tr>
                   <th scope="col">Frais de dossier</th>
-                  <th scope="col">Caution**</th>
+                  <th scope="col">Caution*</th>
                   <th scope="col">Assurance individuelle</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>500 DH</td>
-                  <td>2 mois de loyer</td>
+                  <td>1 mois de loyer</td>
                   <td>190 DH</td>
                 </tr>
               </tbody>
             </table>
             <p className="font-light text-[11px] leading-[13px]">
-              ** Le montant de la caution est remboursable conformément aux
+              * Le montant de la caution est remboursable conformément aux
               conditions du règlement intérieur.
             </p>
 
@@ -125,29 +132,31 @@ const Presentation = () => {
                   <th scope="col">Studio individuel</th>
                   <th scope="col">Studio partagé</th>
                   <th scope="col">Studio PMR</th>
+                  <th scope="col">Appartement double</th>
                   <th scope="col">Appartement quadruple</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>3 000 DH</td>
-                  <td>1 500 DH /pers.</td>
-                  <td>1 500 DH</td>
-                  <td>6 000 DH</td>
+                  <td>2585 DH ** </td>
+                  <td>1540 DH **</td>
+                  <td>1540 DH **</td>
+                  <td>2695 DH **</td>
+                  <td>1595 DH **</td>
                 </tr>
               </tbody>
             </table>
             <p className="font-light text-[11px] leading-[13px]">
-              Le prix du loyer est Hors Taxe d’hébergement de 10%
+              **Le prix indiqué par type de logement est à payer par personne.
               <br />
-              La consommation d’eau, d’électricité sont inclus dans le prix du
-              loyer mensuel, 3m³pour l’eau et 30Kwh pour l’électricité
+              Le prix du loyer est TTC, y compris TVA d’hébergement de 10%.
               <br />
-              Au-delà de 3m³ d’eau et 30Kwh d’électricité, un supplément sera
-              facturé à la résidente de 20 DH/m³ et 2 DH/Kwh.
+              La consommation d’eau et d’électricité est incluse dans le prix du
+              loyer mensuel.
               <br />
-              Les frais d’hébergements couvrant la durée de séjour sont payables
-              par tranche, au début de chaque trimestre.
+              En cas de dépassement de consommation, un supplément sera facturé
+              à la résidente selon type de logement et conformément aux
+              exigences du règlement intérieur.
             </p>
           </div>
         </div>

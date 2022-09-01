@@ -6,7 +6,7 @@ import { PathBanneranim } from '../../data/useVariants'
 
 const Banner = () => {
   return (
-    <div className="main-screen-home relative pl-[90px]">
+    <div className="main-screen-home relative md:pl-[90px]">
       <Sidenav />
       <motion.div
         variants={PathBanneranim}

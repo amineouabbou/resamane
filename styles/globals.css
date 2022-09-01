@@ -99,6 +99,10 @@
     @apply text-white bg-white/5;
   }
 
+  .vertical-tabs .react-tabs__tab--selected .read-more {
+    @apply block;
+  }
+
   .facilities-sections .inner:before {
     @apply w-[3px] bg-[#09556F]/10 h-full absolute left-0 top-0 block content-[''];
   }

@@ -22,7 +22,7 @@ const Atouts = () => {
   const maxWidth = useTransform(scrollYProgress, [0, 1], ['70%', '100%'])
 
   return (
-    <section className="nos-atouts" ref={atoutRef}>
+    <section className="nos-atouts hidden md:block" ref={atoutRef}>
       <motion.div className="container mx-auto relative">
         <div className="absolute -bottom-[230px] left-[15px] z-50">
           <Image src="/icons/shape.svg" alt="shape" width={110} height={451} />

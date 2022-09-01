@@ -13,8 +13,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-links pt-[65px] px-[30px]">
-          <div className="grid grid-cols-4 gap-4">
+        <div className="footer-links pt-[65px] md:px-[30px]">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-4">
             <div className="item">
               <div className="font-semibold text-[#1D647D] text-[17px] leading-[20px] mb-[20px] uppercase">
                 QUI SOMMES-NOUS
@@ -116,10 +116,10 @@ const Footer = () => {
       </div>
 
       <div className="bottom-footer mt-[60px] text-[#09556F] relative">
-        <div className="overlay absolute w-1/2 h-full bg-secondary top-0 right-0"></div>
+        <div className="overlay hidden md:block absolute w-1/2 h-full bg-secondary top-0 right-0"></div>
         <div className="container mx-auto">
           <div className="inner bg-secondary pt-[45px] px-[45px] pb-[65px]">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 md:gap-4">
               <div className="column">
                 <div className="bloc">
                   <div className="font-semibold text-[17px] leading-[20px] mb-[18px]">
