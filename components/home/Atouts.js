@@ -104,12 +104,12 @@ const Atouts = () => {
               className="bloc text-white mb-[85px] flex flex-col items-center"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px]">
+                <div className="icon mb-[50px] flex flex-col justify-center">
                   <Image
                     src="/icons/comodities.svg"
                     alt=""
                     width={121}
-                    height={109}
+                    height={126}
                   />
                 </div>
                 <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px]">
