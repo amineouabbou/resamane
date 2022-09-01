@@ -155,11 +155,6 @@ const Footer = () => {
                     </li>
                     <li className="mr-[40px]">
                       <a href="#" className="hover:text-[#09556F]">
-                        <FaTwitter className="text-[30px]" />
-                      </a>
-                    </li>
-                    <li className="mr-[40px]">
-                      <a href="#" className="hover:text-[#09556F]">
                         <FaInstagram className="text-[30px]" />
                       </a>
                     </li>

@@ -29,7 +29,7 @@ const Header = () => {
           animate={{
             y: 0,
             transition: {
-              duration: 1.6,
+              duration: 1,
               ease: globaleasing,
             },
           }}

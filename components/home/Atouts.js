@@ -49,7 +49,7 @@ const Atouts = () => {
               viewport={{ once: true }}
               className="bloc text-white mb-[85px] flex flex-col items-center"
             >
-              <div className="w-3/4">
+              <div className="w-3/4 flex flex-col items-center text-center">
                 <div className="icon mb-[50px]">
                   <Image
                     src="/icons/proximite.svg"
@@ -62,10 +62,11 @@ const Atouts = () => {
                   PROXIMITÉ
                 </div>
                 <div className="font-light text-[18px] leading-[24px]">
-                  2 min de votre faculté <br />
-                  5 min de votre école <br />
-                  5 min centre ville
-                  <br />5 min gare routière
+                  5 min de la faculté de médecine et de pharmacie. <br />
+                  5 min de l’école nationale de commerce et de gestion.
+                  <br />
+                  13 min du centre ville.
+                  <br />6 min de la gare routière
                 </div>
               </div>
             </motion.div>
@@ -77,7 +78,7 @@ const Atouts = () => {
               viewport={{ once: true }}
               className="bloc text-white mb-[85px] flex flex-col items-center"
             >
-              <div className="w-3/4">
+              <div className="w-3/4 flex flex-col items-center text-center">
                 <div className="icon mb-[50px]">
                   <Image
                     src="/icons/security.svg"
@@ -90,7 +91,7 @@ const Atouts = () => {
                   SÉCURITE
                 </div>
                 <div className="font-light text-[18px] leading-[24px]">
-                  24/7
+                  Résidences sécurisées 24h/24 <br /> et 7j/7
                 </div>
               </div>
             </motion.div>
@@ -102,7 +103,7 @@ const Atouts = () => {
               viewport={{ once: true }}
               className="bloc text-white mb-[85px] flex flex-col items-center"
             >
-              <div className="w-3/4">
+              <div className="w-3/4 flex flex-col items-center text-center">
                 <div className="icon mb-[50px]">
                   <Image
                     src="/icons/comodities.svg"
@@ -128,7 +129,7 @@ const Atouts = () => {
               viewport={{ once: true }}
               className="bloc text-white mb-[85px] flex flex-col items-center"
             >
-              <div className="w-3/4">
+              <div className="w-3/4 flex flex-col items-center text-center">
                 <div className="icon mb-[50px]">
                   <Image
                     src="/icons/happy-face.svg"
