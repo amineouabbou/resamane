@@ -44,6 +44,8 @@ const Lima = [
 export default function Noschambres() {
   const [showPopup, setShowPopup] = useState(false)
   const chamberSlider = useRef()
+  const chamberSlider2 = useRef()
+  const chamberSlider3 = useRef()
   const settings = {
     arrows: false,
     infinite: true,
@@ -78,14 +80,22 @@ export default function Noschambres() {
                     </Slider>
                   </TabPanel>
                   <TabPanel>
-                    <Slider {...settings}>
+                    <Customarrows chamberSlider={chamberSlider2} />
+                    <Slider
+                      {...settings}
+                      ref={(currslide) => (chamberSlider2.current = currslide)}
+                    >
                       {Lima.map((item, index) => (
                         <Chambreslidercard key={index} item={item} />
                       ))}
                     </Slider>
                   </TabPanel>
                   <TabPanel>
-                    <Slider {...settings}>
+                    <Customarrows chamberSlider={chamberSlider3} />
+                    <Slider
+                      {...settings}
+                      ref={(currslide) => (chamberSlider3.current = currslide)}
+                    >
                       {apparts.map((item, index) => (
                         <Chambreslidercard key={index} item={item} />
                       ))}

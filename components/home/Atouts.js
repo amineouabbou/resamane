@@ -1,10 +1,22 @@
 import Image from 'next/image'
-import { useRef } from 'react'
-import { motion, useScroll, scrollYProgress, useTransform } from 'framer-motion'
+import { useRef, useState } from 'react'
+import {
+  motion,
+  useScroll,
+  scrollYProgress,
+  useTransform,
+  AnimatePresence,
+} from 'framer-motion'
 import { fadeIn, titesStagger, titlesAnimation } from '../../data/useVariants'
+import Popup from '../html/Popup'
 
 const Atouts = () => {
   const atoutRef = useRef(null)
+  const [showPopup, setShowPopup] = useState(false)
+
+  const handleClosePopup = () => {
+    setShowPopup(!showPopup)
+  }
 
   const { scrollYProgress } = useScroll({
     target: atoutRef,
@@ -47,7 +59,8 @@ const Atouts = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bloc text-white mb-[85px] flex flex-col items-center"
+              onClick={handleClosePopup}
+              className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
                 <div className="icon mb-[50px]">
@@ -58,7 +71,7 @@ const Atouts = () => {
                     height={116}
                   />
                 </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px]">
+                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-300 group-hover:text-lightblue">
                   PROXIMITÉ
                 </div>
                 <div className="font-light text-[18px] leading-[24px]">
@@ -76,7 +89,8 @@ const Atouts = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bloc text-white mb-[85px] flex flex-col items-center"
+              onClick={handleClosePopup}
+              className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
                 <div className="icon mb-[50px]">
@@ -87,7 +101,7 @@ const Atouts = () => {
                     height={109}
                   />
                 </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px]">
+                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-300 group-hover:text-lightblue">
                   SÉCURITE
                 </div>
                 <div className="font-light text-[18px] leading-[24px]">
@@ -101,10 +115,11 @@ const Atouts = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bloc text-white mb-[85px] flex flex-col items-center"
+              onClick={handleClosePopup}
+              className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px] flex flex-col justify-center">
+                <div className="icon mb-[50px] flex flex-col justify-center ">
                   <Image
                     src="/icons/comodities.svg"
                     alt=""
@@ -112,7 +127,7 @@ const Atouts = () => {
                     height={126}
                   />
                 </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px]">
+                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-300 group-hover:text-lightblue">
                   COMMODITES
                 </div>
                 <div className="font-light text-[18px] leading-[24px]">
@@ -127,7 +142,8 @@ const Atouts = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bloc text-white mb-[85px] flex flex-col items-center"
+              onClick={handleClosePopup}
+              className="bloc text-white mb-[85px] flex flex-col items-center group cursor-pointer"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
                 <div className="icon mb-[50px]">
@@ -138,7 +154,7 @@ const Atouts = () => {
                     height={126}
                   />
                 </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px]">
+                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-300 group-hover:text-lightblue">
                   SÉRÉNITÉ
                 </div>
                 <div className="font-light text-[18px] leading-[24px]">
@@ -151,6 +167,10 @@ const Atouts = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      <AnimatePresence>
+        {showPopup && <Popup handleClosePopup={handleClosePopup} />}
+      </AnimatePresence>
     </section>
   )
 }
