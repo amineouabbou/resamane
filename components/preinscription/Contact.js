@@ -78,7 +78,7 @@ const Contact = () => {
   const onSubmit = async (data) => {
     const {
       data: { status, message },
-    } = await sendMessage(data)
+    } = await sendMessage('10', data)
 
     setmailMessage(message)
   }
