@@ -69,6 +69,7 @@ const Contact = () => {
   const inputTag = useRef()
   const {
     register,
+    reset,
     handleSubmit,
     control,
     formState: { errors },
@@ -81,6 +82,8 @@ const Contact = () => {
     } = await sendMessage('10', data)
 
     setmailMessage(message)
+
+    if (status === 'mail_sent') reset({ ...data })
   }
 
   const handleAttachementChange = (e) => {
