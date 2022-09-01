@@ -63,7 +63,7 @@ const Atouts = () => {
               className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px]">
+                <div className="icon mb-[50px] transition-all duration-500 group-hover:-translate-y-4">
                   <Image
                     src="/icons/proximite.svg"
                     alt=""
@@ -71,15 +71,14 @@ const Atouts = () => {
                     height={116}
                   />
                 </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-300 group-hover:text-lightblue">
+                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-500 delay-75 group-hover:text-lightblue group-hover:-translate-y-4">
                   PROXIMITÉ
                 </div>
-                <div className="font-light text-[18px] leading-[24px]">
-                  5 min de la faculté de médecine. <br />
-                  5 min de l’ENCG.
+                <div className="font-light text-[18px] leading-[24px] transition-all duration-500 delay-100 group-hover:-translate-y-4 group-hover:text-white/20">
+                  5 min de l’ENCG
                   <br />
-                  13 min du centre ville.
-                  <br />6 min de la gare routière
+                  13 min du centre ville
+                  <br /> 6 min de la gare routière
                 </div>
               </div>
             </motion.div>
@@ -93,7 +92,7 @@ const Atouts = () => {
               className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px]">
+                <div className="icon mb-[50px] transition-all duration-500 group-hover:-translate-y-4">
                   <Image
                     src="/icons/security.svg"
                     alt=""
@@ -101,11 +100,12 @@ const Atouts = () => {
                     height={109}
                   />
                 </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-300 group-hover:text-lightblue">
+                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-500 delay-75 group-hover:text-lightblue group-hover:-translate-y-4">
                   SÉCURITE
                 </div>
-                <div className="font-light text-[18px] leading-[24px]">
-                  Résidences sécurisées 24h/24 <br /> et 7j/7
+                <div className="font-light text-[18px] leading-[24px] transition-all duration-500 delay-100 group-hover:-translate-y-4 group-hover:text-white/20">
+                  Résidences sécurisées
+                  <br /> 24h/24 <br /> et 7j/7
                 </div>
               </div>
             </motion.div>
@@ -119,7 +119,7 @@ const Atouts = () => {
               className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px] flex flex-col justify-center ">
+                <div className="icon mb-[50px] transition-all duration-500 group-hover:-translate-y-4">
                   <Image
                     src="/icons/comodities.svg"
                     alt=""
@@ -127,10 +127,10 @@ const Atouts = () => {
                     height={126}
                   />
                 </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-300 group-hover:text-lightblue">
+                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-500 delay-75 group-hover:text-lightblue group-hover:-translate-y-4">
                   COMMODITES
                 </div>
-                <div className="font-light text-[18px] leading-[24px]">
+                <div className="font-light text-[18px] leading-[24px] transition-all duration-500 delay-100 group-hover:-translate-y-4 group-hover:text-white/20">
                   Supérette, GAB, pharmacie, laboratoires d’analyses médicales,
                   centre de copie, laverie…
                 </div>
@@ -146,7 +146,7 @@ const Atouts = () => {
               className="bloc text-white mb-[85px] flex flex-col items-center group cursor-pointer"
             >
               <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px]">
+                <div className="icon mb-[50px] transition-all duration-500 group-hover:-translate-y-4">
                   <Image
                     src="/icons/happy-face.svg"
                     alt=""
@@ -154,10 +154,10 @@ const Atouts = () => {
                     height={126}
                   />
                 </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-300 group-hover:text-lightblue">
+                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-500 delay-75 group-hover:text-lightblue group-hover:-translate-y-4">
                   SÉRÉNITÉ
                 </div>
-                <div className="font-light text-[18px] leading-[24px]">
+                <div className="font-light text-[18px] leading-[24px] transition-all duration-500 delay-100 group-hover:-translate-y-4 group-hover:text-white/20">
                   Hébergements spacieux
                   <br /> modernes équipés connectés, et <br /> espaces communs
                   pratiques.
