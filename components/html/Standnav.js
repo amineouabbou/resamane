@@ -40,9 +40,9 @@ const Standnav = () => {
       </motion.li>
       <motion.li
         variants={shortFadeUp()}
-        className={router.pathname == '/preinscription' ? 'active' : ''}
+        className={router.pathname == '/mondossier' ? 'active' : ''}
       >
-        <Link href="/preinscription">
+        <Link href="/mondossier">
           <a>Mon dossier</a>
         </Link>
       </motion.li>

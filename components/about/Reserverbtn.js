@@ -50,7 +50,7 @@ const Reserverbtn = () => {
     mass: 0.2,
   })
   return (
-    <Link href="/preinscription">
+    <Link href="/mondossier">
       <motion.div
         variants={bookIntroAnimation}
         initial="initial"

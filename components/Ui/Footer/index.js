@@ -80,7 +80,7 @@ const Footer = () => {
               </div>
               <ul className="text-[#023141] font-light leading-[#30] text-[16px]">
                 <li>
-                  <Link href="/preinscription">
+                  <Link href="/mondossier">
                     <a className="text-[#023141] hover:text-lightblue">
                       Pré-inscription
                     </a>
