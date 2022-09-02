@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { titlesAnimation, titesStagger } from '../../data/useVariants'
+import Link from 'next/link'
 
 const Cmsoverlay = ({ subtitle, title }) => {
   return (
@@ -27,9 +28,9 @@ const Cmsoverlay = ({ subtitle, title }) => {
           </span>
         </motion.div>
         <motion.div variants={titlesAnimation}>
-          <a href="#" className="btn w-[180px]">
-            Découvrir
-          </a>
+          <Link href="/mondossier">
+            <a className="btn w-[180px]">Découvrir</a>
+          </Link>
         </motion.div>
       </motion.div>
     </div>

@@ -6,7 +6,7 @@ import Footer from '../components/Ui/Footer'
 import Presentation from '../components/preinscription/Presentation'
 import Contact from '../components/preinscription/Contact'
 
-const Preinscription = () => {
+const Mondossier = () => {
   return (
     <>
       <Layout>
@@ -24,4 +24,4 @@ const Preinscription = () => {
   )
 }
 
-export default Preinscription
+export default Mondossier

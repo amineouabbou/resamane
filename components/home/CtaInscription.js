@@ -26,10 +26,8 @@ const CtaInscription = () => {
           variants={titlesAnimation}
           className="cta flex flex-col items-center"
         >
-          <Link href="/preinscription">
-            <a href="#" className="btn w-[220px] outborder">
-              PRÉ-INSCRIPTION
-            </a>
+          <Link href="/mondossier">
+            <a className="btn w-[220px] outborder">PRÉ-INSCRIPTION</a>
           </Link>
         </motion.div>
       </motion.div>
