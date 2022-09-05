@@ -151,8 +151,9 @@ const Presentation = () => {
               <br />
               Le prix du loyer est TTC, y compris TVA d’hébergement de 10%.
               <br />
-              La consommation d’eau et d’électricité est incluse dans le prix du
-              loyer mensuel.
+              La consommation d&apos; eau et d&apos; électricité est incluse
+              dans le loyer à hauteur de 3m³ pour l&apos; eau et 20kwh pour
+              l&apos; électricité par mois par studio.
               <br />
               En cas de dépassement de consommation, un supplément sera facturé
               à la résidente selon type de logement et conformément aux

@@ -111,6 +111,10 @@
     @apply block w-[14px] h-[14px] border-[2px] border-white absolute top-0 bottom-0 my-auto content-[''] rounded-full;
   }
 
+  .iframe {
+    @apply h-full w-full min-h-full absolute top-0 bottom-0 left-0 right-0 my-auto;
+  }
+
   .input {
     @apply w-full h-[48px] md:h-[55px] bg-white border-[1px] border-[#1D647D14] rounded-[35px] px-[32px] py-[5px] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)];
   }
