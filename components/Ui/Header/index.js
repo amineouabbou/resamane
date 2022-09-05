@@ -1,14 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Standnav from '../../html/Standnav'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { globaleasing } from '../../../data/useVariants'
 import Mobileheader from '../../html/Mobileheader'
 
 const Header = () => {
   const [sticky, setSticky] = useState(false)
-  const [showMobileNav, setshowMobileNav] = useState(false)
 
   const handleScroll = () => {
     if (window.scrollY > 90) {
@@ -18,10 +17,6 @@ const Header = () => {
     }
   }
 
-  const showMobileNavFun = useCallback(() => {
-    setshowMobileNav((prevsate) => !prevsate)
-  }, [])
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
 
@@ -29,7 +24,7 @@ const Header = () => {
   }, [sticky])
   return (
     <>
-      <Mobileheader showMobileNavFun={showMobileNavFun} />
+      <Mobileheader />
       {sticky ? (
         <motion.div
           initial={{ y: -90 }}
@@ -74,18 +69,8 @@ const Header = () => {
         </motion.div>
       ) : null}
 
-      <div
-        className={`border-b-[#1D647D40] fixed ${
-          showMobileNav ? `translate-x-0` : `-translate-x-full`
-        }  transition-all duration-700  md:translate-x-0 w-[90%] md:w-full bg-white px-5 z-[100] top-0 bottom-0 my-auto md:static md:border-b-[1px] md:px-[30px] md:py-[12px] md:flex md:items-center`}
-      >
-        <div className="md:mr-[90px] py-5 md:py-0 flex flex-col md:block items-center overflow-hidden border-b-[#1D647D40] border-b-[1px] md:border-0 relative">
-          <div
-            className="close absolute top-[50%] -translate-y-[50%] left-[20px] font-light text-[21px] md:hidden"
-            onClick={showMobileNavFun}
-          >
-            X
-          </div>
+      <div className="border-b-[#1D647D40] border-b-[1px] px-[30px] py-[12px] hidden md:flex items-center">
+        <div className="mr-[90px] overflow-hidden">
           <motion.div
             initial={{ scale: 0.7, y: 90 }}
             animate={{
@@ -111,28 +96,10 @@ const Header = () => {
           </motion.div>
         </div>
 
-        <nav className="main-nav pt-5 md:pt-0">
+        <nav className="main-nav">
           <Standnav />
         </nav>
       </div>
-
-      <AnimatePresence>
-        {showMobileNav && (
-          <motion.div
-            onClick={showMobileNavFun}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: {
-                duration: 0.8,
-                ease: globaleasing,
-              },
-            }}
-            exit={{ opacity: 0 }}
-            className="backdrop bg-[#000]/50 fixed top-0 bottom-0 left-0 right-0 my-auto mx-auto z-40"
-          ></motion.div>
-        )}
-      </AnimatePresence>
     </>
   )
 }
