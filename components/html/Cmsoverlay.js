@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Cmsoverlay = ({ subtitle, title, showread }) => {
   return (
-    <div className="overlay absolute bottom-[30px] left-[20%] md:left-[5%] z-10 flex flex-col justify-center items-center">
+    <div className="overlay absolute bottom-[15px] md:bottom-[30px] left-[22%] md:left-[5%] z-10 flex flex-col justify-center items-center">
       <motion.div
         variants={titesStagger(0.7, 0.2)}
         initial="initial"
