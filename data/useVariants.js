@@ -35,6 +35,10 @@ export const shortFadeUp = (duration = 1) => {
         ease: globaleasing,
       },
     },
+    exit: {
+      y: 30,
+      opacity: 0,
+    },
   }
 }
 

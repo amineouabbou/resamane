@@ -12,6 +12,7 @@ const Standnav = () => {
       variants={titesStagger(0.6, 0.1)}
       initial="initial"
       animate="animate"
+      exit="exit"
       className="md:flex flex-row items-center justify-center"
     >
       <motion.li
