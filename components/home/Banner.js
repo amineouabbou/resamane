@@ -15,7 +15,7 @@ const Banner = () => {
   }
 
   return (
-    <div className="main-screen-home relative md:pl-[90px]">
+    <div className="main-screen-home relative md:pl-[90px] overflow-hidden">
       <Sidenav />
 
       <motion.div
