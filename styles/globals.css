@@ -7,7 +7,7 @@
 
 @layer components {
   body {
-    @apply font-proxima-nova font-normal antialiased text-[13px] md:text-[15px] text-textcolor leading-[23px];
+    @apply font-proxima-nova font-normal antialiased text-[14px] md:text-[15px] text-textcolor leading-[23px];
   }
 
   a {
@@ -48,7 +48,7 @@
   }
 
   .main-nav li a {
-    @apply font-bold block text-[#023141] uppercase text-[14px];
+    @apply font-bold block py-3 text-center md:text-left md:py-0 text-[#023141] uppercase text-[14px];
   }
 
   .main-nav li a:hover {
@@ -56,7 +56,7 @@
   }
 
   .main-nav li.active a {
-    @apply text-lightblue font-bold rounded-[2px] bg-[#19637B0B] px-[28px] h-[38px] leading-[36px];
+    @apply text-lightblue font-bold md:rounded-[2px] md:bg-[#19637B0B] md:px-[28px] md:h-[38px] md:leading-[36px];
   }
 
   .chambres-appart .inner::after {
@@ -108,11 +108,11 @@
   }
 
   .facilities-sections .inner .box .title::before {
-    @apply bg-[#09556F] block w-[14px] h-[14px] border-[2px] border-white absolute top-0 bottom-0 my-auto -left-[46px] content-[''] rounded-full;
+    @apply block w-[14px] h-[14px] border-[2px] border-white absolute top-0 bottom-0 my-auto content-[''] rounded-full;
   }
 
   .input {
-    @apply w-full h-[55px] bg-white border-[1px] border-[#1D647D14] rounded-[35px] px-[32px] py-[5px] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)];
+    @apply w-full h-[48px] md:h-[55px] bg-white border-[1px] border-[#1D647D14] rounded-[35px] px-[32px] py-[5px] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)];
   }
 
   textarea.input {

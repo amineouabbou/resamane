@@ -12,11 +12,16 @@ import { FethCmsPage } from '../api'
 import Atouts from '../components/home/Atouts'
 import Contact from '../components/home/Contact'
 import CtaInscription from '../components/home/CtaInscription'
+import Link from 'next/link'
+import Image from 'next/image'
+import Togglemobile from '../components/html/Togglemobile'
+import Mobileheader from '../components/html/Mobileheader'
 
 export default function Home({ data }) {
   return (
     <Layout>
       <SEO />
+      <Mobileheader />
       <Banner />
       <Navmain />
       <Aboutsection />

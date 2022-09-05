@@ -17,15 +17,15 @@ const Panoramic = () => {
     mass: 0.2,
   })
   return (
-    <section className="360-section relative hidden md:block" ref={el}>
+    <section className="360-section relative" ref={el}>
       <div className="overlay absolute h-full w-full left-0 right-0 flex flex-col justify-end items-center z-10 bg-primary/25 bg-blend-darken">
-        <div className="container mx-auto mb-[60px]">
+        <div className="container mx-auto mb-[30px] md:mb-[60px]">
           <div className="bloc text-white flex justify-between items-center">
             <motion.div
               variants={titlesAnimation}
               initial="initial"
               whileInView="animate"
-              className="font-bold uppercase text-[55px] leading-[61px]"
+              className="font-bold uppercase text-[25px] md:text-[55px] md:leading-[61px]"
             >
               Visite 360 <br /> de la résidence
             </motion.div>
@@ -40,18 +40,18 @@ const Panoramic = () => {
               }}
             >
               <a
-                className="w-[144px] h-[144px] rounded-full bg-white/70 flex flex-col justify-center items-center hover:scale-125 hover:bg-white/90"
+                className="w-[50px] h-[50px] md:w-[144px] md:h-[144px] rounded-full bg-white/70 flex flex-col justify-center items-center hover:scale-125 hover:bg-white/90"
                 href="#"
               >
-                <i className="block">
-                  <Image alt="" src={playIcon} width="26px" />
+                <i className="w-[16px] h-[16px] md:w-[26px] md:h-[26px] block relative">
+                  <Image alt="" src={playIcon} layout="fill" />
                 </i>
               </a>
             </motion.div>
           </div>
         </div>
       </div>
-      <div className="img relative min-h-[830px] overflow-hidden">
+      <div className="img relative min-h-[330px] md:min-h-[830px] overflow-hidden">
         <motion.div
           style={{ scale }}
           /*whileInView={{

@@ -21,14 +21,14 @@ const imgSlash = {
 
 const Aboutsection = ({ title, contentColumns, intro }) => {
   return (
-    <section className="intro-section">
+    <section className="pt-[60px] md:pt-0 intro-section">
       <div className="container mx-auto">
         <motion.div
           variants={fadeUpOverlayBox(1, 0)}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="text-[25px] md:text-[32px] leading-[40px] uppercase font-bold mb-[20px] md:mb-[45px] origin-center"
+          className="text-[25px] md:text-[32px] leading-9 md:leading-[40px] uppercase font-bold mb-[20px] md:mb-[45px] origin-center"
         >
           VOUS L’AVEZ IMAGINÉ… <br />
           NOUS L’AVONS CONSTRUIT.
@@ -36,7 +36,7 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
       </div>
 
       <div className="inner relative">
-        <div className="md:absolute top-0 bottom-0 left-0 right-0 z-10">
+        <div className="md:absolute top-0 bottom-0 left-0 right-0 z-10 pb-[60px] md:pb-0">
           <div className="container mx-auto h-full relative">
             <motion.div
               variants={fadeUpOverlayBox(1, 0)}
@@ -64,7 +64,7 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
             </motion.div>
           </div>
         </div>
-        <div className="h-[320px] md:h-[475px] relative md:w-2/3 overflow-hidden">
+        <div className="h-[280px] md:h-[475px] relative md:w-2/3 overflow-hidden">
           {/*<motion.div
             variants={imgSlash}
             initial="initial"
@@ -73,7 +73,7 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
             className="bg-lightblue/80 h-full absolute  z-[5] "
           ></motion.div>* */}
           <motion.div
-            className="h-[320px] md:h-[475px]"
+            className="h-[280px] md:h-[475px]"
             variants={imgScaling}
             initial="initial"
             whileInView="animate"
@@ -91,11 +91,11 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
 
       <div className="md:w-2/3 mx-auto">
         <div className="cta relative pt-[60px] pb-[90px]">
-          <div className="absolute -top-[32px] left-[30px]">
-            <Image src="/icons/quoate.svg" alt="" width={99} height={64} />
+          <div className="w-[79px] md:w-[99px] h-[34px] md:h-[64px] absolute -top-[15px] md:-top-[32px] left-[30px]">
+            <Image src="/icons/quoate.svg" alt="" layout="fill" />
           </div>
-          <div className="absolute -bottom-[40px] right-[50px] scale-y-[-1]">
-            <Image src="/icons/quoate.svg" alt="" width={190} height={123} />
+          <div className="md:w-[190px] md:h-[123px] w-[150px] h-[83px]  absolute -bottom-[30px]  md:-bottom-[40px] right-[30px] md:right-[50px] scale-y-[-1]">
+            <Image src="/icons/quoate.svg" layout="fill" alt="" />
           </div>
           <motion.div
             variants={fadeUpOverlayBox(1, 0)}

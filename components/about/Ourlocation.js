@@ -6,8 +6,8 @@ import { fadeUp, titesStagger, globaleasing } from '../../data/useVariants'
 
 const Ourlocation = () => {
   return (
-    <section className="pt-[125px] relative">
-      <div className="absolute bg-[#F5FCFD] top-0 h-full left-0 w-[88%] xl:[clip-path:polygon(0_0,_100%_0%,_96%_100%,_0%_100%)]"></div>
+    <section className="py-[60px] md:pt-[125px] relative">
+      <div className="absolute bg-[#F5FCFD] top-0 h-full left-0 w-full md:w-[88%] xl:[clip-path:polygon(0_0,_100%_0%,_96%_100%,_0%_100%)]"></div>
       <div className="absolute h-[130px] bg-white w-full bottom-0"></div>
       <div className="container mx-auto relative">
         <motion.div
@@ -22,7 +22,7 @@ const Ourlocation = () => {
             },
           }}
           viewport={{ once: true }}
-          className="absolute -top-[280px] left-60 z-10"
+          className="absolute -top-[280px] left-60 hidden z-10 md:block"
         >
           <Image src="/icons/shape.svg" alt="shape" width={110} height={451} />
         </motion.div>
@@ -31,16 +31,16 @@ const Ourlocation = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="w-2/5 mx-auto mb-[65px]"
+          className="md:w-2/5 mx-auto mb-[40px] md:mb-[65px]"
         >
           <motion.h2
             variants={fadeUp}
-            className="font-bold uppercase text-[37px] text-center mb-[40px]"
+            className="font-bold uppercase text-[27px] md:text-[37px] text-center mb-[40px]"
           >
             NOTRE EMPLACEMENT
           </motion.h2>
-          <motion.div variants={fadeUp} className="px-[20px]">
-            <p className="text-center">
+          <motion.div variants={fadeUp} className="md:px-[20px]">
+            <p className="text-justify md:text-center">
               Notre résidence est située sur le Boulevard 11 Janvier, près de
               l’École Nationale d’Architecture, la Faculté des Sciences
               Juridiques Économiques et Sociales et en face de McDonald’s Adrar.

@@ -24,11 +24,11 @@ const Presentation = () => {
 
   return (
     <section className="about" ref={aboutref}>
-      <div className="relative pl-[60px]">
-        <div className="img h-[640px] xl:[clip-path:polygon(3%_0,_100%_0,_100%_100%,_0_100%)] overflow-hidden relative">
+      <div className="relative pl-[5px] md:pl-[60px]">
+        <div className="img h-[340px] md:h-[640px] [clip-path:polygon(3%_0,_100%_0,_100%_100%,_0_100%)] overflow-hidden relative">
           <Imgwrap duration="1">
             <Image
-              src="/remove/slide-1.png"
+              src="/remove/slide-1-old.png"
               layout="fill"
               alt="slider"
               objectFit="cover"
@@ -37,12 +37,12 @@ const Presentation = () => {
         </div>
       </div>
 
-      <div className="bg-[#013C50] pt-[80px] pb-[120px] relative">
+      <div className="bg-[#013C50] py-[60px]  md:pt-[80px] md:pb-[120px] relative">
         <Reserverbtn />
         <div className="container mx-auto relative">
           <motion.div
             style={{ y, rotate }}
-            className="absolute -top-[240px] right-10 z-10"
+            className="absolute -top-[240px] right-10 z-10 hidden md:-block"
           >
             <Image
               src="/icons/shape.svg"
@@ -51,7 +51,7 @@ const Presentation = () => {
               height={451}
             />
           </motion.div>
-          <div className="w-6/12	mx-auto">
+          <div className="md:w-6/12	mx-auto">
             <motion.div
               variants={fadeUp}
               initial="initial"
@@ -59,7 +59,7 @@ const Presentation = () => {
               viewport={{ once: true }}
               className="text-white"
             >
-              <div>
+              <div className="text-justify">
                 <p>
                   Dans une ville comme Agadir, devenue un grand pôle urbain et
                   universitaire, recevant chaque année des centaines
@@ -76,6 +76,7 @@ const Presentation = () => {
                   favoriser le confort, la satisfaction, l’épanouissement
                   personnel, et la grande réussite du parcours de nos
                   locataires.
+                  <br />
                   <br />
                   Nos locaux se distinguent avec brio grâce à l’espace spacieux
                   de leurs chambres et appartements. Notre résidence s’étale sur

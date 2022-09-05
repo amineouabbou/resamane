@@ -14,7 +14,8 @@ const Mondossier = () => {
         <Header />
         <Subheader title="" subtitle="" type="full" />
 
-        <Presentation />
+        {/*
+        <Presentation />* */}
 
         <Contact />
 

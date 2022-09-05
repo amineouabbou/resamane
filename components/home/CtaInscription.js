@@ -5,7 +5,7 @@ import { titesStagger, titlesAnimation } from '../../data/useVariants'
 
 const CtaInscription = () => {
   return (
-    <section className="bg-[#F5FCFD] py-[150px]">
+    <section className="bg-[#F5FCFD] py-[60px] md:py-[150px]">
       <motion.div
         variants={titesStagger(0, 0.6)}
         initial="initial"
@@ -15,7 +15,7 @@ const CtaInscription = () => {
       >
         <motion.div
           variants={titlesAnimation}
-          className="leading-[45px] text-[30px] text-center mb-[45px] font-medium"
+          className="leading-[35px] md:leading-[45px] text-[25px] md:text-[30px] text-center mb-[35px] md:mb-[45px] font-medium"
         >
           HABITER LES RÉSIDENCES AMANE VOUS INTÉRESSE ? <br />
           <span className="text-lightblue font-bold">

@@ -79,13 +79,13 @@ const Contact = () => {
 
   return (
     <section className="form">
-      <div className="w-[60%] mx-auto">
-        <h2 className="font-bold text-[40px] mb-[50px] mt-[110px]">
+      <div className="md:w-[60%] mx-auto">
+        <h2 className="font-bold  text-[30px] text-center md:text-left md:text-[40px] mb-[40px] md:mb-[50px]">
           Nous contactez
         </h2>
-        <div className="bg-[#F5FCFD] py-[35px] px-[85px]">
+        <div className="bg-[#F5FCFD] py-[35px] px-[25px] md:px-[85px]">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="field mb-[35px]">
+            <div className="field mb-[25px] md:mb-[35px]">
               <Inputlabel name="Qu'aimeriez-vous partager avec nous ?" />
               <input className="input" type="text" {...register('subject')} />
               {errors.subject ? (
@@ -95,14 +95,14 @@ const Contact = () => {
               )}
             </div>
 
-            <div className="grid grid-cols-2 gap-x-[20px]">
-              <div className="field mb-[35px]">
+            <div className="grid md:grid-cols-2 gap-x-[20px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Nom *" />
                 <input className="input" type="text" {...register('nom')} />
                 {errors.nom ? <Inputerror message={errors.nom?.message} /> : ''}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Prénom *" />
                 <input className="input" type="text" {...register('prenom')} />
                 {errors.prenom ? (
@@ -112,7 +112,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Adresse" />
                 <input className="input" type="text" {...register('adresse')} />
                 {errors.adresse ? (
@@ -122,7 +122,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Adresse e-mail *" />
                 <input className="input" type="text" {...register('email')} />
                 {errors.email ? (
@@ -133,7 +133,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="field mb-[35px]">
+            <div className="field mb-[25px] md:mb-[35px]">
               <Inputlabel name="Message *" />
               <textarea className="input" {...register('message')} />
               {errors.message ? (
@@ -163,8 +163,8 @@ const Contact = () => {
 
             <div className="devidor h-[1px] bg-[#09556F]/10 my-[40px]"></div>
 
-            <div className="box-infos px-[10px] text-[16px] mb-[30px]">
-              <div className="grid grid-cols-2 gap-x-[10px]">
+            <div className="box-infos md:px-[10px] text-[15px] md:text-[16px] md:mb-[30px]">
+              <div className="grid md:grid-cols-2 gap-y-5 md:gap-y-0 gap-x-[10px]">
                 <div className="bloc flex flex-col items-center">
                   <div>
                     Boulevard du 11 Janvier, <br />

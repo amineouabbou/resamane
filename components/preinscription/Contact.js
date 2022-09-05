@@ -90,14 +90,14 @@ const Contact = () => {
 
   return (
     <section className="form">
-      <div className="w-[60%] mx-auto">
-        <div className="bg-[#F5FCFD] py-[35px] px-[85px]">
+      <div className="md:w-[60%] mx-auto">
+        <div className="bg-[#F5FCFD] py-[35px] px-[25px] md:px-[85px]">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="text-[#023141] text-[16px] font-bold block mb-[20px] leading-[18px]">
+            <div className="text-[#023141] md:text-[16px] font-bold block mb-[20px] leading-[18px]">
               Période de séjour
             </div>
-            <div className="grid grid-cols-2 gap-x-[20px]">
-              <div className="field mb-[35px]">
+            <div className="grid md:grid-cols-2 gap-x-[20px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Du *" mediumfont="true" />
                 <input
                   className="input calendar"
@@ -112,7 +112,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="AU *" mediumfont="true" />
                 <input
                   className="input calendar"
@@ -127,13 +127,13 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Nom *" />
                 <input className="input" type="text" {...register('nom')} />
                 {errors.nom ? <Inputerror message={errors.nom?.message} /> : ''}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Prénom *" />
                 <input className="input" type="text" {...register('prenom')} />
                 {errors.prenom ? (
@@ -143,7 +143,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Téléphone *" />
                 <input className="input" type="text" {...register('phone')} />
                 {errors.phone ? (
@@ -153,13 +153,13 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="CIN, Carte de séjour ou Passeport" />
                 <input className="input" type="text" {...register('cin')} />
                 {errors.cin ? <Inputerror message={errors.cin?.message} /> : ''}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Adresse" />
                 <input className="input" type="text" {...register('adresse')} />
                 {errors.adresse ? (
@@ -169,7 +169,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Adresse e-mail *" />
                 <input className="input" type="text" {...register('email')} />
                 {errors.email ? (
@@ -179,7 +179,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Pays *" />
                 <select
                   className="selectinput"
@@ -199,7 +199,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Ville *" />
                 <input className="input" type="text" {...register('ville')} />
                 {errors.ville ? (
@@ -209,7 +209,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Etablissement *" />
                 <input
                   className="input"
@@ -223,7 +223,7 @@ const Contact = () => {
                 )}
               </div>
 
-              <div className="field mb-[35px]">
+              <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name="Cycle d’étude *" />
                 <input className="input" type="text" {...register('cycle')} />
                 {errors.cycle ? (
@@ -234,7 +234,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="field mb-[35px]">
+            <div className="field mb-[25px] md:mb-[35px]">
               <Inputlabel name="Services prioritaires souhaités" />
               <Controller
                 name="services"
@@ -263,7 +263,7 @@ const Contact = () => {
               )}
             </div>
 
-            <div className="field mb-[35px]">
+            <div className="field mb-[25px] md:mb-[35px]">
               <Inputlabel name="Type de chambre" />
               <select className="selectinput" {...register('chambre')}>
                 <option value=""></option>
@@ -290,7 +290,7 @@ const Contact = () => {
               )}
             </div>
 
-            <div className="field mb-[35px] hidden">
+            <div className="field mb-[25px] md:mb-[35px] hidden">
               <Inputlabel name="Pièce jointe" />
               <div className="input-field">
                 <label htmlFor="inputTag" className="input-file-label">
@@ -313,9 +313,9 @@ const Contact = () => {
               )}
             </div>
 
-            <div className="field mb-[35px]">
+            <div className="field mb-[25px] md:mb-[35px]">
               <Inputlabel name="Comment avez-vous connu Résidences Amane?" />
-              <div className="grid grid-rows-3 grid-flow-col gap-y-4">
+              <div className="grid md:grid-rows-3 md:grid-flow-col gap-y-4">
                 {radioBtns.map((item) => {
                   return (
                     <div key={item.id} className="choice">

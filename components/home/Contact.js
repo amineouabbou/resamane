@@ -27,10 +27,10 @@ const Contact = () => {
   )
 
   return (
-    <section className="contact-section bg-[#F5FCFD] relative">
+    <section className="contact-section py-[60px] bg-[#F5FCFD] relative">
       <div className="hidden md:block md:absolute bottom-0 w-full h-[130px] bg-white right-0"></div>
       <div className="bg-[#013C50] absolute top-0 left-0 w-full md:w-4/5 bottom-0 h-full md:[clip-path:polygon(0_0,_100%_0%,_97%_100%,_0%_100%)]"></div>
-      <div className="container mx-auto relative z-10 py-[120px]">
+      <div className="container mx-auto relative z-10 md:py-[120px]">
         <motion.div
           style={{ y, scale }}
           className="absolute -top-[150px] left-[145px] z-10 hidden md:block"
@@ -43,11 +43,11 @@ const Contact = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="text-white font-bold uppercase text-[32px] text-center mb-[40px]"
+          className="text-white font-bold uppercase text-[27px] text-center mb-[40px]"
         >
           CONTACTEZ-NOUS
         </motion.h2>
-        <div className="bloc text-[21px] text-white flex flex-col items-center">
+        <div className="bloc text-[16px] md:text-[21px] text-white flex flex-col items-center">
           <motion.div
             variants={titlesAnimation}
             initial="initial"
@@ -96,7 +96,7 @@ const Contact = () => {
               </span>
               <div className="leading-[25px]">
                 <span className="font-medium">VISITEZ-NOUS : </span>{' '}
-                <span className="text-[19px]">
+                <span>
                   Du Lundi au vendredi de 8h30 à 17h30 hors jours fériés. Au
                   Boulevard 11 Janvier, quartier Dakhla, Bloc D1, Agadir.
                 </span>

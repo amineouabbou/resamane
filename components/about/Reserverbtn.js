@@ -59,13 +59,13 @@ const Reserverbtn = () => {
       >
         <motion.div
           style={{ scaleX }}
-          className="loader rounded-[10px] absolute h-[4px] bottom-[2px] left-0 right-0 bg-lightblue"
+          className="loader rounded-[10px] absolute h-[2px] md:h-[4px] bottom-[2px] left-0 right-0 bg-lightblue"
         ></motion.div>
         <motion.div
           variants={bookElementStagger}
           initial="initial"
           animate="animate"
-          className="inner group w-[180px] relative h-[120px] flex flex-col items-center justify-center transition-all hover:bg-lightblue border-[#084C6419] border-[1px] "
+          className="inner group w-[120px] md:w-[180px] relative h-[90px] md:h-[120px] flex flex-col items-center justify-center transition-all hover:bg-lightblue border-[#084C6419] border-[1px] "
         >
           <motion.div
             variants={bookElement}
@@ -77,7 +77,7 @@ const Reserverbtn = () => {
           </motion.div>
           <motion.div
             variants={bookElement}
-            className="text-[16px] leading-[21px] font-semibold text-center group-hover:text-white transition-all"
+            className="text-[12px] md:text-[16px] leading-4 md:leading-[21px] font-semibold text-center group-hover:text-white transition-all"
           >
             RESERVER <br />
             MAINTENANT

@@ -7,13 +7,13 @@ import { titesStagger, titlesAnimation } from '../../data/useVariants'
 const Subheader = ({ title, subtitle, description, type }) => {
   if (type === 'full') {
     return (
-      <div className="page-sub-pres px-[30px] relative pb-[30px]">
+      <div className="page-sub-pres md:px-[30px] relative pb-[30px] mb-[40px] md:mb-[60px]">
         <Cmsoverlay title={title} subtitle={subtitle} />
         <div className="absolute top-0 bottom-0 w-3/5 right-0 bg-lightblue"></div>
         <div className="w-3/4">
-          <div className="relative h-[515px]">
+          <div className="relative h-[290px] md:h-[515px]">
             <Image
-              src="/remove/slide-1.png"
+              src="/remove/slide-1-old.png"
               layout="fill"
               objectFit="cover"
               alt=""
@@ -24,18 +24,18 @@ const Subheader = ({ title, subtitle, description, type }) => {
     )
   }
   return (
-    <div className="page-sub-pres px-[30px] relative py-[85px]">
+    <div className="page-sub-pres md:px-[30px] relative py-[30px] md:py-[85px]">
       <div className="container mx-auto flex flex-col items-center">
         <motion.div
           variants={titesStagger(0, 0.3)}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="w-5/12 flex flex-col items-center"
+          className="md:w-5/12 flex flex-col items-center"
         >
           <motion.h1
             variants={titlesAnimation}
-            className="text-[42px] font-bold leading-[40px]"
+            className="text-[25px] md:text-[42px] font-bold md:leading-[40px]"
           >
             {title}
           </motion.h1>

@@ -7,8 +7,40 @@ import {
   useTransform,
   AnimatePresence,
 } from 'framer-motion'
-import { fadeIn, titesStagger, titlesAnimation } from '../../data/useVariants'
+import { titesStagger } from '../../data/useVariants'
 import Popup from '../html/Popup'
+import Sectitle from '../html/Sectitle'
+import Atouitem from './Atouitem'
+
+const DATA = [
+  {
+    url: '/icons/proximite.svg',
+    title: 'PROXIMITÉ',
+    desc: `5 min de l’ENCG
+    <br />
+    13 min du centre ville
+    <br /> 6 min de la gare routière`,
+  },
+  {
+    url: '/icons/security.svg',
+    title: 'SÉCURITE',
+    desc: `Résidences sécurisées
+    <br /> 24h/24 <br /> et 7j/7`,
+  },
+  {
+    url: '/icons/comodities.svg',
+    title: 'COMMODITES',
+    desc: `Supérette, GAB, pharmacie, laboratoires d’analyses médicales,
+    centre de copie, laverie…`,
+  },
+  {
+    url: '/icons/happy-face.svg',
+    title: 'SÉRÉNITÉ',
+    desc: `Hébergements spacieux
+    <br /> modernes équipés connectés, et <br /> espaces communs
+    pratiques.`,
+  },
+]
 
 const Atouts = () => {
   const atoutRef = useRef(null)
@@ -34,136 +66,25 @@ const Atouts = () => {
   const maxWidth = useTransform(scrollYProgress, [0, 1], ['70%', '100%'])
 
   return (
-    <section className="nos-atouts hidden md:block" ref={atoutRef}>
-      <motion.div className="container mx-auto relative">
-        <div className="absolute -bottom-[230px] left-[15px] z-50">
+    <section className="nos-atouts" ref={atoutRef}>
+      <motion.div className="container mx-auto relative px-0 md:px-[1rem]">
+        <div className="absolute -bottom-[230px] hidden md:block left-[15px] z-50">
           <Image src="/icons/shape.svg" alt="shape" width={110} height={451} />
         </div>
-        <motion.div className="inner bg-[#013C50] py-[100px] xl:[clip-path:polygon(2%_0%,_100%_0%,_100%_100%,_0%_100%)]">
-          <motion.div
-            variants={fadeIn(1, 0)}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
-            className="text-white font-bold uppercase text-[37px] text-center mb-[100px]"
-          >
-            NOS ATOUTS
-          </motion.div>
+        <motion.div className="inner bg-[#013C50] py-[60px] md:py-[100px] xl:[clip-path:polygon(2%_0%,_100%_0%,_100%_100%,_0%_100%)]">
+          <Sectitle title="NOS ATOUTS" color="white" />
 
           <motion.div
             variants={titesStagger}
-            className="blocs w-2/3 mx-auto grid grid-cols-2 gap-x-20"
+            className="blocs md:w-2/3 px-2 md:px-0 mx-auto grid grid-cols-2 gap-y-12 md:gap-x-20 md:gap-y-[80px]"
           >
-            <motion.div
-              variants={titlesAnimation}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              onClick={handleClosePopup}
-              className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
-            >
-              <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px] transition-all duration-500 group-hover:-translate-y-4">
-                  <Image
-                    src="/icons/proximite.svg"
-                    alt=""
-                    width={130}
-                    height={116}
-                  />
-                </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-500 delay-75 group-hover:text-lightblue group-hover:-translate-y-4">
-                  PROXIMITÉ
-                </div>
-                <div className="font-light text-[18px] leading-[24px] transition-all duration-500 delay-100 group-hover:-translate-y-4 group-hover:text-white/20">
-                  5 min de l’ENCG
-                  <br />
-                  13 min du centre ville
-                  <br /> 6 min de la gare routière
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={titlesAnimation}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              onClick={handleClosePopup}
-              className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
-            >
-              <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px] transition-all duration-500 group-hover:-translate-y-4">
-                  <Image
-                    src="/icons/security.svg"
-                    alt=""
-                    width={97}
-                    height={109}
-                  />
-                </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-500 delay-75 group-hover:text-lightblue group-hover:-translate-y-4">
-                  SÉCURITE
-                </div>
-                <div className="font-light text-[18px] leading-[24px] transition-all duration-500 delay-100 group-hover:-translate-y-4 group-hover:text-white/20">
-                  Résidences sécurisées
-                  <br /> 24h/24 <br /> et 7j/7
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={titlesAnimation}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              onClick={handleClosePopup}
-              className="bloc text-white mb-[85px] flex flex-col items-center cursor-pointer group"
-            >
-              <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px] transition-all duration-500 group-hover:-translate-y-4">
-                  <Image
-                    src="/icons/comodities.svg"
-                    alt=""
-                    width={121}
-                    height={126}
-                  />
-                </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-500 delay-75 group-hover:text-lightblue group-hover:-translate-y-4">
-                  COMMODITES
-                </div>
-                <div className="font-light text-[18px] leading-[24px] transition-all duration-500 delay-100 group-hover:-translate-y-4 group-hover:text-white/20">
-                  Supérette, GAB, pharmacie, laboratoires d’analyses médicales,
-                  centre de copie, laverie…
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={titlesAnimation}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              onClick={handleClosePopup}
-              className="bloc text-white mb-[85px] flex flex-col items-center group cursor-pointer"
-            >
-              <div className="w-3/4 flex flex-col items-center text-center">
-                <div className="icon mb-[50px] transition-all duration-500 group-hover:-translate-y-4">
-                  <Image
-                    src="/icons/happy-face.svg"
-                    alt=""
-                    width={126}
-                    height={126}
-                  />
-                </div>
-                <div className="uppercase font-semibold text-[28px] leading-[40px] mb-[10px] transition-all duration-500 delay-75 group-hover:text-lightblue group-hover:-translate-y-4">
-                  SÉRÉNITÉ
-                </div>
-                <div className="font-light text-[18px] leading-[24px] transition-all duration-500 delay-100 group-hover:-translate-y-4 group-hover:text-white/20">
-                  Hébergements spacieux
-                  <br /> modernes équipés connectés, et <br /> espaces communs
-                  pratiques.
-                </div>
-              </div>
-            </motion.div>
+            {DATA.map((item) => (
+              <Atouitem
+                key={item.title}
+                item={item}
+                handleClosePopup={handleClosePopup}
+              />
+            ))}
           </motion.div>
         </motion.div>
       </motion.div>

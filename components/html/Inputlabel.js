@@ -9,7 +9,7 @@ const Inputlabel = ({ name, mediumfont }) => {
   }
   return (
     <label
-      className={`text-[#023141] text-[16px] ${fontClass} block mb-[10px] leading-[18px]`}
+      className={`text-[#023141] md:text-[16px] ${fontClass} block mb-[10px] leading-[18px]`}
     >
       {name}
     </label>

@@ -1,11 +1,10 @@
 import Image from 'next/image'
-import { useRef, useEffect } from 'react'
 import Imgwrap from '../html/Imgwrap'
 
 const Map = () => {
   return (
-    <div className="px-[30px]">
-      <div className="img h-[575px] relative">
+    <div className="md:px-[30px]">
+      <div className="img h-[315px] md:h-[575px] relative">
         <a
           target="_blank"
           rel="noreferrer"
