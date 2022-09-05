@@ -5,13 +5,13 @@ import { fadeUp } from '../../data/useVariants'
 const Presentation = () => {
   return (
     <section className="mb-[90px] mt-[70px]">
-      <div className="w-[50%] mx-auto">
-        <div className="text-[32px] text-center leading-[40px] uppercase font-bold mb-[35px] origin-center">
+      <div className="md:w-[50%] mx-auto px-[15px] md:px-0">
+        <div className="text-[22px] md:text-[32px] text-center md:leading-[40px] uppercase font-bold mb-[35px] origin-center">
           MON DOSSIER DE RESERVATION
           <br />
           EN 2 ETAPES
         </div>
-        <div className="text-[28px] text-center leading-[32px] mb-[55px] text-lightblue">
+        <div className="text-[20px] md:text-[28px] text-center md:leading-[32px] mb-[55px] text-lightblue">
           Résidences Amane vous facilite la vie,
           <br />
           et vous offre la possibilité de vous inscrire
@@ -19,7 +19,7 @@ const Presentation = () => {
         </div>
         <div className="mb-[40px]">
           <div className="item">
-            <h2 className="text-[32px] font-bold leading-[37px] mb-6 text-center">
+            <h2 className="text-[24px] md:text-[32px] font-bold leading-[37px] mb-6 text-center">
               Etape 1
             </h2>
           </div>
@@ -87,7 +87,7 @@ const Presentation = () => {
 
         <div className="">
           <div className="item">
-            <h2 className="text-[32px] font-bold leading-[37px] mb-6 text-center">
+            <h2 className="text-[24px] md:text-[32px] font-bold leading-[37px] mb-6 text-center">
               Etape 2
             </h2>
           </div>
@@ -105,47 +105,53 @@ const Presentation = () => {
               la grille tarifaire suivante :
             </p>
             <p className="font-bold">Frais d’inscription par an</p>
-            <table className="table mb-4">
-              <thead className="bg-secondary text-primary">
-                <tr>
-                  <th scope="col">Frais de dossier</th>
-                  <th scope="col">Caution*</th>
-                  <th scope="col">Assurance individuelle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>500 DH</td>
-                  <td>1 mois de loyer</td>
-                  <td>190 DH</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="overflow-x-scroll">
+              <table className="table mb-4">
+                <thead className="bg-secondary text-primary">
+                  <tr>
+                    <th scope="col">Frais de dossier</th>
+                    <th scope="col">Caution*</th>
+                    <th scope="col">Assurance individuelle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>500 DH</td>
+                    <td>1 mois de loyer</td>
+                    <td>190 DH</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <p className="font-light text-[11px] leading-[13px]">
               * Le montant de la caution est remboursable conformément aux
               conditions du règlement intérieur.
             </p>
 
-            <table className="table mb-4">
-              <thead className="bg-secondary text-primary">
-                <tr>
-                  <th scope="col">Studio individuel</th>
-                  <th scope="col">Studio partagé</th>
-                  <th scope="col">Studio PMR</th>
-                  <th scope="col">Appartement double</th>
-                  <th scope="col">Appartement quadruple</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2585 DH ** </td>
-                  <td>1540 DH **</td>
-                  <td>1540 DH **</td>
-                  <td>2695 DH **</td>
-                  <td>1595 DH **</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="overflow-x-scroll">
+              <table className="table mb-4">
+                <thead className="bg-secondary text-primary">
+                  <tr>
+                    <th scope="col">Studio individuel</th>
+                    <th scope="col">Studio partagé</th>
+                    <th scope="col">Studio PMR</th>
+                    <th scope="col">Appartement double</th>
+                    <th scope="col">Appartement quadruple</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2585 DH ** </td>
+                    <td>1540 DH **</td>
+                    <td>1540 DH **</td>
+                    <td>2695 DH **</td>
+                    <td>1595 DH **</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <p className="font-light text-[11px] leading-[13px]">
               **Le prix indiqué par type de logement est à payer par personne.
               <br />
