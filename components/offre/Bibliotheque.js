@@ -42,7 +42,7 @@ const DATA = [
 
 const Bibliotheque = () => {
   return (
-    <section className="facilities-sections py-[60px] md:pt-[100px] md:pb-0">
+    <section className="facilities-sections pt-[20px] md:pt-[100px] md:pb-0">
       <div className="container mx-auto">
         <div className="inner py-[70px] relative pl-[20px] md:pl-[40px]">
           {DATA.map((item) => (
