@@ -129,7 +129,7 @@ const Footer = () => {
                     Boulevard du 11 Janvier, Quartier Dakhla, Bloc D1, Agadir.
                   </div>
                   <div className="flex flex-col md:flex-row md:items-center text-[16px] font-light">
-                    <div>+212 661 892 951</div>
+                    <div>+212 05 26 044 040</div>
                     <div className="md:ml-[20px]">
                       <a
                         className="font-medium underline"
