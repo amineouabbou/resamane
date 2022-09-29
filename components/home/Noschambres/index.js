@@ -10,34 +10,49 @@ import Chambretabtitle from './Chambretabtitle'
 
 const apparts = [
   {
-    url: '/remove/APPART1.jpg',
+    url: '/remove/appartement/01.jpg',
   },
   {
-    url: '/remove/APPART2.jpg',
+    url: '/remove/appartement/02.jpg',
   },
   {
-    url: '/remove/APPART2.jpg',
+    url: '/remove/appartement/03.jpg',
+  },
+  {
+    url: '/remove/appartement/04.jpg',
   },
 ]
 
 const studios = [
   {
-    url: '/remove/Studio.jpg',
+    url: '/remove/chambre-18m/01.jpg',
   },
   {
-    url: '/remove/Studio-2.jpg',
+    url: '/remove/chambre-18m/02.jpg',
   },
   {
-    url: '/remove/Studio-3.jpg',
+    url: '/remove/chambre-18m/03.jpeg',
+  },
+  {
+    url: '/remove/chambre-18m/04.jpg',
   },
 ]
 
-const Lima = [
+const PMR = [
   {
-    url: '/remove/LIMA-PMR1-V2.jpg',
+    url: '/remove/pmr/01.jpg',
   },
   {
-    url: '/remove/LIMA-PMR2-V2.jpg',
+    url: '/remove/pmr/02.jpg',
+  },
+  {
+    url: '/remove/pmr/03.jpg',
+  },
+  {
+    url: '/remove/pmr/04.jpg',
+  },
+  {
+    url: '/remove/pmr/05.jpg',
   },
 ]
 
@@ -110,7 +125,7 @@ export default function Noschambres() {
                       {...settings}
                       ref={(currslide) => (chamberSlider2.current = currslide)}
                     >
-                      {Lima.map((item, index) => (
+                      {PMR.map((item, index) => (
                         <Chambreslidercard key={index} item={item} />
                       ))}
                     </Slider>
