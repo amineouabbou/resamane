@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { PathBanneranim } from '../../data/useVariants'
 import Slider from 'react-slick'
 
-const Banner = () => {
+const Banner = ({ slides }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -25,16 +25,9 @@ const Banner = () => {
         className="main-slideshow"
       >
         <Slider {...settings}>
-          <Card
-            showread={true}
-            photomobile="/remove/slider-1-mobile.jpg"
-            photo="/remove/slider-1.jpg"
-          />
-          <Card
-            showread={false}
-            photomobile="/remove/slider-2-mobile.jpg"
-            photo="/remove/slider-2.jpg"
-          />
+          {slides.map((item, index) => (
+            <Card key={index} data={item} />
+          ))}
         </Slider>
       </motion.div>
     </div>

@@ -42,7 +42,7 @@ const Presentation = () => {
         <div className="container mx-auto relative">
           <motion.div
             style={{ y, rotate }}
-            className="absolute -top-[240px] right-10 z-10 hidden md:-block"
+            className="absolute -top-[240px] right-10 z-10 hidden md:block"
           >
             <Image
               src="/icons/shape.svg"
@@ -61,33 +61,19 @@ const Presentation = () => {
             >
               <div className="text-justify">
                 <p>
-                  Dans une ville comme Agadir, devenue un grand pôle urbain et
-                  universitaire, recevant chaque année des centaines
-                  d’étudiantes venant des quatre coins du Royaume, notre
-                  résidence vient vous offrir une magique solution de logement
-                  tout inclus et avec cela une expérience humaine éminemment
-                  enrichissante et absolument singulière qui érige le crédo de
-                  la sécurité, la quiétude, le confort, la convivialité, et les
-                  belles valeurs du vivre ensemble et de la convivance
-                  harmonieuse et joyeuse afin de vous aider à atteindre la
-                  réussite dans chaque pas franchi durant votre parcours
-                  académique. En effet, notre résidence a été conçue en ayant
-                  anticipé tous vos besoins sans rien laisser au hasard afin de
-                  favoriser le confort, la satisfaction, l’épanouissement
-                  personnel, et la grande réussite du parcours de nos
-                  locataires.
+                  Émanation du Groupe d’entreprises Joumani, la Fondation Ain
+                  Salsabil dédie son premier campus résidentiel étudiant aux
+                  jeunes filles souhaitant vivre à Agadir,et le baptise
+                  <span className="font-bold"> Résidences Amane</span>.
                   <br />
                   <br />
-                  Nos locaux se distinguent avec brio grâce à l’espace spacieux
-                  de leurs chambres et appartements. Notre résidence s’étale sur
-                  une superficie globale de 10800 mètres carré et met à votre
-                  disposition un total de 425 chambres et 880 lits. Notre
-                  résidence propose des espaces de vie où le confort est le
-                  maître mot, un lifestyle empreint de convivialité promettant
-                  une belle expérience humaine et immersive à sa communauté
-                  féminine. Une communauté rassemblée chez nous car nous
-                  partageons un objectif commun et une motivation collective :
-                  Réussir, exceller et briller de mille feux.
+                  Cette association caritative engagée depuis des années partout
+                  au Maroc, pour des actions à caractères sociales et
+                  humanitaires, lance ce campus multi-services inclusif et
+                  fonctionnel, dans le but de contribuer à l’amélioration du
+                  standing des infrastructures estudiantines de la région, et
+                  offrir aux résidentes un cadre de vie moderne propice à leur
+                  épanouissement intellectuel social et personnel.
                 </p>
               </div>
             </motion.div>

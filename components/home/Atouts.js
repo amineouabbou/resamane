@@ -11,43 +11,39 @@ import { titesStagger } from '../../data/useVariants'
 import Popup from '../html/Popup'
 import Sectitle from '../html/Sectitle'
 import Atouitem from './Atouitem'
+import Usepopup from '../html/Usepopup'
 
 const DATA = [
   {
-    url: '/icons/proximite.svg',
-    title: 'PROXIMITÉ',
-    desc: `5 min de l’ENCG
-    <br />
-    13 min du centre ville
-    <br /> 6 min de la gare routière`,
+    id: 0,
+    body: 'Avec notre dispositif de sécurité humain et technologique actif 24/7, garantir votre sécurité est avant tout l’une de nos priorités. ',
   },
   {
-    url: '/icons/security.svg',
-    title: 'SÉCURITE',
-    desc: `Résidences sécurisées
-    <br /> 24h/24 <br /> et 7j/7`,
+    id: 1,
+    body: `Notre emplacement stratégique vous facilite l’accès aux établissements universitaires et lieux d’intérêt de la ville, avec une durée de trajet comprise entre 5 à 15min. `,
   },
   {
-    url: '/icons/comodities.svg',
-    title: 'COMMODITES',
-    desc: `Supérette, GAB, pharmacie, laboratoires d’analyses médicales,
-    centre de copie, laverie…`,
+    id: 2,
+    body: `Toute commodité nécessaire à vos besoins quotidiens est désormais accessible sur place, à quelques pas de votre logement. Nous mettons à votre disposition un parking privé, un restaurant, une mosquée, une bibliothèque, une médiathèque, une laverie, une infirmerie et bien d’autres services utiles à commander auprès de notre équipe sur place.`,
   },
   {
-    url: '/icons/happy-face.svg',
-    title: 'SÉRÉNITÉ',
-    desc: `Hébergements spacieux
-    <br /> modernes équipés connectés, et <br /> espaces communs
-    pratiques.`,
+    id: 3,
+    body: `Nos lieux de vie ont été conçus avec un esprit moderne fonctionnel favorisant le bien-être et la sérénité grâce aux espaces verts implantés avec amour dans différents coins du campus, et aux espaces de vie aménagés avec soin pour vous offrir calme et confort.`,
   },
 ]
 
-const Atouts = () => {
+const Atouts = ({ titre, listeAtoutsRep }) => {
   const atoutRef = useRef(null)
-  const [showPopup, setShowPopup] = useState(false)
+  const [popupData, setPopupData] = useState('')
 
   const handleClosePopup = () => {
-    setShowPopup(!showPopup)
+    setPopupData('')
+  }
+
+  const handlePopupClick = (id) => {
+    const found = DATA.find((item) => item.id == id)
+
+    setPopupData(found.body)
   }
 
   const { scrollYProgress } = useScroll({
@@ -72,17 +68,18 @@ const Atouts = () => {
           <Image src="/icons/shape.svg" alt="shape" width={110} height={451} />
         </div>
         <motion.div className="inner bg-[#013C50] py-[60px] md:py-[100px] xl:[clip-path:polygon(2%_0%,_100%_0%,_100%_100%,_0%_100%)]">
-          <Sectitle title="NOS ATOUTS" color="white" />
+          {titre && <Sectitle title={titre} color="white" />}
 
           <motion.div
             variants={titesStagger}
             className="blocs md:w-2/3 px-2 md:px-0 mx-auto grid grid-cols-2 gap-y-12 md:gap-x-20 md:gap-y-[80px]"
           >
-            {DATA.map((item) => (
+            {listeAtoutsRep.map((item, index) => (
               <Atouitem
-                key={item.title}
-                item={item}
-                handleClosePopup={handleClosePopup}
+                key={item.titre}
+                data={item}
+                index={index}
+                handlePopupClick={handlePopupClick}
               />
             ))}
           </motion.div>
@@ -90,7 +87,9 @@ const Atouts = () => {
       </motion.div>
 
       <AnimatePresence>
-        {showPopup && <Popup handleClosePopup={handleClosePopup} />}
+        {popupData && (
+          <Popup handleClosePopup={handleClosePopup} data={popupData} />
+        )}
       </AnimatePresence>
     </section>
   )

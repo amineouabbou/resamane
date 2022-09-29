@@ -7,7 +7,7 @@ import playIcon from '../../public/icons/play.svg'
 import { useRef, useState } from 'react'
 import YouTube from 'react-youtube'
 
-const Panoramic = () => {
+const Panoramic = ({ titre, arrierePlan }) => {
   const el = useRef()
   const { scrollYProgress } = useScroll()
   const [showVideo, setShowVideo] = useState(false)
@@ -57,14 +57,17 @@ const Panoramic = () => {
             <div className="overlay absolute  h-full w-full left-0 right-0 flex flex-col justify-end items-center z-10 bg-primary/25 bg-blend-darken">
               <div className="container mx-auto mb-[30px] md:mb-[60px]">
                 <div className="bloc text-white flex justify-between items-center">
-                  <motion.div
-                    variants={titlesAnimation}
-                    initial="initial"
-                    whileInView="animate"
-                    className="font-bold uppercase text-[25px] md:text-[55px] md:leading-[61px]"
-                  >
-                    Visite 360 <br /> de la résidence
-                  </motion.div>
+                  {titre && (
+                    <motion.div
+                      variants={titlesAnimation}
+                      initial="initial"
+                      whileInView="animate"
+                      className="font-bold uppercase text-[25px] md:text-[55px] md:leading-[61px]"
+                    >
+                      <div dangerouslySetInnerHTML={{ __html: titre }} />
+                    </motion.div>
+                  )}
+
                   <motion.div
                     onClick={handleShowVideo}
                     initial={{ scale: 0 }}
@@ -96,7 +99,14 @@ const Panoramic = () => {
           }}*/
                 className="block absolute h-full w-full origin-bottom"
               >
-                <Image alt="" src={vuePanImg} layout="fill" objectFit="cover" />
+                {arrierePlan?.sourceUrl && (
+                  <Image
+                    alt=""
+                    src={arrierePlan?.sourceUrl}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                )}
               </motion.div>
             </div>
           </>

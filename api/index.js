@@ -9,60 +9,61 @@ export const FethCmsPage = async (pageid) => {
     method: 'post',
     data: {
       query: `
-                    query pageQuery {
-                        page(id: ${pageid}, idType: DATABASE_ID) {
+      {
+        page(id: "5", idType: DATABASE_ID) {
+          title
+          AcfHome {
+            sectionsFlex {
+              __typename
+              ... on Page_Acfhome_SectionsFlex_Slideshow {
+                slides {
+                  sousTitre
+                  titre
+                  photo {
+                    id
+                    sourceUrl
+                  }
+                }
+              }
+              ... on Page_Acfhome_SectionsFlex_Presentation {
                 title
-                AcfHome {
-                sectionsFlex {
-                    __typename
-                    ... on Page_Acfhome_SectionsFlex_Slideshow {
-                    slides {
-                        titre
-                        sousTitre
-                        photo {
-                        id
-                        sourceUrl
-                        }
-                    }
-                    }
-                    ... on Page_Acfhome_SectionsFlex_Presentation {
-                    title
-                    intro: introduction
-                    contentColumns {
-                        content
-                    }
-                    }
-                    ... on Page_Acfhome_SectionsFlex_NosServices {
-                    introductionGroup {
-                        titre
-                        texte
-                    }
-                    tabs {
-                        paginationGroup {
-                        icone {
-                            sourceUrl
-                            mediaDetails{
-                            height
-                            width
-                            }
-                        }
-                        titreTab
-                        }
-                        texteGroup {
-                        photo {
-                            databaseId
-                            sourceUrl
-                        }
-                        titre
-                        texte
-                        }
-                    }
-                    }
+                intro: introduction
+                photo {
+                  mediaItemUrl
                 }
+                phrase
+              }
+              ... on Page_Acfhome_SectionsFlex_NosAtouts {
+                titre
+                listeAtoutsRep {
+                  icone {
+                    sourceUrl
+                  }
+                  titre
+                  description
                 }
+              }
+              ... on Page_Acfhome_SectionsFlex_Visite360 {
+                titre
+                fieldGroupName
+                arrierePlan {
+                  sourceUrl(size: _1536X1536)
+                }
+              }
+              
+              ... on Page_Acfhome_SectionsFlex_ContactezNous{
+                titre
+                listeContactRep{
+                  icone
+                  label
+                  valeur
+                }
+              }
             }
-                    }
-                `,
+          }
+        }
+      }
+      `,
     },
   })
 

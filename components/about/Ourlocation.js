@@ -41,13 +41,17 @@ const Ourlocation = () => {
           </motion.h2>
           <motion.div variants={fadeUp} className="md:px-[20px]">
             <p className="text-justify md:text-center">
-              Notre résidence est située sur le Boulevard 11 Janvier, près de
-              l’École Nationale d’Architecture, la Faculté des Sciences
-              Juridiques Économiques et Sociales et en face de McDonald’s Adrar.
-              Cet emplacement lui confrère de nombreux avantages, à savoir un
-              environnement estudiantin spécial, propice à la concentration sur
-              les objectifs liés à la réussite et à l’excellence, en plus d’un
-              accès pratique et rapide à la route nationale N 1.
+              Vous allez vivre dans un quartier estudiantin calme et sécurisé.
+              Et pour vos éventuels déplacements, le quartier est facilement
+              accessible à tous les lieux susceptibles de vous intéresser à
+              Agadir.
+              <br /> Notre résidence est située sur le Boulevard 11 Janvier, à
+              deux pas de l’École Nationale d’Architecture, et de la Faculté des
+              Sciences Juridiques Économiques et Sociales et en face de
+              McDonald’s Adrar.
+              <br /> Retenez également l’accès pratique et express à la route
+              nationale N 1, ainsi que votre proximité de l’aéroport et de la
+              gare routière de la ville d’Agadir.
             </p>
           </motion.div>
         </motion.div>

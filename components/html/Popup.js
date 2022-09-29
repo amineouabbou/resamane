@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { globaleasing } from '../../data/useVariants'
 
-const Popup = ({ handleClosePopup }) => {
+const Popup = ({ data, handleClosePopup }) => {
   return (
     <>
       <motion.div
@@ -25,29 +25,7 @@ const Popup = ({ handleClosePopup }) => {
         }}
         className="max-w-[95%] min-w-[95%] md:min-w-[50%] md:max-w-[50%] bg-white p-3 md:p-8 fixed left-0 right-0 top-[50%] my-auto mx-auto z-[9999]"
       >
-        <p>
-          Dans une ville comme Agadir, devenue un grand pôle urbain et
-          universitaire, recevant chaque année des centaines d’étudiantes venant
-          des quatre coins du Royaume, notre résidence vient vous offrir une
-          magique solution de logement tout inclus et avec cela une expérience
-          humaine éminemment enrichissante et absolument singulière qui érige le
-          crédo de la sécurité, la quiétude, le confort, la convivialité, et les
-          belles valeurs du vivre ensemble et de la convivance harmonieuse et
-          joyeuse afin de vous aider à atteindre la réussite dans chaque pas
-          franchi durant votre parcours académique. En effet, notre résidence a
-          été conçue en ayant anticipé tous vos besoins sans rien laisser au
-          hasard afin de favoriser le confort, la satisfaction, l’épanouissement
-          personnel, et la grande réussite du parcours de nos locataires. Nos
-          locaux se distinguent avec brio grâce à l’espace spacieux de leurs
-          chambres et appartements. Notre résidence s’étale sur une superficie
-          globale de 10800 mètres carré et met à votre disposition un total de
-          425 chambres et 880 lits. Notre résidence propose des espaces de vie
-          où le confort est le maître mot, un lifestyle empreint de convivialité
-          promettant une belle expérience humaine et immersive à sa communauté
-          féminine. Une communauté rassemblée chez nous car nous partageons un
-          objectif commun et une motivation collective : Réussir, exceller et
-          briller de mille feux.
-        </p>
+        <div dangerouslySetInnerHTML={{ __html: data }}></div>
       </motion.div>
       <motion.div
         onClick={handleClosePopup}

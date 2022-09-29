@@ -41,8 +41,37 @@ const Lima = [
   },
 ]
 
+const DATA = [
+  {
+    id: 407,
+    body: `Que vous préférez vivre seule ou en colocation, nous avons équipé nos studios de A à Z pour tous vos besoins individuels ou communs. 2 lits séparés, matelas avec oreiller, lampe à chevet, 2 bureaux à chaises, Placards ,Etagères de rangement, kitchenette équipée de lévier plaque chauffante de cuisson et petit frigo, salle de douche, toilette, une connexion internet, et des câbles d’antenne TV. Nous respectons l’inclusion des personnes en situation d’handicap. Pour vous, nous avons conçu et aménagé des studios spacieux spécialement adaptés à toutes vos nécessités. <br />
+    1 Lit 1 place, matelas avec oreiller, lampe à chevet, bureaux à chaises, placard , étagères de rangement, cuisine avec évier, plaque chauffantede cuisson, frigo, douche, toilette, , une connexion internet, et des câbles d’antenne TV.`,
+  },
+  {
+    id: 3,
+    body: `Nous respectons l’inclusion des personnes en situation d’handicap. Pour vous, nous avons conçu et aménagé des studios spacieux spécialement adaptés à toutes vos nécessités. <br /> 1 Lit 1 place, matelas avec oreiller, lampe à chevet, bureaux à chaises, placard , étagères de rangement, cuisine avec évier, plaque chauffantede cuisson, frigo, douche, toilette, , une connexion internet, et des câbles d’antenne TV.`,
+  },
+  {
+    id: 15,
+    body: `Nos appartements totalement équipés accueillent 2 à 4 personnes. Chaque appartement est composé de 2 chambres, un salon, une salle de douche et des toilettes, avec une cuisine spacieuse aménagée pour votre quotidien.<br />
+    Salon canapé, 4 lits, matelas oreillers, lampes à chevet, bureaux à chaises, placard, étagères de rangement, cuisine avec évier, plaque chauffante de cuisson, réfrigérateur, douche, toilette, une connexion internet, et des câbles d’antenne TV.`,
+  },
+]
+
 export default function Noschambres() {
-  const [showPopup, setShowPopup] = useState(false)
+  const [popupData, setPopupData] = useState('')
+
+  const handleClosePopup = () => {
+    setPopupData('')
+  }
+
+  const handlePopupClick = (id) => {
+    console.log('clicked')
+    const found = DATA.find((item) => item.id == id)
+
+    setPopupData(found.body)
+  }
+
   const chamberSlider = useRef()
   const chamberSlider2 = useRef()
   const chamberSlider3 = useRef()
@@ -54,10 +83,6 @@ export default function Noschambres() {
     slidesToShow: 1,
     autoplay: true,
     slidesToScroll: 1,
-  }
-
-  const handleClosePopup = () => {
-    setShowPopup(!showPopup)
   }
 
   return (
@@ -115,21 +140,21 @@ export default function Noschambres() {
                       <TabList>
                         <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
                           <Chambretabtitle
-                            handleClosePopup={handleClosePopup}
-                            title="Chambres<br/> de 20m²"
+                            handlePopupClick={handlePopupClick}
+                            title="Chambres<br/> de 18m²"
                             number="407"
                           />
                         </Tab>
                         <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
                           <Chambretabtitle
-                            handleClosePopup={handleClosePopup}
-                            title="Chambres<br/> de 18m²"
+                            handlePopupClick={handlePopupClick}
+                            title="Studios de <br/> 18m²"
                             number="3"
                           />
                         </Tab>
                         <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
                           <Chambretabtitle
-                            handleClosePopup={handleClosePopup}
+                            handlePopupClick={handlePopupClick}
                             title="Appartements<br /> de 50m²"
                             number="15"
                           />
@@ -145,7 +170,9 @@ export default function Noschambres() {
       </div>
 
       <AnimatePresence>
-        {showPopup && <Popup handleClosePopup={handleClosePopup} />}
+        {popupData && (
+          <Popup handleClosePopup={handleClosePopup} data={popupData} />
+        )}
       </AnimatePresence>
     </section>
   )

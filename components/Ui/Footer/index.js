@@ -23,7 +23,7 @@ const Footer = () => {
                 <li>
                   <Link href="/about">
                     <a className="text-[#023141] hover:text-lightblue">
-                      Présentation
+                      Résidences Amane
                     </a>
                   </Link>
                 </li>
@@ -52,14 +52,14 @@ const Footer = () => {
                 <li>
                   <Link href="/offre">
                     <a className="text-[#023141] hover:text-lightblue">
-                      Chambres et appartements
+                      Nos logements
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/offre">
                     <a className="text-[#023141] hover:text-lightblue">
-                      Bibliothèque
+                      Nos services
                     </a>
                   </Link>
                 </li>
@@ -67,7 +67,7 @@ const Footer = () => {
                 <li>
                   <Link href="/offre">
                     <a className="text-[#023141] hover:text-lightblue">
-                      Salle multimédia
+                      Nos commodités
                     </a>
                   </Link>
                 </li>
@@ -82,7 +82,8 @@ const Footer = () => {
                 <li>
                   <Link href="/mondossier">
                     <a className="text-[#023141] hover:text-lightblue">
-                      Pré-inscription
+                      Votre réservation <br />
+                      de logement
                     </a>
                   </Link>
                 </li>
@@ -91,14 +92,9 @@ const Footer = () => {
 
             <div className="item">
               <div className="font-semibold text-[#1D647D] md:text-[17px] leading-[20px] mb-[10px] md:mb-[20px] uppercase">
-                Ville d’Agadir
+                Nos bons plans
               </div>
               <ul className="text-[#023141] font-light leading-[#30] md:text-[16px]">
-                <li>
-                  <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Étudier à Agadir
-                  </a>
-                </li>
                 <li>
                   <a href="#" className="text-[#023141] hover:text-lightblue">
                     Vivre à Agadir
@@ -106,7 +102,12 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="#" className="text-[#023141] hover:text-lightblue">
-                    Plan de la ville
+                    Etudier à Agadir
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-[#023141] hover:text-lightblue">
+                    Découvrir Agadir
                   </a>
                 </li>
               </ul>

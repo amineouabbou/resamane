@@ -19,20 +19,21 @@ const imgSlash = {
   },
 }
 
-const Aboutsection = ({ title, contentColumns, intro }) => {
+const Aboutsection = ({ title, intro, photo, phrase }) => {
   return (
     <section className="pt-[60px] md:pt-0 intro-section">
       <div className="container mx-auto">
-        <motion.div
-          variants={fadeUpOverlayBox(1, 0)}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="text-[25px] md:text-[32px] leading-9 md:leading-[40px] uppercase font-bold mb-[20px] md:mb-[45px] origin-center"
-        >
-          VOUS L’AVEZ IMAGINÉ… <br />
-          NOUS L’AVONS CONSTRUIT.
-        </motion.div>
+        {title && (
+          <motion.div
+            variants={fadeUpOverlayBox(1, 0)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="text-[25px] md:text-[32px] leading-9 md:leading-[40px] uppercase font-bold mb-[20px] md:mb-[45px] origin-center"
+          >
+            <span dangerouslySetInnerHTML={{ __html: title }} />
+          </motion.div>
+        )}
       </div>
 
       <div className="inner relative">
@@ -45,47 +46,36 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
               viewport={{ once: true }}
               className="overlay bg-white md:w-2/5 md:absolute bottom-0 right-0 md:p-[35px]"
             >
-              <motion.div
-                variants={fadeIn(0.8, 0.4)}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-              >
-                Dans une ville comme Agadir, devenue un grand pôle urbain et
-                universitaire, recevant chaque année des centaines d’étudiantes
-                venant des quatre coins du Royaume, notre offre est une solution
-                de logement tout inclus, marquée par une expérience humaine
-                éminemment enrichissante et singulière qui érige le crédo de la
-                sécurité, la quiétude, le confort, la convivialité, et les
-                belles valeurs du vivre ensemble et de la convivance
-                harmonieuse, afin de vous aider à réussir chaque pas franchi
-                durant votre parcours académique ou professionnel.
-              </motion.div>
+              {intro && (
+                <motion.div
+                  variants={fadeIn(0.8, 0.4)}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                >
+                  {intro}
+                </motion.div>
+              )}
             </motion.div>
           </div>
         </div>
         <div className="h-[280px] md:h-[475px] relative md:w-2/3 overflow-hidden">
-          {/*<motion.div
-            variants={imgSlash}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="bg-lightblue/80 h-full absolute  z-[5] "
-          ></motion.div>* */}
-          <motion.div
-            className="h-[280px] md:h-[475px]"
-            variants={imgScaling}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <Image
-              src="/remove/intro-bg.jpg"
-              layout="fill"
-              alt=""
-              objectFit="cover"
-            />
-          </motion.div>
+          {photo?.mediaItemUrl && (
+            <motion.div
+              className="h-[280px] md:h-[475px]"
+              variants={imgScaling}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <Image
+                src={photo?.mediaItemUrl}
+                layout="fill"
+                alt=""
+                objectFit="cover"
+              />
+            </motion.div>
+          )}
         </div>
       </div>
 
@@ -104,9 +94,9 @@ const Aboutsection = ({ title, contentColumns, intro }) => {
             viewport={{ once: true }}
             className="uppercase leading-[30px] md:leading-[41px] font-medium text-center"
           >
-            <span className="text-[22px] md:text-[32px]">
-              BIENVENUE DANS VOTRE HAVRE DE PAIX ET DE SÉRÉNITÉ !
-            </span>{' '}
+            {phrase && (
+              <span className="text-[22px] md:text-[32px]">{phrase}</span>
+            )}
             <br />
             <span className="text-[31px] md:text-[41px] text-lightblue">
               RESIDENCES AMANE

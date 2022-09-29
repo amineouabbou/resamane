@@ -2,14 +2,9 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 import { useScroll, useTransform, motion, useSpring } from 'framer-motion'
 import { titlesAnimation } from '../../data/useVariants'
-import {
-  FaPhoneAlt,
-  FaWhatsapp,
-  FaRegEnvelopeOpen,
-  FaMapMarkerAlt,
-} from 'react-icons/fa'
+import { FaPhoneAlt, FaWhatsapp, FaRegEnvelopeOpen } from 'react-icons/fa'
 
-const Contact = () => {
+const Contact = ({ titre, listeContactRep }) => {
   const carouselRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
@@ -25,6 +20,25 @@ const Contact = () => {
     useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.1, 1]),
     { stiffness: 50, mass: 0.6 }
   )
+
+  const iconChooser = (exp) => {
+    switch (exp) {
+      case 'phone':
+        return <FaPhoneAlt />
+        break
+      case 'whatsapp':
+        return <FaWhatsapp />
+        break
+      case 'email':
+        return <FaRegEnvelopeOpen />
+        break
+      case 'adresse':
+        return <FaPhoneAlt />
+        break
+      default:
+        console.log("Désolé, nous n'avons plus de " + expr + '.')
+    }
+  }
 
   return (
     <section className="contact-section py-[60px] bg-[#F5FCFD] relative">
@@ -45,7 +59,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-white font-bold uppercase text-[27px] text-center mb-[40px]"
         >
-          CONTACTEZ-NOUS
+          {titre}
         </motion.h2>
         <div className="bloc text-[16px] md:text-[21px] text-white flex flex-col items-center">
           <motion.div
@@ -55,53 +69,17 @@ const Contact = () => {
             viewport={{ once: true }}
             className="md:w-2/5"
           >
-            <div className="flex mb-[15px]">
-              <span className="text-lightblue text-[26px] mr-[15px]">
-                <FaPhoneAlt />
-              </span>
-              <div className="leading-[25px]">
-                <span className="font-medium">PAR TÉLÉPHONE :</span> +212 661
-                892 951
-              </div>
-            </div>
-
-            <div className="flex mb-[15px]">
-              <span className="text-lightblue text-[28px] mr-[15px]">
-                <FaWhatsapp />
-              </span>
-              <div className="leading-[25px]">
-                <span className="font-medium">PAR WHATSAPP :</span> +212 661 892
-                951
-              </div>
-            </div>
-
-            <div className="flex mb-[15px]">
-              <span className="text-lightblue text-[26px] mr-[15px]">
-                <FaRegEnvelopeOpen />
-              </span>
-              <div className="leading-[25px]">
-                <span className="font-medium">PAR EMAIL :</span>{' '}
-                <a
-                  className="text-lightblue underline hover:text-white"
-                  href="#"
-                >
-                  INFO@RESIDENCESAMANE.MA
-                </a>
-              </div>
-            </div>
-
-            <div className="flex mb-[15px]">
-              <span className="text-lightblue text-[26px] mr-[15px]">
-                <FaMapMarkerAlt />
-              </span>
-              <div className="leading-[25px]">
-                <span className="font-medium">VISITEZ-NOUS : </span>{' '}
-                <span>
-                  Du Lundi au vendredi de 8h30 à 17h30 hors jours fériés. Au
-                  Boulevard 11 Janvier, quartier Dakhla, Bloc D1, Agadir.
+            {listeContactRep.map((item) => (
+              <div key={item.valeur} className="flex mb-[15px]">
+                <span className="text-lightblue text-[26px] mr-[15px]">
+                  {iconChooser(item.icone)}
                 </span>
+                <div className="leading-[25px]">
+                  <span className="font-medium">{item.label} :</span>
+                  {item.valeur}
+                </div>
               </div>
-            </div>
+            ))}
           </motion.div>
         </div>
       </div>
