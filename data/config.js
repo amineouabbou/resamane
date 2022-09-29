@@ -10,7 +10,7 @@ const config = {
   GRAPHQL_URL:
     process.env.NODE_ENV !== 'development'
       ? process.env.NEXT_PUBLIC_GRAPHQL_URL
-      : 'http://localhost:8888/resamane/graphql',
+      : 'https://api.residencesamane.ma/graphql',
 }
 
 export default config
