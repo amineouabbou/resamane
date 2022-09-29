@@ -49,7 +49,7 @@ const DATA = [
   },
   {
     id: 3,
-    body: `Nous respectons l’inclusion des personnes en situation d’handicap. Pour vous, nous avons conçu et aménagé des studios spacieux spécialement adaptés à toutes vos nécessités. <br /> 1 Lit 1 place, matelas avec oreiller, lampe à chevet, bureaux à chaises, placard , étagères de rangement, cuisine avec évier, plaque chauffantede cuisson, frigo, douche, toilette, , une connexion internet, et des câbles d’antenne TV.`,
+    body: `Nous respectons l’inclusion des personnes à mobilité réduite ou en situation d’handicap. Pour vous, nous avons conçu et aménagé des studios spacieux spécialement adaptés à toutes vos nécessités. <br /> 1 Lit 1 place, matelas avec oreiller, lampe à chevet, bureaux à chaises, placard , étagères de rangement, cuisine avec évier, plaque chauffantede cuisson, frigo, douche, toilette, , une connexion internet, et des câbles d’antenne TV.`,
   },
   {
     id: 15,
@@ -148,7 +148,7 @@ export default function Noschambres() {
                         <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
                           <Chambretabtitle
                             handlePopupClick={handlePopupClick}
-                            title="Studios de <br/> 18m²"
+                            title="Studios de <br/> 18m² (PMR)"
                             number="3"
                           />
                         </Tab>
