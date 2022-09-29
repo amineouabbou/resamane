@@ -53,7 +53,7 @@ const Aboutsection = ({ title, intro, photo, phrase }) => {
                   whileInView="animate"
                   viewport={{ once: true }}
                 >
-                  {intro}
+                  <span dangerouslySetInnerHTML={{ __html: intro }} />
                 </motion.div>
               )}
             </motion.div>
@@ -95,11 +95,14 @@ const Aboutsection = ({ title, intro, photo, phrase }) => {
             className="uppercase leading-[30px] md:leading-[41px] font-medium text-center"
           >
             {phrase && (
-              <span className="text-[22px] md:text-[32px]">{phrase}</span>
+              <span
+                className="text-[22px] md:text-[32px]"
+                dangerouslySetInnerHTML={{ __html: phrase }}
+              />
             )}
             <br />
             <span className="text-[31px] md:text-[41px] text-lightblue">
-              RESIDENCES AMANE
+              et nous rajoutons <br />« The place to Live ».
             </span>
           </motion.div>
         </div>
