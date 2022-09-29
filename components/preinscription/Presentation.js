@@ -36,20 +36,20 @@ const Presentation = () => {
             <ul>
               <li>
                 <a className="font-semibold underline blue-color" href="#">
-                  Règlement intérieur
+                  Règlement intérieur&nbsp;
                 </a>
                 signé et légalisé par la résidente et par le garant ou tuteur
               </li>
               <li>
                 <a className="font-semibold underline blue-color" href="#">
-                  Engagement du garant
+                  Engagement du garant&nbsp;
                 </a>
                 signé et légalisé par le garant muni d’un justificatif de
                 revenu*
               </li>
               <li>
                 <a className="font-semibold underline blue-color" href="#">
-                  Fiche médicale
+                  Fiche médicale&nbsp;
                 </a>
                 signée attestant que la résidente est exempte de toute maladie
                 contagieuse
@@ -73,9 +73,6 @@ const Presentation = () => {
                 Copie des 3 premières pages du passeport et une copie de la
                 carte de séjour valide durant la période d’hébergement pour la
                 résidente de nationalité étrangère
-              </li>
-              <li>
-                Pass vaccinal sanitaire contre la COVID-19 de la résidente
               </li>
               <li>Copie de la radio pulmonaire de la résidente</li>
               <li>Attestation de RIB de la résidente ou du garant ou tuteur</li>
@@ -142,7 +139,7 @@ const Presentation = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>2585 DH ** </td>
+                    <td>2585 DH **</td>
                     <td>1540 DH **</td>
                     <td>1540 DH **</td>
                     <td>2695 DH **</td>
@@ -157,9 +154,8 @@ const Presentation = () => {
               <br />
               Le prix du loyer est TTC, y compris TVA d’hébergement de 10%.
               <br />
-              La consommation d&apos; eau et d&apos; électricité est incluse
-              dans le loyer à hauteur de 3m³ pour l&apos; eau et 20kwh pour
-              l&apos; électricité par mois par studio.
+              La consommation d’eau et d’électricité est incluse dans le prix du
+              loyer mensuel.
               <br />
               En cas de dépassement de consommation, un supplément sera facturé
               à la résidente selon type de logement et conformément aux

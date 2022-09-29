@@ -264,7 +264,7 @@ const Contact = () => {
             </div>
 
             <div className="field mb-[25px] md:mb-[35px]">
-              <Inputlabel name="Type de chambre" />
+              <Inputlabel name="Type de logement *" />
               <select className="selectinput" {...register('chambre')}>
                 <option value=""></option>
                 <option value="Studio individuel (1 personne)">

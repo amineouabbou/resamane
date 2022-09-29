@@ -41,7 +41,6 @@ const Contact = ({ titre, listeContactRep }) => {
         return <FaMapPin />
         break
       default:
-        console.log("Désolé, nous n'avons plus de " + expr + '.')
     }
   }
 
