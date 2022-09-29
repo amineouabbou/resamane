@@ -2,7 +2,12 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 import { useScroll, useTransform, motion, useSpring } from 'framer-motion'
 import { titlesAnimation } from '../../data/useVariants'
-import { FaPhoneAlt, FaWhatsapp, FaRegEnvelopeOpen } from 'react-icons/fa'
+import {
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaRegEnvelopeOpen,
+  FaMapPin,
+} from 'react-icons/fa'
 
 const Contact = ({ titre, listeContactRep }) => {
   const carouselRef = useRef(null)
@@ -33,7 +38,7 @@ const Contact = ({ titre, listeContactRep }) => {
         return <FaRegEnvelopeOpen />
         break
       case 'adresse':
-        return <FaPhoneAlt />
+        return <FaMapPin />
         break
       default:
         console.log("Désolé, nous n'avons plus de " + expr + '.')
