@@ -52,8 +52,8 @@ let basecounter = 0
 const Bibliotheque = () => {
   return (
     <section className="facilities-sections pt-[20px] md:pt-[100px] md:pb-0">
-      <div className="container mx-auto max-w-[70%]">
-        <div className="inner grid grid-cols-2 gap-x-0 relative">
+      <div className="container mx-auto md:max-w-[70%]">
+        <div className="inner grid md:grid-cols-2 gap-x-0 relative">
           {DATA.map((item, index) => {
             basecounter = index + 1
             return (

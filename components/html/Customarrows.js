@@ -2,13 +2,13 @@ import Image from 'next/image'
 
 const Customarrows = ({ chamberSlider }) => {
   return (
-    <div className="circle-arrow w-[62px] h-[62px] bg-white rounded-full absolute top-0 bottom-0 my-auto z-10 -left-[31px] p-[3px] hover:scale-110 transition-all">
+    <div className="circle-arrow w-[62px] h-[62px] bg-white rounded-full absolute top-0 bottom-0 my-auto z-10 -left-[31px] p-[3px] hover:scale-110 transition-all hidden md:block">
       <div
         className="group flex flex-col items-center content-center h-[30px] border-b-[1px] border-b-[#1D647D]/10"
         onClick={() => chamberSlider?.current?.slickPrev()}
       >
         <div className="group-hover:scale-125 transition-all">
-          <Image src="/icons/arrow-top.svg" width="13" height="7" />
+          <Image alt="" src="/icons/arrow-top.svg" width="13" height="7" />
         </div>
       </div>
       <div
@@ -17,6 +17,7 @@ const Customarrows = ({ chamberSlider }) => {
       >
         <div className="group-hover:scale-125 transition-all">
           <Image
+            alt=""
             className="rotate-180"
             src="/icons/arrow-top.svg"
             width="13"

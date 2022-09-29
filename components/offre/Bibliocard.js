@@ -24,9 +24,9 @@ const Bibliocard = ({ item, counter }) => {
         `md:[clip-path:polygon(0_0,_100%_0%,_100%_100%,_12%_100%)]`
       } ${
         counter == 5 && ` mx-auto`
-      } box md:py-[60px] flex flex-col items-center `}
+      } box px-4 py-8 md-px-0 md:py-[60px] flex flex-col items-center `}
     >
-      <div className="inner w-[60%]">
+      <div className="inner md:w-[60%]">
         <motion.div
           variants={titesStagger(0, 0.2)}
           initial="initial"
@@ -54,7 +54,7 @@ const Bibliocard = ({ item, counter }) => {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="text-center"
+            className=" text-justify md:text-center"
           >
             <motion.p
               variants={fadeIn(0.5, 0.4)}

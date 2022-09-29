@@ -101,12 +101,12 @@ export default function Noschambres() {
   }
 
   return (
-    <section className="chambres-appart  relative hidden md:block pl-[90px]">
-      <div className="wrap pt-[90px] bg-[#013C50] xl:[clip-path:polygon(0_0,_100%_0,_100%_100%,_5%_100%)]">
-        <div className="inner relative min-h-[870px]">
-          <Tabs focusTabOnClick={false}>
-            <div className="overlay absolute h-full w-full top-0 left-0 ">
-              <div className="flex flex-col items-end h-full">
+    <section className="chambres-appart  relative md:pl-[90px]">
+      <div className="wrap md:pt-[90px] bg-[#013C50] xl:[clip-path:polygon(0_0,_100%_0,_100%_100%,_5%_100%)]">
+        <div className="inner relative min-h-[320px] md:min-h-[870px]">
+          <Tabs className="flex flex-col md:block" focusTabOnClick={false}>
+            <div className="overlay md:absolute md:h-full w-full top-0 left-0 order-2 md:order-1">
+              <div className="md:flex flex-col items-end h-full">
                 <div className="md:w-1/2 relative z-10">
                   <TabPanel>
                     <Customarrows chamberSlider={chamberSlider} />
@@ -144,14 +144,14 @@ export default function Noschambres() {
                 </div>
               </div>
             </div>
-            <div className="container mx-auto">
-              <div className="flex flex-row">
+            <div className="container mx-auto order-1 md:order-2">
+              <div className="md:flex flex-row">
                 <div className="column md:w-1/2 relative">
-                  <h2 className="text-[32px] font-bold uppercase text-white leading-[40px] mb-[90px] mt-[45px]">
+                  <h2 className=" text-[27px] md:text-[32px] font-bold uppercase text-white leading-[40px] mb-[70px] md:mb-[90px] mt-[45px]">
                     Chambres <br /> et appartements
                   </h2>
-                  <div className="flex flex-col items-end">
-                    <div className="bloc mb-[120px] vertical-tabs">
+                  <div className="md:flex flex-col items-end">
+                    <div className="bloc mb-[20px] md:mb-[120px] vertical-tabs">
                       <TabList>
                         <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
                           <Chambretabtitle

@@ -1,7 +1,7 @@
 const Chambretabtitle = ({ title, number, handlePopupClick }) => {
   return (
     <>
-      <span className="block py-[40px] px-[65px] cursor-pointer text-[35px] leading-[40px] ">
+      <span className="block py-[20px] px-[20px] md:py-[40px] md:px-[65px] cursor-pointer text-[25px] leading-[30px] md:text-[35px] md:leading-[40px] ">
         <span className="font-bold">{number} </span>
         <span dangerouslySetInnerHTML={{ __html: title }}></span>
         <div

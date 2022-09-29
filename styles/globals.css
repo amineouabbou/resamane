@@ -60,7 +60,7 @@
   }
 
   .chambres-appart .inner::after {
-    @apply content-[''] h-[35px] bg-[#fff] absolute bottom-0 -left-1 w-full block;
+    @apply content-[''] h-[35px] bg-[#fff] absolute bottom-0 -left-1 w-full hidden md:block;
   }
 
   .slide-pagination .item {
