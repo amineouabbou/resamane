@@ -37,7 +37,7 @@ const Presentation = () => {
               <li>
                 <a
                   className="font-semibold underline blue-color"
-                  href="https://residencesamane.ma/wp-content/uploads/2022/08/Reglement-Interieur-2022-2023_Residences-Amane-1.pdf"
+                  href="https://api.residencesamane.ma/wp-content/uploads/2022/08/Reglement-Interieur-2022-2023_Residences-Amane-1.pdf"
                 >
                   Règlement intérieur&nbsp;
                 </a>
@@ -46,7 +46,7 @@ const Presentation = () => {
               <li>
                 <a
                   className="font-semibold underline blue-color"
-                  href="https://residencesamane.ma/wp-content/uploads/2022/08/Engagement-du-garant_Residences-Amane.pdf"
+                  href="https://api.residencesamane.ma/wp-content/uploads/2022/08/Engagement-du-garant_Residences-Amane.pdf"
                 >
                   Engagement du garant&nbsp;
                 </a>
@@ -56,7 +56,7 @@ const Presentation = () => {
               <li>
                 <a
                   className="font-semibold underline blue-color"
-                  href="https://residencesamane.ma/wp-content/uploads/2022/08/Fiche-medicale_Residences-Amane.pdf"
+                  href="https://api.residencesamane.ma/wp-content/uploads/2022/08/Fiche-medicale_Residences-Amane.pdf"
                 >
                   Fiche médicale&nbsp;
                 </a>
