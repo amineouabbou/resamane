@@ -81,7 +81,6 @@ export default function Noschambres() {
   }
 
   const handlePopupClick = (id) => {
-    console.log('clicked')
     const found = DATA.find((item) => item.id == id)
 
     setPopupData(found.body)

@@ -35,20 +35,29 @@ const Presentation = () => {
             </p>
             <ul>
               <li>
-                <a className="font-semibold underline blue-color" href="#">
+                <a
+                  className="font-semibold underline blue-color"
+                  href="https://residencesamane.ma/wp-content/uploads/2022/08/Reglement-Interieur-2022-2023_Residences-Amane-1.pdf"
+                >
                   Règlement intérieur&nbsp;
                 </a>
                 signé et légalisé par la résidente et par le garant ou tuteur
               </li>
               <li>
-                <a className="font-semibold underline blue-color" href="#">
+                <a
+                  className="font-semibold underline blue-color"
+                  href="https://residencesamane.ma/wp-content/uploads/2022/08/Engagement-du-garant_Residences-Amane.pdf"
+                >
                   Engagement du garant&nbsp;
                 </a>
                 signé et légalisé par le garant muni d’un justificatif de
                 revenu*
               </li>
               <li>
-                <a className="font-semibold underline blue-color" href="#">
+                <a
+                  className="font-semibold underline blue-color"
+                  href="https://residencesamane.ma/wp-content/uploads/2022/08/Fiche-medicale_Residences-Amane.pdf"
+                >
                   Fiche médicale&nbsp;
                 </a>
                 signée attestant que la résidente est exempte de toute maladie
@@ -93,8 +102,9 @@ const Presentation = () => {
             <p>
               Après étude de votre dossier, nous vous répondrons par e-mail pour
               vous inviter à finaliser la démarche de réservation dans nos
-              locaux. N&apos; oubliez pas de vous munir des originaux de tous
-              les documents et pièces fournis par E-mail.
+              locaux.
+              <br /> N&apos; oubliez pas de vous munir des originaux de tous les
+              documents et pièces fournis par E-mail.
             </p>
             <p>
               Le règlement des frais d’inscription et d’hébergement se fera sur

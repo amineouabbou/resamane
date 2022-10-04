@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from './config'
 
-const { url } = config
+const { apiUrl } = config
 
 export const DATA_PAGINATION = [
   {
@@ -357,7 +357,7 @@ export const sendMessage = async (idform, data) => {
   const formData = generateFormData(data)
 
   const response = await axios.post(
-    `${url}/wp-json/contact-form-7/v1/contact-forms/${idform}/feedback/`,
+    `${apiUrl}/wp-json/contact-form-7/v1/contact-forms/${idform}/feedback/`,
     formData
   )
 
