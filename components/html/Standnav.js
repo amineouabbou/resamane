@@ -47,7 +47,7 @@ const Standnav = () => {
           <a>Mon dossier</a>
         </Link>
       </motion.li>
-      <motion.li variants={shortFadeUp()}>
+      <motion.li className="hidden" variants={shortFadeUp()}>
         <a>{`Ville d'agadir`}</a>
       </motion.li>
       <motion.li variants={shortFadeUp()}>
