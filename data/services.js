@@ -343,8 +343,11 @@ export const generateFormData = (data) => {
   const formData = new FormData()
 
   for (const key in data) {
-    if (key === 'field') {
-      formData.append(key, data[key][1])
+    if (key === 'services') {
+      formData.append(
+        key,
+        data[key].map((item) => item.value)
+      )
     } else {
       formData.append(key, data[key])
     }
