@@ -21,7 +21,7 @@ export const FethCmsPage = async (pageid) => {
                   titre
                   photo {
                     id
-                    sourceUrl
+                    sourceUrl(size:_1536X1536)
                   }
                 }
               }
