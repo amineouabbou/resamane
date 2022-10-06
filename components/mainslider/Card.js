@@ -8,10 +8,10 @@ const Card = ({ data }) => {
       <Cmsoverlay title={data?.titre} subtitle={data?.sousTitre} />
 
       <motion.div
-        initial={{ scale: 1.1 }}
+        initial={{ scale: 1.03 }}
         animate={{
           scale: 1,
-          transition: { duration: 12, ease: [0, 0, 0, 0] },
+          transition: { duration: 2, ease: [0, 0, 0, 0] },
         }}
         className="relative hidden md:block h-[350px] md:h-[750px] bg-no-repeat origin-center bg-cover"
       >

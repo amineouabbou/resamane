@@ -43,6 +43,22 @@
     letter-spacing: 0.55px;
   }
 
+  .main-slideshow .slick-arrow {
+    @apply bg-[url('/icons/arrow-b-r.svg')] bg-[length:41px_82px] h-[82px] w-[41px] absolute top-0 bottom-0 my-auto z-10 opacity-50 hover:opacity-100 transition-all;
+  }
+
+  .main-slideshow .slick-arrow::before {
+    @apply hidden;
+  }
+
+  .main-slideshow .slick-arrow.slick-next {
+    @apply right-[7%] -scale-x-100;
+  }
+
+  .main-slideshow .slick-arrow.slick-prev {
+    @apply left-[8%] scale-x-100;
+  }
+
   .main-nav li {
     @apply mx-[26px];
   }

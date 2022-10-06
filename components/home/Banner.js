@@ -7,9 +7,11 @@ import Slider from 'react-slick'
 
 const Banner = ({ slides }) => {
   const settings = {
-    dots: true,
+    arrows: true,
+    dots: false,
     infinite: true,
-    speed: 500,
+    autoplay: true,
+    speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
   }
