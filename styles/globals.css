@@ -183,6 +183,6 @@
 
   .table th,
   .table td {
-    @apply border-b-[1px] border-[#ccc] p-2;
+    @apply border-b-[1px] border-[#ccc] p-2 text-center;
   }
 }

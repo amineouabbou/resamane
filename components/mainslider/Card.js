@@ -13,7 +13,7 @@ const Card = ({ data }) => {
           scale: 1,
           transition: { duration: 2, ease: [0, 0, 0, 0] },
         }}
-        className="relative hidden md:block h-[350px] md:h-[750px] bg-no-repeat origin-center bg-cover"
+        className="relative bg-red-500 h-[250px] md:h-[750px] bg-no-repeat origin-center bg-cover"
       >
         <Image
           alt=""

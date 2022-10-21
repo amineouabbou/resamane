@@ -65,7 +65,7 @@ const Contact = ({ titre, listeContactRep }) => {
         >
           {titre}
         </motion.h2>
-        <div className="bloc text-[16px] md:text-[21px] text-white flex flex-col items-center">
+        <div className="bloc text-[15px] md:text-[21px] text-white flex flex-col items-center">
           <motion.div
             variants={titlesAnimation}
             initial="initial"
@@ -75,7 +75,7 @@ const Contact = ({ titre, listeContactRep }) => {
           >
             {listeContactRep.map((item) => (
               <div key={item.valeur} className="flex mb-[15px]">
-                <span className="text-lightblue text-[26px] mr-[15px]">
+                <span className="text-lightblue text-[20px] md:text-[26px] mr-[15px]">
                   {iconChooser(item.icone)}
                 </span>
                 <div className="leading-[25px]">

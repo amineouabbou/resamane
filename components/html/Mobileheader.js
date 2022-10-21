@@ -26,7 +26,7 @@ const Mobileheader = () => {
         <div className="logo">
           <Link href="/">
             <a>
-              <Image alt="" src="/logo.svg" width={51} height={72} />
+              <Image alt="" src="/logo-big.svg" width={51} height={72} />
             </a>
           </Link>
         </div>

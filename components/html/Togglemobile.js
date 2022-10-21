@@ -24,7 +24,7 @@ const Togglemobile = () => {
       variants={titesStagger(2, 0.2)}
       initial="initial"
       animate="animate"
-      className="toggle-menu h-[15px] mx-auto flex-col justify-between cursor-pointer hidden"
+      className="toggle-menu h-[15px] mx-auto flex-col justify-between cursor-pointer flex"
     >
       <motion.div
         variants={toggleItem}
