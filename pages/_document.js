@@ -8,10 +8,19 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        {/*<Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"
-          strategy="beforeInteractive"
-        ></Script>* */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-SXPE494SYZ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-SXPE494SYZ');
+        `}
+        </Script>
       </body>
     </Html>
   )
