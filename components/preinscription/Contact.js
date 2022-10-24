@@ -24,6 +24,7 @@ const schema = yup.object().shape({
   dateau: yup.string().required(requiredMessage),
   nom: yup.string().required(requiredMessage),
   prenom: yup.string().required(requiredMessage),
+  cin: yup.string().required(requiredMessage),
   phone: yup
     .string()
     .required(requiredMessage)

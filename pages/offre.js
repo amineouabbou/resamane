@@ -18,6 +18,16 @@ const Offre = ({ slug }) => {
           qui vous offrent un confort absolu dans un logement pratique et fonctionnel.
           Notre offre de logement vous donne accès à des services et commodités gratuits ou payants utiles pour vos besoins quotidiens. "
         />
+        <div className="flex justify-center">
+          <a
+            href="https://api.residencesamane.ma/wp-content/uploads/2022/10/depliant-VF.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="btn lightblue mb-[40px] md:mb-[85px]"
+          >
+            Téléchargez notre plaquette
+          </a>
+        </div>
 
         <Noschambres />
 

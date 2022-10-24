@@ -24,7 +24,7 @@ const Subheader = ({ title, subtitle, description, type }) => {
     )
   }
   return (
-    <div className="page-sub-pres md:px-[30px] relative py-[30px] md:py-[85px]">
+    <div className="page-sub-pres md:px-[30px] relative py-[30px] md:py-[55px]">
       <div className="container mx-auto flex flex-col items-center">
         <motion.div
           variants={titesStagger(0, 0.3)}
