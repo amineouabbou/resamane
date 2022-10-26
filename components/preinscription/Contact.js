@@ -74,6 +74,7 @@ const Contact = () => {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -82,6 +83,21 @@ const Contact = () => {
     const {
       data: { status, message },
     } = await sendMessage('10', data)
+
+    if (status === 'mail_sent')
+      reset({
+        datedu: '',
+        dateau: '',
+        nom: '',
+        prenom: '',
+        cin: '',
+        phone: '',
+        email: '',
+        ville: '',
+        etablissement: '',
+        cycle: '',
+        chambre: '',
+      })
 
     toast.info(message, {
       position: toast.POSITION.BOTTOM_RIGHT,
