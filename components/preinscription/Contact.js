@@ -4,6 +4,9 @@ import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import Image from 'next/image'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 import { motion } from 'framer-motion'
 import { fadeUp } from '../../data/useVariants'
 
@@ -65,7 +68,6 @@ const options = [
 ]
 
 const Contact = () => {
-  const [mailMessage, setmailMessage] = useState('')
   const imageName = useRef()
   const inputTag = useRef()
   const {
@@ -81,7 +83,9 @@ const Contact = () => {
       data: { status, message },
     } = await sendMessage('10', data)
 
-    setmailMessage(message)
+    toast.info(message, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    })
   }
 
   const handleAttachementChange = (e) => {
@@ -155,7 +159,7 @@ const Contact = () => {
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="CIN, Carte de séjour ou Passeport" />
+                <Inputlabel name="CIN, Carte de séjour ou Passeport *" />
                 <input className="input" type="text" {...register('cin')} />
                 {errors.cin ? <Inputerror message={errors.cin?.message} /> : ''}
               </div>
@@ -367,15 +371,10 @@ const Contact = () => {
                 Soumettre
               </button>
             </motion.div>
-
-            {mailMessage && (
-              <div className="font-bold text-center mt-[50px]">
-                {mailMessage}
-              </div>
-            )}
           </form>
         </div>
       </div>
+      <ToastContainer />
     </section>
   )
 }

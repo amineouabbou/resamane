@@ -125,7 +125,7 @@ const Presentation = () => {
                   <tr>
                     <td>500 DH</td>
                     <td>1 mois de loyer</td>
-                    <td>190 DH</td>
+                    <td>196dhs</td>
                   </tr>
                 </tbody>
               </table>
