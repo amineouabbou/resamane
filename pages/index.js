@@ -48,7 +48,7 @@ export default function Home({ data }) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const data = await FethCmsPage('5')
 
   return {
