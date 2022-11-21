@@ -178,6 +178,7 @@ const Footer = () => {
                     <li className="mr-[20px] md:mr-[40px]">
                       <a
                         rel="noreferrer"
+                        target="_blank"
                         href="https://www.linkedin.com/company/86589782/"
                         className="hover:text-[#09556F]"
                       >
