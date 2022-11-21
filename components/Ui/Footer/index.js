@@ -1,7 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+} from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -150,17 +156,41 @@ const Footer = () => {
                   </div>
                   <ul className="flex items-center text-white">
                     <li className="mr-[20px] md:mr-[40px]">
-                      <a href="#" className="hover:text-[#09556F]">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://www.facebook.com/profile.php?id=100082696087998&sk=about"
+                        className="hover:text-[#09556F]"
+                      >
                         <FaFacebookF className="text-[24px] md:text-[30px]" />
                       </a>
                     </li>
                     <li className="mr-[20px] md:mr-[40px]">
-                      <a href="#" className="hover:text-[#09556F]">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href=" https://www.instagram.com/residencesamane/"
+                        className="hover:text-[#09556F]"
+                      >
                         <FaInstagram className="text-[24px] md:text-[30px]" />
                       </a>
                     </li>
+                    <li className="mr-[20px] md:mr-[40px]">
+                      <a
+                        rel="noreferrer"
+                        href="https://www.linkedin.com/company/86589782/"
+                        className="hover:text-[#09556F]"
+                      >
+                        <FaLinkedin className="text-[24px] md:text-[30px]" />
+                      </a>
+                    </li>
                     <li>
-                      <a href="#" className="hover:text-[#09556F]">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://www.youtube.com/channel/UCFqC-3lkLukwbTjmGcsHJLg"
+                        className="hover:text-[#09556F]"
+                      >
                         <FaYoutube className="text-[24px] md:text-[30px]" />
                       </a>
                     </li>
