@@ -10,7 +10,10 @@ const Offre = ({ slug }) => {
   return (
     <>
       <Layout>
-        <SEO />
+        <SEO
+          title="Résidences étudiantes à agadir"
+          description="Résidences universitaires Amane est une résidences pour étudiantes, situées à agadir, avec une capacité de 880 lits, appartements et chambres"
+        />
         <Header />
         <Subheader
           title="NOTRE OFFRE"

@@ -13,7 +13,10 @@ const About = () => {
   return (
     <>
       <Layout>
-        <SEO />
+        <SEO
+          title="Résidence et logement universitaire a agadir"
+          description="Résidences universitaires Amane est une résidence et un campus multi-services inclusif et fonctionnel, pour étudiantes située à agadir "
+        />
         <Header />
         <Subheader title="QUI SOMMES-NOUS ?" />
         <Presentation />

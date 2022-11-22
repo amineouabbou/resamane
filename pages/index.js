@@ -18,7 +18,10 @@ export default function Home({ data }) {
   console.log('Data ------: ', data)
   return (
     <Layout>
-      <SEO />
+      <SEO
+        title="Résidences universitaires Amane"
+        description="Résidences universitaires Amane pour étudiantes, situées à agadir, offrant un cadre de vie sociale moderne, un standing unique."
+      />
       <Mobileheader />
       {data.Page_Acfhome_SectionsFlex_Slideshow && (
         <Banner {...data.Page_Acfhome_SectionsFlex_Slideshow} />

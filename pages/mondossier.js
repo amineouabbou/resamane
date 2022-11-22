@@ -10,7 +10,10 @@ const Mondossier = () => {
   return (
     <>
       <Layout>
-        <SEO />
+        <SEO
+          title="Location logement agadir"
+          description="Dossier de réservation de logement aux résidences universitaires Amane de Agadir"
+        />
         <Header />
         <Subheader title="" subtitle="" type="full" />
 

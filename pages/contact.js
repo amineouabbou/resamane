@@ -10,7 +10,10 @@ const Preinscription = () => {
   return (
     <>
       <Layout>
-        <SEO />
+        <SEO
+          title="Informations des residences universtaires amane de Agadir"
+          description="toutes les coordonnées des résidences univeristaires amane, résidences pour etudiantes à agadir"
+        />
         <Header />
         <Subheader title="" subtitle="" type="full" />
 
