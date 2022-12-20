@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 const Usepopup = () => {
-  console.log('called')
   const [data, setData] = useState()
   const [open, setOpen] = useState(false)
 

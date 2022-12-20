@@ -59,17 +59,15 @@ const PMR = [
 const DATA = [
   {
     id: 407,
-    body: `Que vous préférez vivre seule ou en colocation, nous avons équipé nos studios de A à Z pour tous vos besoins individuels ou communs. 2 lits séparés, matelas avec oreiller, lampe à chevet, 2 bureaux à chaises, Placards ,Etagères de rangement, kitchenette équipée de lévier plaque chauffante de cuisson et petit frigo, salle de douche, toilette, une connexion internet, et des câbles d’antenne TV. Nous respectons l’inclusion des personnes en situation d’handicap. Pour vous, nous avons conçu et aménagé des studios spacieux spécialement adaptés à toutes vos nécessités. <br />
-    1 Lit 1 place, matelas avec oreiller, lampe à chevet, bureaux à chaises, placard , étagères de rangement, cuisine avec évier, plaque chauffantede cuisson, frigo, douche, toilette, , une connexion internet, et des câbles d’antenne TV.`,
+    imageURL: '/remove/pops/chambres.svg',
   },
   {
     id: 3,
-    body: `Nous respectons l’inclusion des personnes à mobilité réduite ou en situation d’handicap. Pour vous, nous avons conçu et aménagé des studios spacieux spécialement adaptés à toutes vos nécessités. <br /> 1 Lit 1 place, matelas avec oreiller, lampe à chevet, bureaux à chaises, placard , étagères de rangement, cuisine avec évier, plaque chauffantede cuisson, frigo, douche, toilette, , une connexion internet, et des câbles d’antenne TV.`,
+    imageURL: '/remove/pops/studios.svg',
   },
   {
     id: 15,
-    body: `Nos appartements totalement équipés accueillent 2 à 4 personnes. Chaque appartement est composé de 2 chambres, un salon, une salle de douche et des toilettes, avec une cuisine spacieuse aménagée pour votre quotidien.<br />
-    Salon canapé, 4 lits, matelas oreillers, lampes à chevet, bureaux à chaises, placard, étagères de rangement, cuisine avec évier, plaque chauffante de cuisson, réfrigérateur, douche, toilette, une connexion internet, et des câbles d’antenne TV.`,
+    imageURL: '/remove/pops/Appart.svg',
   },
 ]
 
@@ -82,8 +80,7 @@ export default function Noschambres() {
 
   const handlePopupClick = (id) => {
     const found = DATA.find((item) => item.id == id)
-
-    setPopupData(found.body)
+    setPopupData(found)
   }
 
   const chamberSlider = useRef()

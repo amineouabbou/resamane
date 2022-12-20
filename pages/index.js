@@ -15,7 +15,6 @@ import CtaInscription from '../components/home/CtaInscription'
 import Mobileheader from '../components/html/Mobileheader'
 
 export default function Home({ data }) {
-  console.log('Data ------: ', data)
   return (
     <Layout>
       <SEO

@@ -155,8 +155,6 @@ const Page = ({ slug }) => {
 export default Page
 
 export const getServerSideProps = async ({ params }) => {
-  console.log(params)
-
   return {
     props: {
       slug: params.slug,
