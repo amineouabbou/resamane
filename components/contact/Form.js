@@ -52,12 +52,9 @@ const Contact = () => {
     resolver: yupResolver(schema),
   })
   const onSubmit = async (formData) => {
-    console.log(formData)
     const {
       data: { status, message },
     } = await sendMessage('205', formData)
-
-    console.log(status)
 
     if (status === 'mail_sent')
       reset({

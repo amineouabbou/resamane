@@ -59,15 +59,15 @@ const PMR = [
 const DATA = [
   {
     id: 407,
-    imageURL: '/remove/pops/chambres.svg',
+    imageURL: '/remove/pops/double.png',
   },
   {
     id: 3,
-    imageURL: '/remove/pops/studios.svg',
+    imageURL: '/remove/pops/pmr.png',
   },
   {
     id: 15,
-    imageURL: '/remove/pops/Appart.svg',
+    imageURL: '/remove/pops/appart.png',
   },
 ]
 
