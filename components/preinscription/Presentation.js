@@ -150,10 +150,10 @@ const Presentation = () => {
                 <tbody>
                   <tr>
                     <td>2585 DH **</td>
-                    <td>1540 DH **</td>
-                    <td>1540 DH **</td>
-                    <td>2695 DH **</td>
-                    <td>1595 DH **</td>
+                    <td>1300 DH **</td>
+                    <td>1300 DH **</td>
+                    <td>2290 DH **</td>
+                    <td>1355 DH **</td>
                   </tr>
                 </tbody>
               </table>
