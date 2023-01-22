@@ -1,45 +1,64 @@
 import Subheader from '../components/html/Subheader'
 import SEO from '../components/SEO'
-import Header from '../components/Ui/Header'
-import Layout from '../components/Ui/Layout'
 import Noschambres from '../components/home/Noschambres'
-import Footer from '../components/Ui/Footer'
 import Bibliotheque from '../components/offre/Bibliotheque'
+import Layout from '../components/Ui/Layout'
+import { GET_ABOUT_PAGE, GET_OFFER_PAGE } from '../api/Queries'
+import { getCmsData } from '../api'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const Offre = ({ slug }) => {
+const Offre = ({ data }) => {
+  const { title, metaDesc } = data.page.translation.seo
+
+  const sections = data.page.translation.AcfHome.sectionsFlex
+
   return (
     <>
-      <Layout>
-        <SEO
-          title="Résidences étudiantes à agadir"
-          description="Résidences universitaires Amane est une résidences pour étudiantes, situées à agadir, avec une capacité de 880 lits, appartements et chambres"
-        />
-        <Header />
-        <Subheader
-          title="NOTRE OFFRE"
-          description="Résidences Amane est un campus résidentiel multi-services de plus de 18 000 m² doté de différents espaces d’études, de loisirs et de bien-être, et avec une capacité de 880 lits répartis dans deux pavillons d’hébergement, composés de studios et appartements éclairés, équipés, et connectés 
-          qui vous offrent un confort absolu dans un logement pratique et fonctionnel.
-          Notre offre de logement vous donne accès à des services et commodités gratuits ou payants utiles pour vos besoins quotidiens. "
-        />
-        <div className="flex justify-center">
-          <a
-            href="https://api.residencesamane.ma/wp-content/uploads/2022/10/depliant-VF.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="btn lightblue mb-[40px] md:mb-[85px]"
-          >
-            Téléchargez notre plaquette
-          </a>
-        </div>
+      <SEO title={title} description={metaDesc} />
 
-        <Noschambres />
+      {sections.map((item, index) => {
+        if (
+          item.__typename === 'Page_Acfhome_SectionsFlex_OurOfferPresentation'
+        ) {
+          return (
+            <div key={index}>
+              <Subheader title={item?.title} description={item?.presentation} />
+              <div className="flex justify-center">
+                <a
+                  href={item.button.file.mediaItemUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn lightblue mb-[40px] md:mb-[85px]"
+                >
+                  {item.button.label}
+                </a>
+              </div>
+            </div>
+          )
+        }
+        if (
+          item.__typename === 'Page_Acfhome_SectionsFlex_ChambresEtAppartements'
+        ) {
+          return <Noschambres key={index} {...item} />
+        }
 
-        <Bibliotheque />
-
-        <Footer />
-      </Layout>
+        if (item.__typename === 'Page_Acfhome_SectionsFlex_OffreAdvantages') {
+          return <Bibliotheque key={index} {...item} />
+        }
+      })}
     </>
   )
 }
 
 export default Offre
+
+export const getServerSideProps = async ({ locale }) => {
+  const data = await getCmsData(GET_OFFER_PAGE, 'notre-offre', locale)
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      data,
+    },
+  }
+}

@@ -5,6 +5,7 @@ import Standnav from '../../html/Standnav'
 import { motion } from 'framer-motion'
 import { globaleasing } from '../../../data/useVariants'
 import Mobileheader from '../../html/Mobileheader'
+import Languages from '../../html/Languages'
 
 const Header = () => {
   const [sticky, setSticky] = useState(false)
@@ -66,6 +67,7 @@ const Header = () => {
           <nav className="main-nav">
             <Standnav />
           </nav>
+          <Languages />
         </motion.div>
       ) : null}
 
@@ -99,6 +101,8 @@ const Header = () => {
         <nav className="main-nav">
           <Standnav />
         </nav>
+
+        <Languages />
       </div>
     </>
   )

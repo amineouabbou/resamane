@@ -1,15 +1,24 @@
 import Image from 'next/image'
 import React, { useRef } from 'react'
 import Imgwrap from '../html/Imgwrap'
-import Reserverbtn from './Reserverbtn'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { fadeUp } from '../../data/useVariants'
 
-const Presentation = () => {
+import dynamic from 'next/dynamic'
+
+// Client Components:
+const Reserverbtn = dynamic(() => import('./Reserverbtn'), { ssr: false })
+
+const Presentation = (props) => {
   const aboutref = useRef()
   const { scrollYProgress } = useScroll({
     target: aboutref,
   })
+
+  const {
+    presentationTexte,
+    backgroundImage: { mediaItemUrl },
+  } = props
 
   const x = useTransform(scrollYProgress, [0, 1], [0, -120])
 
@@ -28,7 +37,7 @@ const Presentation = () => {
         <div className="img h-[340px] md:h-[640px] [clip-path:polygon(3%_0,_100%_0,_100%_100%,_0_100%)] overflow-hidden relative">
           <Imgwrap duration="1">
             <Image
-              src="/remove/slide-1-old.png"
+              src={mediaItemUrl}
               layout="fill"
               alt="slider"
               objectFit="cover"
@@ -59,22 +68,8 @@ const Presentation = () => {
               viewport={{ once: true }}
               className="text-white"
             >
-              <div className="text-justify">
-                <p>
-                  Émanation du Groupe d’entreprises Joumani, la Fondation Ain
-                  Salsabil dédie son premier campus résidentiel étudiant aux
-                  jeunes filles souhaitant vivre à Agadir,et le baptise
-                  <span className="font-bold"> Résidences Amane</span>.
-                  <br />
-                  <br />
-                  Cette association caritative engagée depuis des années partout
-                  au Maroc, pour des actions à caractères sociales et
-                  humanitaires, lance ce campus multi-services inclusif et
-                  fonctionnel, dans le but de contribuer à l’amélioration du
-                  standing des infrastructures estudiantines de la région, et
-                  offrir aux résidentes un cadre de vie moderne propice à leur
-                  épanouissement intellectuel social et personnel.
-                </p>
+              <div className="text-justify about-intro">
+                <div dangerouslySetInnerHTML={{ __html: presentationTexte }} />
               </div>
             </motion.div>
           </div>

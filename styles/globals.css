@@ -185,4 +185,12 @@
   .table td {
     @apply border-b-[1px] border-[#ccc] p-2 text-center;
   }
+
+  .about-intro p {
+    @apply mb-5;
+  }
+
+  .about-intro p strong {
+    @apply font-bold;
+  }
 }

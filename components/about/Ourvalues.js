@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { fadeUp, titesStagger, globaleasing } from '../../data/useVariants'
 import Popup from '../html/Popup'
+import PopupText from '../html/PopupText'
 
 const blocHover = {
   initial: {
@@ -71,17 +72,19 @@ const DATA = [
   },
 ]
 
-const Ourvalues = () => {
+const Ourvalues = (props) => {
   const [popupData, setPopupData] = useState('')
+
+  console.log('props values', props)
+
+  const { sectionTitle, listeValeurs } = props
 
   const handleClosePopup = () => {
     setPopupData('')
   }
 
-  const handlePopupClick = (id) => {
-    const found = DATA.find((item) => item.id == id)
-
-    setPopupData(found.body)
+  const handlePopupClick = (data) => {
+    setPopupData(data)
   }
 
   return (
@@ -95,122 +98,32 @@ const Ourvalues = () => {
             viewport={{ once: true }}
             className="font-bold uppercase  text-[27px] md:text-[37px] text-center mb-[85px]"
           >
-            NOS VALEURS
+            {sectionTitle}
           </motion.h2>
 
           <div className="md:w-[75%]	mx-auto">
-            <motion.div
-              variants={titesStagger(0, 0.4)}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-[60px]"
-            >
-              <motion.div
-                variants={fadeUp}
-                className="cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group"
-                onClick={() => handlePopupClick(0)}
-              >
-                <div className="md:mt-[80px] bloc flex flex-col justify-center items-center md:py-[50px]">
-                  <div className="w-[51px] h-[83px] md:w-[91px] md:h-[123px] icone mb-5 md:mb-[35px] transition-all duration-300 group-hover:-translate-y-5 relative">
-                    <Image
-                      src="/icons/vitalite.svg"
-                      alt="Securité"
-                      layout="fill"
-                    />
+            <motion.div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-[60px]">
+              {listeValeurs.map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeUp}
+                  className="cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group"
+                  onClick={() => handlePopupClick(item.popupContenu)}
+                >
+                  <div className="bloc flex flex-col justify-center items-center md:py-[50px]">
+                    <div className="w-[51px] h-[83px] md:w-[91px] md:h-[123px] icone mb-5 md:mb-[35px] transition-all duration-300 group-hover:-translate-y-5 relative">
+                      <Image
+                        src={item?.icone?.mediaItemUrl}
+                        alt="Securité"
+                        layout="fill"
+                      />
+                    </div>
+                    <div className="font-semibold uppercase text-[20px] md:text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
+                      {item.titre}
+                    </div>
                   </div>
-                  <div className="font-semibold uppercase text-[20px] md:text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
-                    VITALITÉ
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div onClick={() => handlePopupClick(1)} variants={fadeUp}>
-                <div className="bloc flex flex-col justify-center items-center md:py-[50px] active cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
-                  <div className="w-[51px] h-[83px] md:w-[91px] md:h-[123px] icone mb-5 md:mb-[35px] transition-all duration-300 group-hover:-translate-y-5 relative">
-                    <Image
-                      src="/icons/security.svg"
-                      alt="Securité"
-                      layout="fill"
-                    />
-                  </div>
-                  <div className="font-semibold uppercase text-[20px] md:text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
-                    SÉCURITÉ
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                onClick={() => handlePopupClick(2)}
-                variants={fadeUp}
-                className="md:mt-[80px]"
-              >
-                <div className="bloc flex flex-col justify-center items-center md:py-[50px] cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
-                  <div className="w-[71px] h-[83px] md:w-[91px] md:h-[123px] icone mb-5 md:mb-[35px] transition-all duration-300 group-hover:-translate-y-5 relative">
-                    <Image
-                      src="/icons/hand-shake.svg"
-                      alt="Securité"
-                      layout="fill"
-                    />
-                  </div>
-                  <div className="font-semibold uppercase text-[20px] md:text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
-                    INTÉGRITÉ
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                onClick={() => handlePopupClick(3)}
-                variants={fadeUp}
-                className="md:mt-[40px]"
-              >
-                <div className="bloc flex flex-col justify-center items-center md:py-[50px] active cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
-                  <div className="w-[51px] h-[83px] md:w-[91px] md:h-[123px] icone mb-5 md:mb-[35px] transition-all duration-300 group-hover:-translate-y-5 relative">
-                    <Image
-                      src="/icons/quality.svg"
-                      alt="Securité"
-                      layout="fill"
-                    />
-                  </div>
-                  <div className="font-semibold uppercase text-[20px] md:text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
-                    QUALITÉ
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div onClick={() => handlePopupClick(4)} variants={fadeUp}>
-                <div className="bloc flex flex-col justify-center items-center md:py-[50px] cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
-                  <div className="w-[51px] h-[83px] md:w-[91px] md:h-[123px] icone mb-5 md:mb-[35px] transition-all duration-300 group-hover:-translate-y-5 relative">
-                    <Image
-                      src="/icons/diversite.svg"
-                      alt="Securité"
-                      layout="fill"
-                    />
-                  </div>
-                  <div className="font-semibold uppercase text-[20px] md:text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
-                    DIVERSITÉ
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                onClick={() => handlePopupClick(5)}
-                variants={fadeUp}
-                className="md:mt-[40px]"
-              >
-                <div className="bloc flex flex-col justify-center items-center md:py-[50px] cursor-pointer transition-all duration-300 hover:bg-[#F5FCFD] group">
-                  <div className="w-[61px] h-[83px] md:w-[91px] md:h-[123px] icone mb-5 md:mb-[35px] transition-all duration-300 group-hover:-translate-y-5 relative">
-                    <Image
-                      src="/icons/durabilite.svg"
-                      alt="Securité"
-                      layout="fill"
-                    />
-                  </div>
-                  <div className="font-semibold uppercase text-[20px] md:text-[28px] transition-all delay-75 duration-300 group-hover:-translate-y-5">
-                    DURABILITÉ
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>
@@ -218,7 +131,7 @@ const Ourvalues = () => {
 
       <AnimatePresence>
         {popupData && (
-          <Popup handleClosePopup={handleClosePopup} data={popupData} />
+          <PopupText data={popupData} handleClosePopup={handleClosePopup} />
         )}
       </AnimatePresence>
     </>

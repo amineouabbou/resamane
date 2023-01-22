@@ -4,7 +4,13 @@ import Cardmap from './Cardmap'
 import { motion } from 'framer-motion'
 import { fadeUp, titesStagger, globaleasing } from '../../data/useVariants'
 
-const Ourlocation = () => {
+const Ourlocation = (props) => {
+  const {
+    sectionTitle,
+    presentationTexte,
+    mapImage: { mediaItemUrl },
+  } = props
+
   return (
     <section className="py-[60px] md:pt-[125px] relative">
       <div className="absolute bg-[#F5FCFD] top-0 h-full left-0 w-full md:w-[88%] xl:[clip-path:polygon(0_0,_100%_0%,_96%_100%,_0%_100%)]"></div>
@@ -37,26 +43,17 @@ const Ourlocation = () => {
             variants={fadeUp}
             className="font-bold uppercase text-[27px] md:text-[37px] text-center mb-[40px]"
           >
-            NOTRE EMPLACEMENT
+            {sectionTitle}
           </motion.h2>
           <motion.div variants={fadeUp} className="md:px-[20px]">
-            <p className="text-justify md:text-center">
-              Vous allez vivre dans un quartier estudiantin calme et sécurisé.
-              Et pour vos éventuels déplacements, le quartier est facilement
-              accessible à tous les lieux susceptibles de vous intéresser à
-              Agadir.
-              <br /> Notre résidence est située sur le Boulevard 11 Janvier, à
-              deux pas de l’École Nationale d’Architecture, et de la Faculté des
-              Sciences Juridiques Économiques et Sociales et en face de
-              McDonald’s Adrar.
-              <br /> Retenez également l’accès pratique et express à la route
-              nationale N 1, ainsi que votre proximité de l’aéroport et de la
-              gare routière de la ville d’Agadir.
-            </p>
+            <div
+              className="text-justify md:text-center"
+              dangerouslySetInnerHTML={{ __html: presentationTexte }}
+            />
           </motion.div>
         </motion.div>
 
-        <Cardmap />
+        <Cardmap imgUrl={mediaItemUrl} />
       </div>
     </section>
   )

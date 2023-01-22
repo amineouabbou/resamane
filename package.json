@@ -9,17 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.4",
     "@googlemaps/js-api-loader": "^1.14.3",
     "@hookform/resolvers": "^2.9.7",
     "axios": "^0.27.2",
     "framer-motion": "^7.2.1",
+    "graphql": "^16.6.0",
     "gsap": "^3.11.0",
+    "i18next": "^22.4.9",
     "next": "12.2.4",
+    "next-i18next": "^13.0.3",
     "next-seo": "^5.5.0",
     "nextjs-progressbar": "^0.0.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.34.2",
+    "react-i18next": "^12.1.4",
     "react-icons": "^4.4.0",
     "react-select": "^5.4.0",
     "react-slick": "^0.29.0",
@@ -27,6 +32,7 @@
     "react-toastify": "^9.0.8",
     "react-youtube": "^9.0.3",
     "slick-carousel": "^1.8.1",
+    "slugify": "^1.6.5",
     "yup": "^0.32.11"
   },
   "devDependencies": {

@@ -4,6 +4,7 @@ import Sidenav from './Sidenav'
 import { motion } from 'framer-motion'
 import { PathBanneranim } from '../../data/useVariants'
 import Slider from 'react-slick'
+import Navmain from '../Navmain'
 
 const Banner = ({ slides }) => {
   const settings = {
@@ -17,22 +18,25 @@ const Banner = ({ slides }) => {
   }
 
   return (
-    <div className="main-screen-home relative md:pl-[90px] overflow-hidden">
-      <Sidenav />
+    <>
+      <div className="main-screen-home relative md:pl-[90px] overflow-hidden">
+        <Sidenav />
 
-      <motion.div
-        variants={PathBanneranim}
-        initial="initial"
-        animate="animate"
-        className="main-slideshow"
-      >
-        <Slider {...settings}>
-          {slides.map((item, index) => (
-            <Card key={index} data={item} />
-          ))}
-        </Slider>
-      </motion.div>
-    </div>
+        <motion.div
+          variants={PathBanneranim}
+          initial="initial"
+          animate="animate"
+          className="main-slideshow"
+        >
+          <Slider {...settings}>
+            {slides.map((item, index) => (
+              <Card key={index} data={item} />
+            ))}
+          </Slider>
+        </motion.div>
+      </div>
+      <Navmain />
+    </>
   )
 }
 

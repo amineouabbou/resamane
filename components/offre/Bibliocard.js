@@ -38,7 +38,7 @@ const Bibliocard = ({ item, counter }) => {
             variants={shortFadeUp(1)}
             className="icon w-[41px] h-[37px] md:w-[124px] md:h-[114px] relative mb-[45px]"
           >
-            <Image alt="" src={item.icon} layout="fill" />
+            <Image alt="" src={item?.icone?.mediaItemUrl} layout="fill" />
           </motion.div>
           <motion.h2
             variants={shortFadeUp(1)}
@@ -62,7 +62,7 @@ const Bibliocard = ({ item, counter }) => {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              {item.desc}
+              {item.shortDescription}
             </motion.p>
           </motion.div>
         </div>

@@ -8,54 +8,6 @@ import Popup from '../../html/Popup'
 import Chambreslidercard from './Chambreslidercard'
 import Chambretabtitle from './Chambretabtitle'
 
-const apparts = [
-  {
-    url: '/remove/appartement/01.jpg',
-  },
-  {
-    url: '/remove/appartement/02.jpg',
-  },
-  {
-    url: '/remove/appartement/03.jpg',
-  },
-  {
-    url: '/remove/appartement/04.jpg',
-  },
-]
-
-const studios = [
-  {
-    url: '/remove/chambre-18m/01.jpg',
-  },
-  {
-    url: '/remove/chambre-18m/02.jpg',
-  },
-  {
-    url: '/remove/chambre-18m/03.jpeg',
-  },
-  {
-    url: '/remove/chambre-18m/04.jpg',
-  },
-]
-
-const PMR = [
-  {
-    url: '/remove/pmr/01.jpg',
-  },
-  {
-    url: '/remove/pmr/02.jpg',
-  },
-  {
-    url: '/remove/pmr/03.jpg',
-  },
-  {
-    url: '/remove/pmr/04.jpg',
-  },
-  {
-    url: '/remove/pmr/05.jpg',
-  },
-]
-
 const DATA = [
   {
     id: 407,
@@ -71,8 +23,10 @@ const DATA = [
   },
 ]
 
-export default function Noschambres() {
+export default function Noschambres(props) {
   const [popupData, setPopupData] = useState('')
+
+  const { sectionTitle, tabsRep } = props
 
   const handleClosePopup = () => {
     setPopupData('')
@@ -104,39 +58,19 @@ export default function Noschambres() {
             <div className="overlay md:absolute md:h-full w-full top-0 left-0 order-2 md:order-1">
               <div className="md:flex flex-col items-end h-full">
                 <div className="md:w-1/2 relative z-10">
-                  <TabPanel>
-                    <Customarrows chamberSlider={chamberSlider} />
-                    <Slider
-                      {...settings}
-                      ref={(currslide) => (chamberSlider.current = currslide)}
-                    >
-                      {studios.map((item, index) => (
-                        <Chambreslidercard key={index} item={item} />
-                      ))}
-                    </Slider>
-                  </TabPanel>
-                  <TabPanel>
-                    <Customarrows chamberSlider={chamberSlider2} />
-                    <Slider
-                      {...settings}
-                      ref={(currslide) => (chamberSlider2.current = currslide)}
-                    >
-                      {PMR.map((item, index) => (
-                        <Chambreslidercard key={index} item={item} />
-                      ))}
-                    </Slider>
-                  </TabPanel>
-                  <TabPanel>
-                    <Customarrows chamberSlider={chamberSlider3} />
-                    <Slider
-                      {...settings}
-                      ref={(currslide) => (chamberSlider3.current = currslide)}
-                    >
-                      {apparts.map((item, index) => (
-                        <Chambreslidercard key={index} item={item} />
-                      ))}
-                    </Slider>
-                  </TabPanel>
+                  {tabsRep.map((item, index) => (
+                    <TabPanel key={index}>
+                      <Customarrows chamberSlider={chamberSlider} />
+                      <Slider
+                        {...settings}
+                        ref={(currslide) => (chamberSlider.current = currslide)}
+                      >
+                        {item.gallery.map((item, index) => (
+                          <Chambreslidercard key={index} item={item} />
+                        ))}
+                      </Slider>
+                    </TabPanel>
+                  ))}
                 </div>
               </div>
             </div>
@@ -144,32 +78,23 @@ export default function Noschambres() {
               <div className="md:flex flex-row">
                 <div className="column md:w-1/2 relative">
                   <h2 className=" text-[27px] md:text-[32px] font-bold uppercase text-white leading-[40px] mb-[70px] md:mb-[90px] mt-[45px]">
-                    Chambres <br /> et appartements
+                    <div dangerouslySetInnerHTML={{ __html: sectionTitle }} />
                   </h2>
                   <div className="md:flex flex-col items-end">
                     <div className="bloc mb-[20px] md:mb-[120px] vertical-tabs">
                       <TabList>
-                        <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
-                          <Chambretabtitle
-                            handlePopupClick={handlePopupClick}
-                            title="Chambres<br/> de 18m²"
-                            number="407"
-                          />
-                        </Tab>
-                        <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
-                          <Chambretabtitle
-                            handlePopupClick={handlePopupClick}
-                            title="Studios de <br/> 18m² (PMR)"
-                            number="3"
-                          />
-                        </Tab>
-                        <Tab className="text-white/10 hover:text-white transition-all hover:bg-white/5">
-                          <Chambretabtitle
-                            handlePopupClick={handlePopupClick}
-                            title="Appartements<br /> de 50m²"
-                            number="15"
-                          />
-                        </Tab>
+                        {tabsRep.map((item, index) => (
+                          <Tab
+                            key={index}
+                            className="text-white/10 hover:text-white transition-all hover:bg-white/5"
+                          >
+                            <Chambretabtitle
+                              handlePopupClick={handlePopupClick}
+                              title={item?.tabLabelGroup?.label}
+                              number={item?.tabLabelGroup?.number}
+                            />
+                          </Tab>
+                        ))}
                       </TabList>
                     </div>
                   </div>

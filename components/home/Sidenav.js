@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { globaleasing } from '../../data/useVariants'
 import Togglemobile from '../html/Togglemobile'
+import Languages from '../html/Languages'
 
 const Sidenav = () => {
   return (
@@ -56,7 +57,7 @@ const Sidenav = () => {
         </motion.div>
       </div>
 
-      <Togglemobile />
+      <Languages className="mx-auto mt-[10px]" />
     </div>
   )
 }
