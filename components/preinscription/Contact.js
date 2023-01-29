@@ -155,14 +155,18 @@ const Contact = () => {
               <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name={`${t('Nom')} *`} />
                 <input className="input" type="text" {...register('nom')} />
-                {errors.nom ? <Inputerror message={errors.nom?.message} /> : ''}
+                {errors.nom ? (
+                  <Inputerror message={t(errors.nom?.message)} />
+                ) : (
+                  ''
+                )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name={`${t('Prénom')} *`} />
                 <input className="input" type="text" {...register('prenom')} />
                 {errors.prenom ? (
-                  <Inputerror message={errors.prenom?.message} />
+                  <Inputerror message={t(errors.prenom?.message)} />
                 ) : (
                   ''
                 )}
@@ -172,7 +176,7 @@ const Contact = () => {
                 <Inputlabel name={`${t('Téléphone')} *`} />
                 <input className="input" type="text" {...register('phone')} />
                 {errors.phone ? (
-                  <Inputerror message={errors.phone?.message} />
+                  <Inputerror message={t(errors.phone?.message)} />
                 ) : (
                   ''
                 )}
@@ -183,14 +187,18 @@ const Contact = () => {
                   name={`${t('CIN, Carte de séjour ou Passeport')} *`}
                 />
                 <input className="input" type="text" {...register('cin')} />
-                {errors.cin ? <Inputerror message={errors.cin?.message} /> : ''}
+                {errors.cin ? (
+                  <Inputerror message={t(errors.cin?.message)} />
+                ) : (
+                  ''
+                )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
                 <Inputlabel name={t('Adresse')} />
                 <input className="input" type="text" {...register('adresse')} />
                 {errors.adresse ? (
-                  <Inputerror message={errors.adresse?.message} />
+                  <Inputerror message={t(errors.adresse?.message)} />
                 ) : (
                   ''
                 )}
@@ -200,7 +208,7 @@ const Contact = () => {
                 <Inputlabel name={`${t('Adresse e-mail')} *`} />
                 <input className="input" type="text" {...register('email')} />
                 {errors.email ? (
-                  <Inputerror message={errors.email?.message} />
+                  <Inputerror message={t(errors.email?.message)} />
                 ) : (
                   ''
                 )}
@@ -220,7 +228,7 @@ const Contact = () => {
                   ))}
                 </select>
                 {errors.pays ? (
-                  <Inputerror message={errors.pays?.message} />
+                  <Inputerror message={t(errors.pays?.message)} />
                 ) : (
                   ''
                 )}
@@ -230,7 +238,7 @@ const Contact = () => {
                 <Inputlabel name={`${t('Ville')} *`} />
                 <input className="input" type="text" {...register('ville')} />
                 {errors.ville ? (
-                  <Inputerror message={errors.ville?.message} />
+                  <Inputerror message={t(errors.ville?.message)} />
                 ) : (
                   ''
                 )}
@@ -244,7 +252,7 @@ const Contact = () => {
                   {...register('etablissement')}
                 />
                 {errors.etablissement ? (
-                  <Inputerror message={errors.etablissement?.message} />
+                  <Inputerror message={t(errors.etablissement?.message)} />
                 ) : (
                   ''
                 )}
@@ -254,7 +262,7 @@ const Contact = () => {
                 <Inputlabel name={`${t('Cycle d’étude')} *`} />
                 <input className="input" type="text" {...register('cycle')} />
                 {errors.cycle ? (
-                  <Inputerror message={errors.cycle?.message} />
+                  <Inputerror message={t(errors.cycle?.message)} />
                 ) : (
                   ''
                 )}
@@ -285,7 +293,7 @@ const Contact = () => {
                 )}
               </div>
               {errors.services ? (
-                <Inputerror message={errors.services?.message} />
+                <Inputerror message={t(errors.services?.message)} />
               ) : (
                 ''
               )}
@@ -312,7 +320,7 @@ const Contact = () => {
                 </option>
               </select>
               {errors.chambre ? (
-                <Inputerror message={errors.chambre?.message} />
+                <Inputerror message={t(errors.chambre?.message)} />
               ) : (
                 ''
               )}
@@ -335,7 +343,7 @@ const Contact = () => {
                 />
               </div>
               {errors.attachement ? (
-                <Inputerror message={errors.attachement?.message} />
+                <Inputerror message={t(errors.attachement?.message)} />
               ) : (
                 ''
               )}
@@ -377,7 +385,7 @@ const Contact = () => {
                 })}
               </div>
               {errors.channels ? (
-                <Inputerror message={errors.channels?.message} />
+                <Inputerror message={t(errors.channels?.message)} />
               ) : (
                 ''
               )}
