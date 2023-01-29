@@ -3,7 +3,7 @@ import SEO from '../components/SEO'
 import Noschambres from '../components/home/Noschambres'
 import Bibliotheque from '../components/offre/Bibliotheque'
 import Layout from '../components/Ui/Layout'
-import { GET_ABOUT_PAGE, GET_OFFER_PAGE } from '../api/Queries'
+import { GET_OFFER_PAGE } from '../api/Queries'
 import { getCmsData } from '../api'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -51,6 +51,10 @@ const Offre = ({ data }) => {
 }
 
 export default Offre
+
+Offre.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>
+}
 
 export const getServerSideProps = async ({ locale }) => {
   const data = await getCmsData(GET_OFFER_PAGE, 'notre-offre', locale)

@@ -3,11 +3,7 @@ import React, { useRef } from 'react'
 import Imgwrap from '../html/Imgwrap'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { fadeUp } from '../../data/useVariants'
-
-import dynamic from 'next/dynamic'
-
-// Client Components:
-const Reserverbtn = dynamic(() => import('./Reserverbtn'), { ssr: false })
+import Reserverbtn from './Reserverbtn'
 
 const Presentation = (props) => {
   const aboutref = useRef()

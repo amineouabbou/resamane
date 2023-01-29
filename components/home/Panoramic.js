@@ -113,8 +113,6 @@ const Panoramic = ({ titre, arrierePlan }) => {
           </>
         )}
       </section>
-
-      <CtaInscription />
     </>
   )
 }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { globaleasing } from '../../data/useVariants'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 const bookIntroAnimation = {
   initial: {

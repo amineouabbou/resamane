@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const GET_CMS_PAGE = gql`
-  query getPage($slug: ID!, $lang: LanguageCodeEnum!) {
+  query getHomePage($slug: ID!, $lang: LanguageCodeEnum!) {
     page(id: $slug, idType: URI) {
       title
       translation(language: $lang) {
@@ -54,6 +54,14 @@ export const GET_CMS_PAGE = gql`
                 icone
                 label
                 valeur
+              }
+            }
+            ... on Page_Acfhome_SectionsFlex_CallToAction {
+              titre
+              sousTitre
+              bouttonGroup {
+                label
+                url
               }
             }
           }
@@ -159,6 +167,42 @@ export const GET_OFFER_PAGE = gql`
   }
 `
 
+export const GET_DOSSIER_PAGE = gql`
+  query getDossierPage($slug: ID!, $lang: LanguageCodeEnum!) {
+    page(id: $slug, idType: URI) {
+      translation(language: $lang) {
+        title
+        seo {
+          title
+          metaDesc
+        }
+        AcfDossier {
+          titre
+          description
+          stepsList {
+            title
+            content
+          }
+        }
+      }
+    }
+  }
+`
+
+export const GET_CONTACT_PAGE = gql`
+  query getDossierPage($slug: ID!, $lang: LanguageCodeEnum!) {
+    page(id: $slug, idType: URI) {
+      translation(language: $lang) {
+        title
+        seo {
+          title
+          metaDesc
+        }
+      }
+    }
+  }
+`
+
 export const GET_MENU = gql`
   query getMenu($lang: LanguageCodeFilterEnum) {
     menuItems(where: { language: $lang, location: PRIMARY }) {
@@ -166,6 +210,22 @@ export const GET_MENU = gql`
         id
         label
         path
+      }
+    }
+  }
+`
+
+export const GET_FOOTER_MENUS = gql`
+  query GET_FOOTER_MENUS($lang: LanguageCodeFilterEnum) {
+    menuItems(where: { language: $lang, location: FOOTER }, first: 100) {
+      nodes {
+        label
+        childItems {
+          nodes {
+            label
+            url
+          }
+        }
       }
     }
   }

@@ -19,7 +19,7 @@ const Banner = ({ slides }) => {
 
   return (
     <>
-      <div className="main-screen-home relative md:pl-[90px] overflow-hidden">
+      <div className="main-screen-home relative md:pl-[90px] ">
         <Sidenav />
 
         <motion.div

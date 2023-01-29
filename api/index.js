@@ -8,6 +8,8 @@ export const getCmsData = async (query, slug, locale) => {
   let lang = ''
   if (locale == 'fr') {
     lang = 'FR'
+  } else if (locale == 'ar') {
+    lang = 'AR'
   } else {
     lang = 'EN'
   }

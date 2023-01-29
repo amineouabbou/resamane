@@ -8,12 +8,12 @@ import Atouts from '../components/home/Atouts'
 import Contact from '../components/home/Contact'
 import HomeLayout from '../components/Ui/Layout/HomeLayout'
 import { GET_CMS_PAGE } from '../api/Queries'
+import CtaInscription from '../components/home/CtaInscription'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export default function Home({ data }) {
-  console.log('DATA', data)
   const { title, metaDesc } = data.page.translation.seo
   const sections = data.page.translation.AcfHome.sectionsFlex
-  console.log('Section', sections)
   return (
     <>
       <SEO title={title} description={metaDesc} />
@@ -35,6 +35,10 @@ export default function Home({ data }) {
           return <Panoramic key={index} {...item} />
         }
 
+        if (item.__typename === 'Page_Acfhome_SectionsFlex_CallToAction') {
+          return <CtaInscription key={index} {...item} />
+        }
+
         if (item.__typename === 'Page_Acfhome_SectionsFlex_ContactezNous') {
           return <Contact key={index} {...item} />
         }
@@ -52,6 +56,7 @@ export const getServerSideProps = async ({ locale }) => {
 
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['common'])),
       data,
     },
   }

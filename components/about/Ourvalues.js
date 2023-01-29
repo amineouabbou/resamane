@@ -75,8 +75,6 @@ const DATA = [
 const Ourvalues = (props) => {
   const [popupData, setPopupData] = useState('')
 
-  console.log('props values', props)
-
   const { sectionTitle, listeValeurs } = props
 
   const handleClosePopup = () => {

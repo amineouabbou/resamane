@@ -13,8 +13,6 @@ const About = ({ data }) => {
 
   const sections = data.page.translation.AcfHome.sectionsFlex
 
-  console.log(data)
-
   return (
     <>
       <SEO title={title} description={metaDesc} />
@@ -38,6 +36,10 @@ const About = ({ data }) => {
 }
 
 export default About
+
+About.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>
+}
 
 export const getServerSideProps = async ({ locale }) => {
   const data = await getCmsData(GET_ABOUT_PAGE, 'qui-sommes-nous', locale)

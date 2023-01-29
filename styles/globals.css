@@ -165,32 +165,45 @@
     @apply block;
   }
 
-  .std {
-    @apply text-justify;
-  }
-
-  .std p {
-    @apply mb-4;
-  }
-
-  .std ul {
-    @apply list-disc pl-[15px];
-  }
-
-  .table {
-    @apply w-full;
-  }
-
-  .table th,
-  .table td {
-    @apply border-b-[1px] border-[#ccc] p-2 text-center;
-  }
-
   .about-intro p {
     @apply mb-5;
   }
 
   .about-intro p strong {
     @apply font-bold;
+  }
+}
+
+.std {
+  @apply text-justify;
+
+  & a {
+    @apply underline;
+  }
+
+  & h6,
+  & p {
+    @apply mb-4;
+  }
+
+  & h6 {
+    @apply font-light text-[11px] leading-[13px];
+  }
+
+  & ul {
+    @apply list-disc pl-[15px];
+  }
+
+  & table {
+    @apply w-full mb-4;
+
+    & thead {
+      @apply bg-secondary;
+    }
+
+    & th,
+    & td {
+      @apply border-b-[1px] border-[#ccc] p-2 text-center;
+    }
   }
 }
