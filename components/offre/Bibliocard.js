@@ -62,7 +62,7 @@ const Bibliocard = ({ item, counter }) => {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              <div
+              <span
                 dangerouslySetInnerHTML={{ __html: item.shortDescription }}
               />
             </motion.p>

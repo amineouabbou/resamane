@@ -163,8 +163,9 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-y-5 md:gap-y-0 gap-x-[10px]">
                 <div className="bloc flex flex-col items-center">
                   <div>
-                    Boulevard du 11 Janvier, <br />
-                    Quartier dakhla, Bloc D1, Agadir
+                    {t(
+                      'Boulevard du 11 Janvier, Quartier Dakhla, Bloc D1, Agadir.'
+                    )}
                   </div>
                 </div>
 
