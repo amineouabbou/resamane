@@ -8,7 +8,8 @@ import { GET_ABOUT_PAGE } from '../api/Queries'
 import { getCmsData } from '../api'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const About = ({ data }) => {
+const About = ({ data, current_lang }) => {
+  console.log('cyrrent lang', current_lang)
   const { title, metaDesc } = data.page.translation.seo
 
   const sections = data.page.translation.AcfHome.sectionsFlex
@@ -38,7 +39,8 @@ const About = ({ data }) => {
 export default About
 
 About.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>
+  const { props } = page
+  return <Layout lang={props.current_lang}>{page}</Layout>
 }
 
 export const getServerSideProps = async ({ locale }) => {
@@ -48,6 +50,7 @@ export const getServerSideProps = async ({ locale }) => {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
       data,
+      current_lang: locale,
     },
   }
 }

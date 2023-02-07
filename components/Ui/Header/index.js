@@ -6,9 +6,12 @@ import { motion } from 'framer-motion'
 import { globaleasing } from '../../../data/useVariants'
 import Mobileheader from '../../html/Mobileheader'
 import Languages from '../../html/Languages'
+import { useRouter } from 'next/router'
+import clsx from 'clsx'
 
-const Header = () => {
+const Header = ({ lang }) => {
   const [sticky, setSticky] = useState(false)
+  const { locale } = useRouter()
 
   const handleScroll = () => {
     if (window.scrollY > 90) {
@@ -38,7 +41,12 @@ const Header = () => {
           }}
           className="border-b-[#1D647D40] border-b-[1px] h-[80px] px-[30px] py-[12px] hidden md:flex items-center fixed top-0 w-full z-40 bg-white"
         >
-          <div className="mr-[90px] overflow-hidden">
+          <div
+            className={clsx('overflow-hidden', {
+              'ml-[90px]': locale === 'ar',
+              'mr-[90px]': locale !== 'ar',
+            })}
+          >
             <motion.div
               initial={{ scale: 0.7, y: 90 }}
               animate={{
@@ -72,7 +80,12 @@ const Header = () => {
       ) : null}
 
       <div className="border-b-[#1D647D40] border-b-[1px] px-[30px] py-[12px] hidden md:flex items-center">
-        <div className="mr-[90px] overflow-hidden">
+        <div
+          className={clsx('overflow-hidden', {
+            'ml-[90px]': locale === 'ar',
+            'mr-[90px]': locale !== 'ar',
+          })}
+        >
           <motion.div
             initial={{ scale: 0.7, y: 90 }}
             animate={{
@@ -102,7 +115,7 @@ const Header = () => {
           <Standnav />
         </nav>
 
-        <Languages />
+        <Languages lang={lang} />
       </div>
     </>
   )

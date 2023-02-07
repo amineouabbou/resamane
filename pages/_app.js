@@ -4,8 +4,19 @@ import Layout from '../components/Ui/Layout'
 import { appWithTranslation } from 'next-i18next'
 import { ApolloProvider } from '@apollo/client'
 import client from '../apollo-client'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }) {
+  const { locale } = useRouter()
+  const dir = locale === 'ar' ? 'rtl' : 'ltr'
+  const textAlign = locale === 'ar' ? 'right' : 'left'
+
+  useEffect(() => {
+    document.documentElement.dir = dir
+    document.body.style.textAlign = textAlign
+  }, [locale])
+
   const getLayout = Component.getLayout || ((page) => page)
 
   return (

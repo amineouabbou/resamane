@@ -19,7 +19,7 @@ const imgSlash = {
   },
 }
 
-const Aboutsection = ({ title, intro, photo, phrase }) => {
+const Aboutsection = ({ title, intro, photo, phrase, phrase2 }) => {
   return (
     <section className="pt-[60px] md:pt-0 intro-section">
       <div className="container mx-auto">
@@ -101,9 +101,12 @@ const Aboutsection = ({ title, intro, photo, phrase }) => {
               />
             )}
             <br />
-            <span className="text-[31px] md:text-[41px] text-lightblue">
-              et nous rajoutons <br />« The place to Live ».
-            </span>
+            {phrase2 && (
+              <span
+                className="text-[31px] md:text-[41px] text-lightblue"
+                dangerouslySetInnerHTML={{ __html: phrase2 }}
+              />
+            )}
           </motion.div>
         </div>
       </div>

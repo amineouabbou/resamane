@@ -30,6 +30,7 @@ export const GET_CMS_PAGE = gql`
                 mediaItemUrl
               }
               phrase
+              phrase2
             }
             ... on Page_Acfhome_SectionsFlex_NosAtouts {
               titre
@@ -39,6 +40,7 @@ export const GET_CMS_PAGE = gql`
                 }
                 titre
                 description
+                popup
               }
             }
             ... on Page_Acfhome_SectionsFlex_Visite360 {

@@ -12,8 +12,9 @@ import {
 import { GET_FOOTER_MENUS } from '../../../api/Queries'
 import { useQuery } from '@apollo/client'
 import { useRouter } from 'next/router'
+import clsx from 'clsx'
 
-const Footer = () => {
+const Footer = ({ lang }) => {
   const router = useRouter()
   const { locale } = router
   const current_lang = locale.toUpperCase()
@@ -68,7 +69,15 @@ const Footer = () => {
         </div>
 
         <div className="bottom-footer md:mt-[60px] text-[#09556F] relative">
-          <div className="overlay hidden md:block absolute w-1/2 h-full bg-secondary top-0 right-0"></div>
+          <div
+            className={clsx(
+              'overlay hidden md:block absolute w-1/2 h-full bg-secondary top-0 ',
+              {
+                'left-0': router.locale === 'ar',
+                'right-0': router.locale !== 'ar',
+              }
+            )}
+          ></div>
           <div className="container mx-auto">
             <div className="inner bg-secondary p-8 md:pt-[45px] md:px-[45px] md:pb-[65px]">
               <div className="grid md:grid-cols-2 gap-8 md:gap-4">
@@ -78,11 +87,13 @@ const Footer = () => {
                       {t('Contactez-nous')}
                     </div>
                     <div className="texte text-[15px] md:text-[16px] mb-[8px] font-light">
-                      Boulevard du 11 Janvier, Quartier Dakhla, Bloc D1, Agadir.
+                      {t(
+                        'Boulevard du 11 Janvier, Quartier Dakhla, Bloc D1, Agadir.'
+                      )}
                     </div>
                     <div className="flex flex-col md:flex-row md:items-center text-[16px] font-light">
-                      <div>+212 05 26 044 040</div>
-                      <div className="md:ml-[20px]">
+                      <div style={{ direction: 'ltr' }}>+212 05 26 044 040</div>
+                      <div className="md:mx-[20px]">
                         <a
                           className="font-medium underline"
                           href="mailto:info@residencesamane.ma"
@@ -95,12 +106,12 @@ const Footer = () => {
                 </div>
 
                 <div className="column relative">
-                  <div className="bloc">
+                  <div className="bloc flex flex-col">
                     <div className="font-semibold text-[17px] leading-[20px] mb-[30px]">
                       {t('Suivez-nous sur')}
                     </div>
-                    <ul className="flex items-center text-white">
-                      <li className="mr-[20px] md:mr-[40px]">
+                    <ul className="flex gap-x-[30px] items-center text-white">
+                      <li>
                         <a
                           rel="noreferrer"
                           target="_blank"
@@ -110,7 +121,7 @@ const Footer = () => {
                           <FaFacebookF className="text-[24px] md:text-[30px]" />
                         </a>
                       </li>
-                      <li className="mr-[20px] md:mr-[40px]">
+                      <li>
                         <a
                           rel="noreferrer"
                           target="_blank"
@@ -120,7 +131,7 @@ const Footer = () => {
                           <FaInstagram className="text-[24px] md:text-[30px]" />
                         </a>
                       </li>
-                      <li className="mr-[20px] md:mr-[40px]">
+                      <li>
                         <a
                           rel="noreferrer"
                           target="_blank"

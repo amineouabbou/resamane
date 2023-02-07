@@ -3,22 +3,26 @@ import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { globaleasing } from '../../data/useVariants'
+import clsx from 'clsx'
 
-const Languages = ({ className }) => {
+const Languages = ({ className, lang: propLang }) => {
   const router = useRouter()
   const [active, setActive] = useState(false)
 
   const handleLocaleChange = (lang) => {
     router.push(router.route, router.asPath, {
       locale: lang,
+      shallow: false,
     })
   }
   return (
     <>
       <div
-        className={`relative w-[20px] md:w-[29px] h-[20px] md:h-[29px] ml-auto ${
-          className ? `${className}` : ``
-        }`}
+        className={clsx('relative w-[20px] md:w-[29px] h-[20px] md:h-[29px]', {
+          [`${className}`]: className,
+          'mr-auto visible': router.locale === 'ar',
+          'ml-auto visible': router.locale !== 'ar',
+        })}
         onMouseOver={() => setActive(true)}
         onMouseOut={() => setActive(false)}
       >

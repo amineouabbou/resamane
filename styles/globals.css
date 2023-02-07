@@ -153,6 +153,10 @@
     @apply bg-[url('/icons/calendar-2.svg')] bg-[length:18px_20px] bg-[center_right_25px] bg-no-repeat;
   }
 
+  html[dir='rtl'] .input.calendar {
+    @apply bg-[center_left_25px];
+  }
+
   .choice label {
     @apply inline-block bg-[#1D647D0B] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)] rounded-[35px] h-[46px] leading-[44px] text-[#09556F7B] font-medium px-[25px] mr-[25px] cursor-pointer;
   }

@@ -72,7 +72,7 @@ const Contact = () => {
   return (
     <section className="form">
       <div className="md:w-[60%] mx-auto">
-        <h2 className="font-bold  text-[30px] text-center md:text-left md:text-[40px] mb-[40px] md:mb-[50px]">
+        <h2 className="font-bold  text-[30px] text-center md:text-inherit md:text-[40px] mb-[40px] md:mb-[50px]">
           {t('Nous contacter')}
         </h2>
         <div className="bg-[#F5FCFD] py-[35px] px-[25px] md:px-[85px]">
