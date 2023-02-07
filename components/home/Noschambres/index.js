@@ -1,4 +1,5 @@
 import { AnimatePresence } from 'framer-motion'
+import dynamic from 'next/dynamic'
 import { useRef, useState } from 'react'
 import Slider from 'react-slick'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
@@ -6,7 +7,11 @@ import Customarrows from '../../html/Customarrows'
 import Popup from '../../html/Popup'
 
 import Chambreslidercard from './Chambreslidercard'
-import Chambretabtitle from './Chambretabtitle'
+
+const Chambretabtitle = dynamic(() => import('./Chambretabtitle'), {
+  loading: () => 'Loading...',
+  ssr: false,
+})
 
 const DATA = [
   {

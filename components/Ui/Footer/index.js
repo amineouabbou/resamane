@@ -22,7 +22,6 @@ const Footer = ({ lang }) => {
   const { loading, data } = useQuery(GET_FOOTER_MENUS, {
     variables: { lang: current_lang },
   })
-  console.log('Data', data)
 
   const { t } = useTranslation('common')
 

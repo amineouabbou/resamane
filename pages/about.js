@@ -9,7 +9,6 @@ import { getCmsData } from '../api'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const About = ({ data, current_lang }) => {
-  console.log('cyrrent lang', current_lang)
   const { title, metaDesc } = data.page.translation.seo
 
   const sections = data.page.translation.AcfHome.sectionsFlex

@@ -44,7 +44,7 @@ const Subheader = ({ title, subtitle, description, type }) => {
               variants={titlesAnimation}
               className="text-center mt-[18px]"
             >
-              {description}
+              <div dangerouslySetInnerHTML={{ __html: description }} />
             </motion.div>
           ) : (
             ''
