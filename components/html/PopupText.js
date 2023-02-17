@@ -22,7 +22,7 @@ const PopupText = ({ data, handleClosePopup }) => {
             ease: globaleasing,
           },
         }}
-        className="max-w-[95%] min-w-[95%] md:min-w-[50%] md:max-w-[50%] bg-white p-3 md:p-8 fixed left-0 right-0 top-[50%] my-auto mx-auto z-[9999]"
+        className="max-w-[95%] min-w-[95%] rounded-md md:min-w-[50%] md:max-w-[50%] bg-white p-3 md:p-8 fixed left-0 right-0 top-[50%] my-auto mx-auto z-[9999]"
       >
         <div dangerouslySetInnerHTML={{ __html: data }}></div>
       </motion.div>

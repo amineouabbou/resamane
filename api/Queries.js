@@ -22,6 +22,7 @@ export const GET_CMS_PAGE = gql`
                   sourceUrl(size: _1536X1536)
                 }
               }
+              slogan
             }
             ... on Page_Acfhome_SectionsFlex_Presentation {
               title

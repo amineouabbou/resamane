@@ -14,6 +14,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 export default function Home({ data }) {
   const { title, metaDesc } = data.page.translation.seo
   const sections = data.page.translation.AcfHome.sectionsFlex
+
   return (
     <>
       <SEO title={title} description={metaDesc} />

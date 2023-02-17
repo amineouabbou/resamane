@@ -6,7 +6,7 @@ import { PathBanneranim } from '../../data/useVariants'
 import Slider from 'react-slick'
 import Navmain from '../Navmain'
 
-const Banner = ({ slides }) => {
+const Banner = ({ slides, slogan }) => {
   const settings = {
     arrows: true,
     dots: false,
@@ -20,7 +20,7 @@ const Banner = ({ slides }) => {
   return (
     <>
       <div className="main-screen-home relative md:pl-[90px] ">
-        <Sidenav />
+        <Sidenav slogan={slogan} />
 
         <motion.div
           variants={PathBanneranim}

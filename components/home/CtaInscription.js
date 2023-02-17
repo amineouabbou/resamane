@@ -18,15 +18,18 @@ const CtaInscription = (props) => {
           variants={titlesAnimation}
           className="leading-[35px] md:leading-[45px] text-[25px] md:text-[30px] text-center mb-[35px] md:mb-[45px] font-medium"
         >
-          {titre} <br />
-          <span className="text-lightblue font-bold">{sousTitre}</span>
+          <div dangerouslySetInnerHTML={{ __html: titre }} />
+          <div
+            className="text-lightblue font-bold"
+            dangerouslySetInnerHTML={{ __html: sousTitre }}
+          />
         </motion.div>
         <motion.div
           variants={titlesAnimation}
           className="cta flex flex-col items-center"
         >
           <Link href={bouttonGroup.url}>
-            <a className="btn w-[220px] outborder">{bouttonGroup.label}</a>
+            <a className="btn outborder">{bouttonGroup.label}</a>
           </Link>
         </motion.div>
       </motion.div>

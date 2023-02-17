@@ -78,10 +78,7 @@ const Contact = ({ titre, listeContactRep }) => {
                 <span className="text-lightblue text-[20px] md:text-[26px] mx-[15px]">
                   {iconChooser(item.icone)}
                 </span>
-                <div className="leading-[25px]">
-                  <span className="font-medium">{item.label} :</span>
-                  {item.valeur}
-                </div>
+                <div className="leading-[25px]">{item.valeur}</div>
               </div>
             ))}
           </motion.div>

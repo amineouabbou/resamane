@@ -6,7 +6,7 @@ import Togglemobile from '../html/Togglemobile'
 import Languages from '../html/Languages'
 import { useTranslation } from 'next-i18next'
 
-const Sidenav = () => {
+const Sidenav = ({ slogan }) => {
   const { t } = useTranslation()
   return (
     <div className="side-nav w-[90px] bg-white absolute top-0 left-0 h-full z-20 pt-[25px] pb-[10px] hidden md:flex md:flex-col">
@@ -55,7 +55,7 @@ const Sidenav = () => {
           }}
           className="slogan text-primary text-[11px] font-bold bg-white px-[22px]"
         >
-          {t('RÉSIDENCE UNIVERSITAIRE POUR ÉTUDIANTES')}
+          {slogan}
         </motion.div>
       </div>
 

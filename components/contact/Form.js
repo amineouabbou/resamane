@@ -73,7 +73,7 @@ const Contact = () => {
     <section className="form">
       <div className="md:w-[60%] mx-auto">
         <h2 className="font-bold  text-[30px] text-center md:text-inherit md:text-[40px] mb-[40px] md:mb-[50px]">
-          {t('Nous contacter')}
+          {t('CONTACTEZ-NOUS')}
         </h2>
         <div className="bg-[#F5FCFD] py-[35px] px-[25px] md:px-[85px]">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -172,8 +172,8 @@ const Contact = () => {
                 <div className="bloc flex flex-col items-center">
                   <div className="in">
                     <div>
-                      <span className="font-bold">{t('Tél')}:</span> +212 661
-                      892 951
+                      <span className="font-bold">{t('Tél')}:</span> +212 526
+                      044 040
                     </div>
                     <div>
                       <span className="font-bold">Email:</span>{' '}

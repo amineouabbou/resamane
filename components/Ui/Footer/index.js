@@ -36,8 +36,10 @@ const Footer = ({ lang }) => {
       <div className="footer bg-white">
         <div className="container mx-auto">
           <div className="logo-box flex flex-col items-center py-[20px] md:pb-[42px] border-b-[1px] border-b-[#09556F/10]">
-            <div className="img h-[149px] w-[70px] md:w-[111px] md:h-[209px] relative">
-              <Image src="/logo-big.svg" alt="" layout="fill" />
+            <div className="img h-[149px] w-[70px] md:w-[111px] md:h-[209px] relative cursor-pointer ">
+              <Link href="/" className="cursor-pointer block">
+                <Image src="/logo-big.svg" alt="" layout="fill" />
+              </Link>
             </div>
           </div>
 
@@ -91,7 +93,7 @@ const Footer = ({ lang }) => {
                       )}
                     </div>
                     <div className="flex flex-col md:flex-row md:items-center text-[16px] font-light">
-                      <div style={{ direction: 'ltr' }}>+212 05 26 044 040</div>
+                      <div style={{ direction: 'ltr' }}>+212 526 044 040</div>
                       <div className="md:mx-[20px]">
                         <a
                           className="font-medium underline"
