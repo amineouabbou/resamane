@@ -59,7 +59,7 @@ const Sidenav = ({ slogan }) => {
         </motion.div>
       </div>
 
-      <Languages className="mx-auto mt-[10px]" />
+      {/* <Languages className="mx-auto mt-[10px]" /> */}
     </div>
   )
 }
