@@ -1,9 +1,7 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { globaleasing } from '../../data/useVariants'
-import Image from 'next/image'
 
-const Popup = ({ data, handleClosePopup }) => {
+const PopupText = ({ data, handleClosePopup }) => {
   return (
     <>
       <motion.div
@@ -26,22 +24,7 @@ const Popup = ({ data, handleClosePopup }) => {
         }}
         className="max-w-[95%] min-w-[95%] rounded-md md:min-w-[50%] md:max-w-[50%] bg-white p-3 md:p-8 fixed left-0 right-0 top-[50%] my-auto mx-auto z-[9999]"
       >
-        {data.imageURL ? (
-          ''
-        ) : (
-          <div dangerouslySetInnerHTML={{ __html: data }}></div>
-        )}
-
-        {data.imageURL && (
-          <div className="relative w-full h-[450px]">
-            <Image
-              layout="fill"
-              alt=""
-              src={data.imageURL}
-              objectFit="contain"
-            />
-          </div>
-        )}
+        <div dangerouslySetInnerHTML={{ __html: data }}></div>
       </motion.div>
       <motion.div
         onClick={handleClosePopup}
@@ -60,4 +43,4 @@ const Popup = ({ data, handleClosePopup }) => {
   )
 }
 
-export default Popup
+export default PopupText

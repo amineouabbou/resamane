@@ -9,7 +9,7 @@ const Atouitem = ({ data, handlePopupClick, index }) => {
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      onClick={() => handlePopupClick(index)}
+      onClick={() => handlePopupClick(data.popup)}
       className="bloc text-white flex flex-col items-center cursor-pointer group"
     >
       <div className="md:w-3/4 flex flex-col items-center text-center">

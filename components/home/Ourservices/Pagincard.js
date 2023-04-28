@@ -1,7 +1,6 @@
 import Image from 'next/image'
 
 const Pagincard = ({ id, active, handleClick, paginationGroup }) => {
-  //console.log("Pagincard rendered")
   return (
     <div
       data-index={id}

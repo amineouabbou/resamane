@@ -7,6 +7,7 @@ import Togglemobile from './Togglemobile'
 import { motion } from 'framer-motion'
 import Mobilesidemenu from './Mobilesidemenu'
 import { globaleasing } from '../../data/useVariants'
+import Languages from './Languages'
 
 const Mobileheader = () => {
   const [showMobileNav, setshowMobileNav] = useState(false)
@@ -16,7 +17,7 @@ const Mobileheader = () => {
   }, [])
   return (
     <>
-      <div className="mobile-header flex relative justify-center mt-[10px] md:hidden border-b-[#1D647D40] border-b-[1px]">
+      <div className="mobile-header flex px-[40px] relative items-center justify-around mt-[10px] md:hidden border-b-[#1D647D40] border-b-[1px]">
         <div
           className="menu absolute top-[50%] -translate-y-[50%] left-[20px]"
           onClick={showMobileNavFun}
@@ -30,6 +31,7 @@ const Mobileheader = () => {
             </a>
           </Link>
         </div>
+        {/* <Languages /> */}
       </div>
 
       <AnimatePresence>

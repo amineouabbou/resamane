@@ -1,30 +1,45 @@
 import Subheader from '../components/html/Subheader'
 import SEO from '../components/SEO'
-import Header from '../components/Ui/Header'
-import Layout from '../components/Ui/Layout'
-import Footer from '../components/Ui/Footer'
 import Presentation from '../components/preinscription/Presentation'
 import Contact from '../components/preinscription/Contact'
+import Layout from '../components/Ui/Layout'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { GET_DOSSIER_PAGE } from '../api/Queries'
+import { getCmsData } from '../api'
 
-const Mondossier = () => {
+const Mondossier = ({ data }) => {
+  const { title, metaDesc } = data?.page?.translation?.seo || {}
+  const { titre, description, stepsList } =
+    data?.page?.translation?.AcfDossier || {}
   return (
     <>
-      <Layout>
-        <SEO
-          title="Location logement agadir"
-          description="Dossier de réservation de logement aux résidences universitaires Amane de Agadir"
-        />
-        <Header />
-        <Subheader title="" subtitle="" type="full" />
+      <SEO title={title} description={metaDesc} />
+      <Subheader title="" subtitle="" type="full" />
 
-        <Presentation />
+      <Presentation
+        titre={titre}
+        description={description}
+        stepsList={stepsList}
+      />
 
-        <Contact />
-
-        <Footer />
-      </Layout>
+      <Contact />
     </>
   )
 }
 
+Mondossier.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>
+}
+
 export default Mondossier
+
+export const getServerSideProps = async ({ locale }) => {
+  const data = await getCmsData(GET_DOSSIER_PAGE, 'mon-dossier', locale)
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      data,
+    },
+  }
+}

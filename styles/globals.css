@@ -153,6 +153,10 @@
     @apply bg-[url('/icons/calendar-2.svg')] bg-[length:18px_20px] bg-[center_right_25px] bg-no-repeat;
   }
 
+  html[dir='rtl'] .input.calendar {
+    @apply bg-[center_left_25px];
+  }
+
   .choice label {
     @apply inline-block bg-[#1D647D0B] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.02)] rounded-[35px] h-[46px] leading-[44px] text-[#09556F7B] font-medium px-[25px] mr-[25px] cursor-pointer;
   }
@@ -165,24 +169,45 @@
     @apply block;
   }
 
-  .std {
-    @apply text-justify;
+  .about-intro p {
+    @apply mb-5;
   }
 
-  .std p {
+  .about-intro p strong {
+    @apply font-bold;
+  }
+}
+
+.std {
+  @apply text-justify;
+
+  & a {
+    @apply underline;
+  }
+
+  & h6,
+  & p {
     @apply mb-4;
   }
 
-  .std ul {
+  & h6 {
+    @apply font-light text-[11px] leading-[13px];
+  }
+
+  & ul {
     @apply list-disc pl-[15px];
   }
 
-  .table {
-    @apply w-full;
-  }
+  & table {
+    @apply w-full mb-4;
 
-  .table th,
-  .table td {
-    @apply border-b-[1px] border-[#ccc] p-2 text-center;
+    & thead {
+      @apply bg-secondary;
+    }
+
+    & th,
+    & td {
+      @apply border-b-[1px] border-[#ccc] p-2 text-center;
+    }
   }
 }

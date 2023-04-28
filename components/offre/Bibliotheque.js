@@ -49,16 +49,13 @@ const DATA = [
 
 let basecounter = 0
 
-const Bibliotheque = () => {
+const Bibliotheque = ({ listeAdvantages }) => {
   return (
     <section className="facilities-sections pt-[20px] md:pt-[100px] md:pb-0">
       <div className="container mx-auto md:max-w-[70%]">
         <div className="inner grid md:grid-cols-2 gap-x-0 relative">
-          {DATA.map((item, index) => {
-            basecounter = index + 1
-            return (
-              <Bibliocard key={item.title} counter={basecounter} item={item} />
-            )
+          {listeAdvantages.map((item, index) => {
+            return <Bibliocard key={index} item={item} />
           })}
 
           <div className="box hidden">

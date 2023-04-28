@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { globaleasing } from '../../data/useVariants'
+import { useTranslation } from 'next-i18next'
 
 const bookIntroAnimation = {
   initial: {
@@ -42,6 +43,7 @@ const bookElement = {
 
 const Reserverbtn = () => {
   const { scrollYProgress } = useScroll()
+  const { t } = useTranslation('common')
 
   const x = useTransform(scrollYProgress, [0, 1], [0, 1])
 
@@ -77,10 +79,9 @@ const Reserverbtn = () => {
           </motion.div>
           <motion.div
             variants={bookElement}
-            className="text-[12px] md:text-[16px] leading-4 md:leading-[21px] font-semibold text-center group-hover:text-white transition-all"
+            className="text-[12px] md:text-[16px] px-[30px] leading-4 md:leading-[21px] font-semibold text-center group-hover:text-white transition-all uppercase"
           >
-            RESERVER <br />
-            MAINTENANT
+            {t('Reserver maintenant')}
           </motion.div>
         </motion.div>
       </motion.div>

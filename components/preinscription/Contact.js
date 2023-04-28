@@ -18,6 +18,7 @@ import {
   requiredMessage,
   sendMessage,
 } from '../../data/services'
+import { useTranslation } from 'next-i18next'
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -52,22 +53,25 @@ const schema = yup.object().shape({
     ),
 })
 
-const options = [
-  { value: 'Restaurant', label: 'Restaurant' },
-  { value: 'Médiathèque', label: 'Médiathèque' },
-  { value: 'Bibliothèque', label: 'Bibliothèque' },
-  { value: 'Piscine couverte', label: 'Piscine couverte' },
-  { value: 'Salle de Fitness', label: 'Salle de Fitness' },
-  { value: 'Parking privé ', label: 'Parking privé ' },
-  {
-    value: 'Navette transport ',
-    label: 'Navette transport (De Résidences Amane à votre établissement)',
-  },
-  { value: 'Laverie', label: 'Laverie' },
-  { value: 'Centre de beauté', label: 'Centre de beauté' },
-]
+const getOptions = (t) => {
+  return [
+    { value: 'Restaurant', label: t('Restaurant') },
+    { value: 'Médiathèque', label: t('Médiathèque') },
+    { value: 'Bibliothèque', label: t('Bibliothèque') },
+    { value: 'Piscine couverte', label: t('Piscine couverte') },
+    { value: 'Salle de Fitness', label: t('Salle de Fitness') },
+    { value: 'Parking privé ', label: t('Parking privé') },
+    {
+      value: 'Navette transport ',
+      label: t('Navette transport (De Résidences Amane à votre établissement)'),
+    },
+    { value: 'Laverie', label: t('Laverie') },
+    { value: 'Centre de beauté', label: t('Centre de beauté') },
+  ]
+}
 
 const Contact = () => {
+  const { t } = useTranslation()
   const imageName = useRef()
   const inputTag = useRef()
   const {
@@ -115,11 +119,11 @@ const Contact = () => {
         <div className="bg-[#F5FCFD] py-[35px] px-[25px] md:px-[85px]">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="text-[#023141] md:text-[16px] font-bold block mb-[20px] leading-[18px]">
-              Période de séjour
+              {t('Période de séjour')}
             </div>
             <div className="grid md:grid-cols-2 gap-x-[20px]">
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Du *" mediumfont="true" />
+                <Inputlabel name={`${t('Du')} *`} mediumfont="true" />
                 <input
                   className="input calendar"
                   type="text"
@@ -127,14 +131,14 @@ const Contact = () => {
                   {...register('datedu')}
                 />
                 {errors.datedu ? (
-                  <Inputerror message={errors.datedu?.message} />
+                  <Inputerror message={t(errors.datedu?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="AU *" mediumfont="true" />
+                <Inputlabel name={`${t('Au')} *`} mediumfont="true" />
                 <input
                   className="input calendar"
                   placeholder="JJ/MM/AAAA"
@@ -142,66 +146,76 @@ const Contact = () => {
                   {...register('dateau')}
                 />
                 {errors.dateau ? (
-                  <Inputerror message={errors.dateau?.message} />
+                  <Inputerror message={t(errors.dateau?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Nom *" />
+                <Inputlabel name={`${t('Nom')} *`} />
                 <input className="input" type="text" {...register('nom')} />
-                {errors.nom ? <Inputerror message={errors.nom?.message} /> : ''}
+                {errors.nom ? (
+                  <Inputerror message={t(errors.nom?.message)} />
+                ) : (
+                  ''
+                )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Prénom *" />
+                <Inputlabel name={`${t('Prénom')} *`} />
                 <input className="input" type="text" {...register('prenom')} />
                 {errors.prenom ? (
-                  <Inputerror message={errors.prenom?.message} />
+                  <Inputerror message={t(errors.prenom?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Téléphone *" />
+                <Inputlabel name={`${t('Téléphone')} *`} />
                 <input className="input" type="text" {...register('phone')} />
                 {errors.phone ? (
-                  <Inputerror message={errors.phone?.message} />
+                  <Inputerror message={t(errors.phone?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="CIN, Carte de séjour ou Passeport *" />
+                <Inputlabel
+                  name={`${t('CIN, Carte de séjour ou Passeport')} *`}
+                />
                 <input className="input" type="text" {...register('cin')} />
-                {errors.cin ? <Inputerror message={errors.cin?.message} /> : ''}
+                {errors.cin ? (
+                  <Inputerror message={t(errors.cin?.message)} />
+                ) : (
+                  ''
+                )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Adresse" />
+                <Inputlabel name={t('Adresse')} />
                 <input className="input" type="text" {...register('adresse')} />
                 {errors.adresse ? (
-                  <Inputerror message={errors.adresse?.message} />
+                  <Inputerror message={t(errors.adresse?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Adresse e-mail *" />
+                <Inputlabel name={`${t('Adresse e-mail')} *`} />
                 <input className="input" type="text" {...register('email')} />
                 {errors.email ? (
-                  <Inputerror message={errors.email?.message} />
+                  <Inputerror message={t(errors.email?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Pays *" />
+                <Inputlabel name={`${t('Pays')} *`} />
                 <select
                   className="selectinput"
                   {...register('pays')}
@@ -214,41 +228,41 @@ const Contact = () => {
                   ))}
                 </select>
                 {errors.pays ? (
-                  <Inputerror message={errors.pays?.message} />
+                  <Inputerror message={t(errors.pays?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Ville *" />
+                <Inputlabel name={`${t('Ville')} *`} />
                 <input className="input" type="text" {...register('ville')} />
                 {errors.ville ? (
-                  <Inputerror message={errors.ville?.message} />
+                  <Inputerror message={t(errors.ville?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Etablissement *" />
+                <Inputlabel name={`${t('Etablissement')} *`} />
                 <input
                   className="input"
                   type="text"
                   {...register('etablissement')}
                 />
                 {errors.etablissement ? (
-                  <Inputerror message={errors.etablissement?.message} />
+                  <Inputerror message={t(errors.etablissement?.message)} />
                 ) : (
                   ''
                 )}
               </div>
 
               <div className="field mb-[25px] md:mb-[35px]">
-                <Inputlabel name="Cycle d’étude *" />
+                <Inputlabel name={`${t('Cycle d’étude')} *`} />
                 <input className="input" type="text" {...register('cycle')} />
                 {errors.cycle ? (
-                  <Inputerror message={errors.cycle?.message} />
+                  <Inputerror message={t(errors.cycle?.message)} />
                 ) : (
                   ''
                 )}
@@ -256,7 +270,7 @@ const Contact = () => {
             </div>
 
             <div className="field mb-[25px] md:mb-[35px]">
-              <Inputlabel name="Services prioritaires souhaités" />
+              <Inputlabel name={t('Services prioritaires souhaités')} />
               <Controller
                 name="services"
                 control={control}
@@ -268,44 +282,45 @@ const Contact = () => {
                     isClearable
                     isMulti
                     isSearchable={false}
-                    options={options}
+                    options={getOptions(t)}
                   />
                 )}
               />
 
               <div className="font-light text-[14px] leading-[17px] pt-[10px]">
-                Merci de sélectionner 3 services prioritaires dont vous serez
-                intéressée en priorité pendant votre séjour
+                {t(
+                  'Merci de sélectionner 3 services prioritaires dont vous serez intéressée en priorité pendant votre séjour'
+                )}
               </div>
               {errors.services ? (
-                <Inputerror message={errors.services?.message} />
+                <Inputerror message={t(errors.services?.message)} />
               ) : (
                 ''
               )}
             </div>
 
             <div className="field mb-[25px] md:mb-[35px]">
-              <Inputlabel name="Type de logement *" />
+              <Inputlabel name={`${t('Type de logement')} *`} />
               <select className="selectinput" {...register('chambre')}>
                 <option value=""></option>
                 <option value="Studio individuel (1 personne)">
-                  Studio individuel (1 personne)
+                  {t('Studio individuel (1 personne)')}
                 </option>
                 <option value="Studio partagé (2 personnes)">
-                  Studio partagé (2 personnes)
+                  {t('Studio partagé (2 personnes)')}
                 </option>
                 <option value="Studio PMR (1 personne)">
-                  Studio PMR (1 personne)
+                  {t('Studio PMR (1 personne)')}
                 </option>
                 <option value="Appartement double (2 personnes)">
-                  Appartement double (2 personnes)
+                  {t('Appartement double (2 personnes)')}
                 </option>
                 <option value="Appartement quadruple (4 personnes)">
-                  Appartement quadruple (4 personnes)
+                  {t('Appartement quadruple (4 personnes)')}
                 </option>
               </select>
               {errors.chambre ? (
-                <Inputerror message={errors.chambre?.message} />
+                <Inputerror message={t(errors.chambre?.message)} />
               ) : (
                 ''
               )}
@@ -328,14 +343,16 @@ const Contact = () => {
                 />
               </div>
               {errors.attachement ? (
-                <Inputerror message={errors.attachement?.message} />
+                <Inputerror message={t(errors.attachement?.message)} />
               ) : (
                 ''
               )}
             </div>
 
             <div className="field mb-[25px] md:mb-[35px]">
-              <Inputlabel name="Comment avez-vous connu Résidences Amane?" />
+              <Inputlabel
+                name={t('Comment avez-vous connu Résidences Amane?')}
+              />
               <div className="grid md:grid-rows-3 md:grid-flow-col gap-y-4">
                 {radioBtns.map((item) => {
                   return (
@@ -360,7 +377,7 @@ const Contact = () => {
                               src="/icons/check.svg"
                             />
                           </i>
-                          <span>{item.name}</span>
+                          <span>{t(item.name)}</span>
                         </span>
                       </label>
                     </div>
@@ -368,7 +385,7 @@ const Contact = () => {
                 })}
               </div>
               {errors.channels ? (
-                <Inputerror message={errors.channels?.message} />
+                <Inputerror message={t(errors.channels?.message)} />
               ) : (
                 ''
               )}
@@ -384,7 +401,7 @@ const Contact = () => {
               className="flex flex-col items-end"
             >
               <button className="btn w-[300px] lightblue" type="submit">
-                Soumettre
+                {t('Soumettre')}
               </button>
             </motion.div>
           </form>

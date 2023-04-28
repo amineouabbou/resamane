@@ -337,7 +337,7 @@ export const countries = [
   { name: 'Zimbabwe', code: 'ZW' },
 ]
 
-export const requiredMessage = 'Champ obligatoire.'
+export const requiredMessage = 'Champ obligatoire'
 
 export const generateFormData = (data) => {
   const formData = new FormData()

@@ -13,8 +13,6 @@ const Servicespagination = ({
     setActive(el)
   }
 
-  //console.log("servicesPagination rendred", active)
-
   return (
     <div className="slide-pagination border-t-[#09556F/5] border-t-[1px] mt-[58px]">
       <div className="container mx-auto flex flex-row justify-around">

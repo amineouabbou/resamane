@@ -1,7 +1,10 @@
+import clsx from 'clsx'
 import { Html, Head, Main, NextScript } from 'next/document'
+import { useRouter } from 'next/router'
 import Script from 'next/script'
+import { useEffect } from 'react'
 
-export default function Document() {
+export default function Document(props) {
   return (
     <Html>
       <Head></Head>
@@ -24,4 +27,10 @@ export default function Document() {
       </body>
     </Html>
   )
+}
+
+export const getInitialProps = async (ctx) => {
+  const initialProps = await Document.getInitialProps(ctx)
+
+  return { ...initialProps, locale: ctx?.locale || 'es' }
 }

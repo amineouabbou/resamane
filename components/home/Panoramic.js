@@ -6,6 +6,7 @@ import vuePanImg from '../../public/remove/360.jpg'
 import playIcon from '../../public/icons/play.svg'
 import { useRef, useState } from 'react'
 import YouTube from 'react-youtube'
+import CtaInscription from './CtaInscription'
 
 const Panoramic = ({ titre, arrierePlan }) => {
   const el = useRef()

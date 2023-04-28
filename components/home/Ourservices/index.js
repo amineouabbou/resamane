@@ -17,8 +17,6 @@ const Ourservices = ({ introductionGroup, tabs }) => {
     beforeChange: (current, next) => setActive(next),
   }
 
-  //console.log("our services root render")
-
   return (
     <section className="our-services bg-[#F5FCFD] pt-[130px] pb-[120px] hidden md:block">
       <div className="container mx-auto">

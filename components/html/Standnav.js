@@ -3,60 +3,44 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { titesStagger, shortFadeUp } from '../../data/useVariants'
+import { useQuery } from '@apollo/client'
+import { GET_MENU } from '../../api/Queries'
+import slugify from 'slugify'
 
 const Standnav = () => {
   const router = useRouter()
+  const { slug } = router.query
+  const { locale } = router
+  const current_lang = locale.toUpperCase()
 
-  return (
-    <motion.ul
-      variants={titesStagger(0.6, 0.1)}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="md:flex flex-row items-center justify-center"
-    >
-      <motion.li
-        variants={shortFadeUp()}
-        className={router.pathname == '/' ? 'active' : ''}
+  const { loading, data } = useQuery(GET_MENU, {
+    variables: { lang: current_lang },
+  })
+
+  if (loading) {
+    return <div>Loading ...</div>
+  }
+
+  if (data) {
+    return (
+      <motion.ul
+        variants={titesStagger(0.6, 0.1)}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="md:flex flex-row items-center justify-center"
       >
-        <Link href="/">
-          <a>Accueil</a>
-        </Link>
-      </motion.li>
-      <motion.li
-        variants={shortFadeUp()}
-        className={router.pathname == '/about' ? 'active' : ''}
-      >
-        <Link href="/about">
-          <a>Qui sommes-nous</a>
-        </Link>
-      </motion.li>
-      <motion.li
-        variants={shortFadeUp()}
-        className={router.pathname == '/offre' ? 'active' : ''}
-      >
-        <Link href="/offre">
-          <a>Notre offre</a>
-        </Link>
-      </motion.li>
-      <motion.li
-        variants={shortFadeUp()}
-        className={router.pathname == '/mondossier' ? 'active' : ''}
-      >
-        <Link href="/mondossier">
-          <a>Mon dossier</a>
-        </Link>
-      </motion.li>
-      <motion.li className="hidden" variants={shortFadeUp()}>
-        <a>{`Ville d'agadir`}</a>
-      </motion.li>
-      <motion.li variants={shortFadeUp()}>
-        <Link href="/contact">
-          <a href="#">Contact</a>
-        </Link>
-      </motion.li>
-    </motion.ul>
-  )
+        {data.menuItems.nodes.map((item) => (
+          <motion.li
+            className={`${router.pathname === item.path ? 'active' : ''}`}
+            key={item.id}
+          >
+            <Link href={`${item.path}`}>{item.label}</Link>
+          </motion.li>
+        ))}
+      </motion.ul>
+    )
+  }
 }
 
 export default Standnav

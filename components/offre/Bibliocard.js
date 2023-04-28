@@ -10,22 +10,7 @@ import {
 
 const Bibliocard = ({ item, counter }) => {
   return (
-    <div
-      className={`${
-        counter == 1 || counter == 4 || counter == 5
-          ? 'bg-[#F5FCFD]'
-          : 'bg-white'
-      } ${
-        counter == 1 ||
-        (counter == 5 &&
-          `md:[clip-path:polygon(0_0,_100%_0%,_85%_100%,_0%_100%)]`)
-      }  ${
-        counter == 4 &&
-        `md:[clip-path:polygon(0_0,_100%_0%,_100%_100%,_12%_100%)]`
-      } ${
-        counter == 5 && ` mx-auto`
-      } box px-4 py-8 md-px-0 md:py-[60px] flex flex-col items-center `}
-    >
+    <div className=" box px-4 py-8 md-px-0 md:py-[60px] flex flex-col items-center odd:bg-[#F5FCFD] ">
       <div className="inner md:w-[60%]">
         <motion.div
           variants={titesStagger(0, 0.2)}
@@ -38,7 +23,7 @@ const Bibliocard = ({ item, counter }) => {
             variants={shortFadeUp(1)}
             className="icon w-[41px] h-[37px] md:w-[124px] md:h-[114px] relative mb-[45px]"
           >
-            <Image alt="" src={item.icon} layout="fill" />
+            <Image alt="" src={item?.icone?.mediaItemUrl} layout="fill" />
           </motion.div>
           <motion.h2
             variants={shortFadeUp(1)}
@@ -62,7 +47,9 @@ const Bibliocard = ({ item, counter }) => {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              {item.desc}
+              <span
+                dangerouslySetInnerHTML={{ __html: item.shortDescription }}
+              />
             </motion.p>
           </motion.div>
         </div>
