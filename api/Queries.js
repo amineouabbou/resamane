@@ -17,6 +17,10 @@ export const GET_CMS_PAGE = gql`
               slides {
                 sousTitre
                 titre
+                bouttonGroup {
+                  label
+                  slug
+                }
                 photo {
                   id
                   sourceUrl(size: _1536X1536)

@@ -3,7 +3,8 @@ import { motion } from 'framer-motion'
 import { titlesAnimation, titesStagger } from '../../data/useVariants'
 import Link from 'next/link'
 
-const Cmsoverlay = ({ subtitle, title }) => {
+const Cmsoverlay = ({ subtitle, title, cta }) => {
+  const { label, slug } = cta || {}
   return (
     <div className="overlay absolute bottom-[10%] md:bottom-[10%] left-[22%] md:left-[5%] z-10 flex flex-col justify-center items-center">
       <motion.div
@@ -32,13 +33,13 @@ const Cmsoverlay = ({ subtitle, title }) => {
           </motion.div>
         )}
 
-        {title || subtitle ? (
+        {label && (
           <motion.div variants={titlesAnimation}>
-            <Link href="/mondossier">
-              <a className="btn w-[180px]">Découvrir</a>
+            <Link href={`/${slug}`}>
+              <a className="btn w-[220px]">{label}</a>
             </Link>
           </motion.div>
-        ) : null}
+        )}
       </motion.div>
     </div>
   )

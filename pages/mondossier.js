@@ -15,14 +15,12 @@ const Mondossier = ({ data }) => {
     <>
       <SEO title={title} description={metaDesc} />
       <Subheader title="" subtitle="" type="full" />
-
+      <Contact />
       <Presentation
         titre={titre}
         description={description}
         stepsList={stepsList}
       />
-
-      <Contact />
     </>
   )
 }

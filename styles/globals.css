@@ -211,3 +211,7 @@
     }
   }
 }
+
+.main-slideshow {
+  direction: ltr;
+}
