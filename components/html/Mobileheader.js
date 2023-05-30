@@ -31,7 +31,7 @@ const Mobileheader = () => {
             </a>
           </Link>
         </div>
-        {/* <Languages /> */}
+        <Languages />
       </div>
 
       <AnimatePresence>

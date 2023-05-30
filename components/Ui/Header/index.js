@@ -75,7 +75,7 @@ const Header = ({ lang }) => {
           <nav className="main-nav">
             <Standnav />
           </nav>
-          {/* <Languages /> */}
+          <Languages />
         </motion.div>
       ) : null}
 
@@ -115,7 +115,7 @@ const Header = ({ lang }) => {
           <Standnav />
         </nav>
 
-        {/* <Languages lang={lang} /> */}
+        <Languages lang={lang} />
       </div>
     </>
   )

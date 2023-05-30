@@ -5,7 +5,11 @@ import Cmsoverlay from '../html/Cmsoverlay'
 const Card = ({ data }) => {
   return (
     <div className="item relative overflow-hidden">
-      <Cmsoverlay title={data?.titre} subtitle={data?.sousTitre} />
+      <Cmsoverlay
+        title={data?.titre}
+        subtitle={data?.sousTitre}
+        cta={data?.bouttonGroup}
+      />
 
       <motion.div
         initial={{ scale: 1.03 }}

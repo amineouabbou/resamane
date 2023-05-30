@@ -19,7 +19,7 @@ const Banner = ({ slides, slogan }) => {
 
   return (
     <>
-      <div className="main-screen-home relative md:pl-[90px] ">
+      <div className="main-screen-home relative md:pl-[90px]">
         <Sidenav slogan={slogan} />
 
         <motion.div

@@ -53,13 +53,13 @@ const Sidenav = ({ slogan }) => {
               delay: 2.5,
             },
           }}
-          className="slogan text-primary text-[11px] font-bold bg-white px-[22px]"
+          className="slogan text-primary text-[14px] tracking-[0.05em] font-bold bg-white px-[22px] uppercase"
         >
           {slogan}
         </motion.div>
       </div>
 
-      {/* <Languages className="mx-auto mt-[10px]" /> */}
+      <Languages className="mx-auto mt-[10px]" />
     </div>
   )
 }
